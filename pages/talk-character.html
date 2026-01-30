@@ -185,6 +185,14 @@
         }
       }
 
+      function getApiBaseUrl() {
+        const host = window.location.hostname;
+        if (host === "localhost" || host === "127.0.0.1") {
+          return "http://localhost:3001";
+        }
+        return "https://littleheroes-y949.onrender.com";
+      }
+
       // Initialize on page load
       window.addEventListener("DOMContentLoaded", () => {
         initializePage();
@@ -202,7 +210,7 @@
           };
 
           try {
-            const response = await fetch("http://localhost:3001/api/chat", {
+            const response = await fetch(`${getApiBaseUrl()}/api/chat`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(payload),
