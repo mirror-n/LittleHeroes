@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev:server": "tsx backend/api/server.ts",
-    "start": "node --loader tsx backend/api/server.ts",
+    "start": "node --import tsx backend/api/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
