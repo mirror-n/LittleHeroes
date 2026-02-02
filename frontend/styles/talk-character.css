@@ -71,9 +71,9 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
+  width: min(60%, 320px);
   max-width: 600px;
-  min-width: 400px;
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -158,9 +158,9 @@
   }
 
   .character-image-container {
-    width: 65%;
+    width: min(65%, 300px);
     max-width: 500px;
-    min-width: 300px;
+    min-width: 0;
   }
 
   .character-image-container img {
@@ -204,9 +204,9 @@
   }
 
   .character-image-container {
-    width: 70%;
+    width: min(70%, 260px);
     max-width: 400px;
-    min-width: 250px;
+    min-width: 0;
   }
 
   .character-image-container img {

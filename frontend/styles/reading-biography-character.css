@@ -92,3 +92,14 @@
     min-height: 100px;
   }
 }
+
+@media (max-width: 680px) {
+  .episodes-content {
+    padding: 60px 20px 40px;
+  }
+
+  .biography-title-box h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
