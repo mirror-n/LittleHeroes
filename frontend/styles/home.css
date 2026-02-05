@@ -45,8 +45,186 @@
   justify-content: center;
 }
 
-.greats-container img {
-  width: 70%;
+.greats-visual {
+  --base-size: 760px;
+  position: relative;
+  width: var(--base-size);
+  height: var(--base-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.central-kid-shell {
+  position: relative;
+  z-index: 2;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.central-kid {
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.central-kid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.figures-circle {
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --orbit-radius: 310px;
+}
+
+.figure-portrait {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #15fa62, #30ffbb);
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: default;
+  transform: translate(-50%, -50%)
+    rotate(var(--angle))
+    translateY(calc(-1 * var(--orbit-radius)))
+    rotate(calc(-1 * var(--angle)));
+}
+
+.figure-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.figure-portrait:hover,
+.figure-portrait:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.9),
+    0 0 18px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.figure-portrait[data-key="lincoln"]:hover,
+.figure-portrait[data-key="lincoln"]:focus-visible,
+.figure-portrait[data-key="davinci"]:hover,
+.figure-portrait[data-key="davinci"]:focus-visible,
+.figure-portrait[data-key="einstein"]:hover,
+.figure-portrait[data-key="einstein"]:focus-visible,
+.figure-portrait[data-key="newton"]:hover,
+.figure-portrait[data-key="newton"]:focus-visible,
+.figure-portrait[data-key="socrates"]:hover,
+.figure-portrait[data-key="socrates"]:focus-visible,
+.figure-portrait[data-key="shakespeare"]:hover,
+.figure-portrait[data-key="shakespeare"]:focus-visible {
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.9),
+    0 0 30px rgba(192, 75, 32, 1);
+}
+
+.figure-portrait[data-key="darwin"]:hover,
+.figure-portrait[data-key="darwin"]:focus-visible,
+.figure-portrait[data-key="helen"]:hover,
+.figure-portrait[data-key="helen"]:focus-visible,
+.figure-portrait[data-key="marie"]:hover,
+.figure-portrait[data-key="marie"]:focus-visible,
+.figure-portrait[data-key="mozart"]:hover,
+.figure-portrait[data-key="mozart"]:focus-visible,
+.figure-portrait[data-key="chaplin"]:hover,
+.figure-portrait[data-key="chaplin"]:focus-visible,
+.figure-portrait[data-key="carnegie"]:hover,
+.figure-portrait[data-key="carnegie"]:focus-visible {
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.9),
+    0 0 30px rgba(56, 142, 60, 1);
+}
+
+.learn-list li.learn-highlight {
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 1),
+    0 0 10px rgba(255, 255, 255, 0.95),
+    0 0 23px rgba(255, 255, 255, 0.85);
+    filter: brightness(1.1);
+}
+
+.learn-list li.learn-highlight span {
+  text-shadow:
+  0 0 5px rgba(255, 255, 255, 1),
+  0 0 10px rgba(255, 255, 255, 0.95),
+  0 0 23px rgba(255, 255, 255, 0.85);
+  filter: brightness(1.1);
+}
+
+.figure-portrait.top-left {
+  --angle: 0deg;
+}
+
+.figure-portrait.upper-left {
+  --angle: 30deg;
+}
+
+.figure-portrait.upper-mid-left {
+  --angle: 60deg;
+}
+
+.figure-portrait.mid-left {
+  --angle: 90deg;
+}
+
+.figure-portrait.lower-mid-left {
+  --angle: 120deg;
+}
+
+.figure-portrait.bottom-center-left {
+  --angle: 150deg;
+}
+
+.figure-portrait.bottom-center-right {
+  --angle: 180deg;
+}
+
+.figure-portrait.bottom-right {
+  --angle: 210deg;
+}
+
+.figure-portrait.lower-mid-right {
+  --angle: 240deg;
+}
+
+.figure-portrait.mid-right {
+  --angle: 270deg;
+}
+
+.figure-portrait.top-center-right {
+  --angle: 300deg;
+}
+
+.figure-portrait.top-center-left {
+  --angle: 330deg;
 }
 
 /* Learn Text Sections */
@@ -96,6 +274,13 @@
     max-width: 900px;
   }
 
+  .greats-visual {
+    --scale: min(1, calc((100vw - 80px) / var(--base-size)));
+    width: calc(var(--base-size) * var(--scale));
+    height: calc(var(--base-size) * var(--scale));
+    transform: scale(var(--scale));
+    transform-origin: center;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -120,6 +305,10 @@
   .greats-container {
     min-height: 500px;
     flex-direction: column;
+  }
+
+  .greats-visual {
+    order: -1;
   }
 
   .learn-text {
@@ -151,8 +340,11 @@
 }
 
 @media (max-width: 680px) {
-  .greats-container img {
-    width: 90%;
+  .greats-visual {
+    --scale: min(1, calc((100vw - 56px) / var(--base-size)));
+    width: calc(var(--base-size) * var(--scale));
+    height: calc(var(--base-size) * var(--scale));
+    transform: scale(var(--scale));
   }
 
   .learn-list li {

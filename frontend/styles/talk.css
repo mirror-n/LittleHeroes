@@ -84,8 +84,8 @@
 .character-image {
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 53%;
+  right: 5px;
+  width: 45%;
   max-width: 340px;
   min-width: 0;
   pointer-events: none;

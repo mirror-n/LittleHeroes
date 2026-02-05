@@ -98,10 +98,11 @@ html {
 }
 
 .logo-icon img {
+  width: 50px;
   height: auto;
   display: block;
   transform-origin: right top;
-  --logo-scale: 0.25;
+  --logo-scale: 1;
   transform: scale(var(--logo-scale));
 }
 
@@ -208,7 +209,7 @@ img {
   }
 
   .logo-icon img {
-    --logo-scale: 0.20;
+    --logo-scale: 0.8;
   }
 
   .text-content2 {
@@ -252,7 +253,7 @@ img {
   }
 
   .logo-icon img {
-    --logo-scale: 0.13;
+    --logo-scale: 0.52;
   }
 
   .text-title1 {
@@ -293,7 +294,7 @@ img {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
   .tabs-banner {
     padding: 12px 0;
   }
@@ -312,7 +313,7 @@ img {
   }
 
   .logo-icon img {
-    --logo-scale: 0.10;
+    --logo-scale: 0.4;
   }
 
   .text-title1 {

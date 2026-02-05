@@ -48,87 +48,146 @@
     <!-- Learn from the Greats Section -->
     <section class="greats-section">
       <div class="greats-container">
-        <img
-          src="../images/home_characters_circle.png"
-          alt="AI Greats Circle"
-        />
-        <!-- Central Child -->
-        <!--
-        <div class="central-child">
-          <div class="child-portrait">
-            <div class="placeholder-portrait">👦</div>
+        <div class="greats-visual" aria-label="Greats circle">
+          <div class="central-kid-shell">
+            <div class="central-kid">
+              <video
+                id="central-kid-video"
+                src="../images/animated-home/central-kid.mp4"
+                autoplay
+                muted
+                playsinline
+                disablepictureinpicture
+                controlslist="nodownload nofullscreen noplaybackrate noremoteplayback"
+              ></video>
+            </div>
+          </div>
+
+          <div class="figures-circle">
+            <a
+              class="figure-portrait top-left"
+              title="Abraham Lincoln"
+              href="javascript:void(0)"
+              data-key="lincoln"
+            >
+              <img src="../images/card_adult_abe.png" alt="Abe" />
+            </a>
+            <a
+              class="figure-portrait upper-left"
+              title="Leonardo da Vinci"
+              href="javascript:void(0)"
+              data-key="davinci"
+            >
+              <img src="../images/card_adult_leo.png" alt="Leo" />
+            </a>
+            <a
+              class="figure-portrait upper-mid-left"
+              title="Albert Einstein"
+              href="javascript:void(0)"
+              data-key="einstein"
+            >
+              <img src="../images/card_adult_al.png" alt="Al" />
+            </a>
+            <a
+              class="figure-portrait mid-left"
+              title="Isaac Newton"
+              href="javascript:void(0)"
+              data-key="newton"
+            >
+              <img src="../images/card_adult_isac.png" alt="Isac" />
+            </a>
+            <a
+              class="figure-portrait lower-mid-left"
+              title="Socrates"
+              href="javascript:void(0)"
+              data-key="socrates"
+            >
+              <img src="../images/card_adult_socrate.png" alt="Socrate" />
+            </a>
+            <a
+              class="figure-portrait bottom-center-left"
+              title="William Shakespeare"
+              href="javascript:void(0)"
+              data-key="shakespeare"
+            >
+              <img src="../images/card_adult_willy.png" alt="Willy" />
+            </a>
+            <a
+              class="figure-portrait bottom-center-right"
+              title="Andrew Carnegie"
+              href="javascript:void(0)"
+              data-key="carnegie"
+            >
+              <img src="../images/card_adult_andy.png" alt="Andy" />
+            </a>
+            <a
+              class="figure-portrait bottom-right"
+              title="Charlie Chaplin"
+              href="javascript:void(0)"
+              data-key="chaplin"
+            >
+              <img src="../images/card_adult_charlie.png" alt="Charlie" />
+            </a>
+            <a
+              class="figure-portrait lower-mid-right"
+              title="Wolfgang Amadeus Mozart"
+              href="javascript:void(0)"
+              data-key="mozart"
+            >
+              <img src="../images/card_adult_wolf.png" alt="Wolf" />
+            </a>
+            <a
+              class="figure-portrait mid-right"
+              title="Marie Curie"
+              href="javascript:void(0)"
+              data-key="marie"
+            >
+              <img src="../images/card_adult_marie.png" alt="Marie" />
+            </a>
+            <a
+              class="figure-portrait top-center-right"
+              title="Helen Keller"
+              href="javascript:void(0)"
+              data-key="helen"
+            >
+              <img src="../images/card_adult_hellen.png" alt="Hellen" />
+            </a>
+            <a
+              class="figure-portrait top-center-left"
+              title="Charles Darwin"
+              href="javascript:void(0)"
+              data-key="darwin"
+            >
+              <img src="../images/card_adult_chales.png" alt="Chales" />
+            </a>
           </div>
         </div>
--->
-        <!-- Historical Figures Circle -->
-        <!--
-        <div class="figures-circle">
-          <div class="figure-portrait top-left" title="Abraham Lincoln">👔</div>
-          <div class="figure-portrait upper-left" title="Leonardo da Vinci">
-            🎨
-          </div>
-          <div class="figure-portrait upper-mid-left" title="Albert Einstein">
-            💡
-          </div>
-          <div class="figure-portrait mid-left" title="Isaac Newton">🍎</div>
-          <div class="figure-portrait lower-mid-left" title="Socrates">🏛️</div>
-          <div
-            class="figure-portrait bottom-center-left"
-            title="William Shakespeare"
-          >
-            ✍️
-          </div>
-          <div
-            class="figure-portrait bottom-center-right"
-            title="Andrew Carnegie"
-          >
-            💼
-          </div>
-          <div class="figure-portrait bottom-right" title="Charlie Chaplin">
-            🎬
-          </div>
-          <div
-            class="figure-portrait lower-mid-right"
-            title="Wolfgang Amadeus Mozart"
-          >
-            🎻
-          </div>
-          <div class="figure-portrait mid-right" title="Marie Curie">⚗️</div>
-          <div class="figure-portrait top-center-right" title="Helen Keller">
-            🌟
-          </div>
-          <div class="figure-portrait top-center-left" title="Charles Darwin">
-            🌿
-          </div>
-          
-        </div>
--->
         <!-- Left Side Text -->
         <div class="learn-text left-text">
           <h2 class="text-title3 text-content-darkblue">
             Learn from the Greats
           </h2>
           <ul class="learn-list text-content1">
-            <li>
+            <li id="learn-lincoln" data-key="lincoln">
               Lincoln's <span class="text-character-quality-red"> honesty</span>
             </li>
-            <li>
+            <li id="learn-davinci" data-key="davinci">
               Da Vinci's
               <span class="text-character-quality-red"> creativity</span>
             </li>
-            <li>
+            <li id="learn-einstein" data-key="einstein">
               Einstein's
               <span class="text-character-quality-red"> imagination</span>
             </li>
-            <li>
+            <li id="learn-newton" data-key="newton">
               Newton's
               <span class="text-character-quality-red"> logical thinking </span>
             </li>
-            <li>
+            <li id="learn-socrates" data-key="socrates">
               Socrates's
               <span class="text-character-quality-red"> questioning</span>
             </li>
-            <li>
+            <li id="learn-shakespeare" data-key="shakespeare">
               Shakespeare's
               <span class="text-character-quality-red"> expressiveness</span>
             </li>
@@ -141,26 +200,26 @@
             Leave it to the Greats
           </h2>
           <ul class="learn-list text-content1">
-            <li>
+            <li id="learn-darwin" data-key="darwin">
               Darwin's
               <span class="text-character-quality-green"> curiosity</span>
             </li>
-            <li>
+            <li id="learn-helen" data-key="helen">
               Helen's
               <span class="text-character-quality-green"> hard work</span>
             </li>
-            <li>
+            <li id="learn-marie" data-key="marie">
               Marie's
               <span class="text-character-quality-green"> perseverance</span>
             </li>
-            <li>
+            <li id="learn-mozart" data-key="mozart">
               Mozart's
               <span class="text-character-quality-green"> inspiration</span>
             </li>
-            <li>
+            <li id="learn-chaplin" data-key="chaplin">
               Chaplin's <span class="text-character-quality-green"> humor</span>
             </li>
-            <li>
+            <li id="learn-carnegie" data-key="carnegie">
               Carnegie's
               <span class="text-character-quality-green">
                 financial coaching</span
@@ -170,6 +229,74 @@
         </div>
       </div>
     </section>
+
+    <script>
+      const video = document.getElementById("central-kid-video");
+      if (video) {
+        video.removeAttribute("controls");
+        video.addEventListener("contextmenu", (event) => event.preventDefault());
+
+        let direction = 1;
+        const speed = 1.5;
+        let lastTime = null;
+
+        const step = (timestamp) => {
+          if (!lastTime) {
+            lastTime = timestamp;
+          }
+          const delta = (timestamp - lastTime) / 1000;
+          lastTime = timestamp;
+
+          if (video.readyState >= 2) {
+            const nextTime = video.currentTime + direction * speed * delta;
+            if (nextTime >= video.duration) {
+              direction = -1;
+              video.currentTime = video.duration;
+            } else if (nextTime <= 0) {
+              direction = 1;
+              video.currentTime = 0;
+            } else {
+              video.currentTime = nextTime;
+            }
+          }
+
+          requestAnimationFrame(step);
+        };
+
+        video.addEventListener("loadedmetadata", () => {
+          video.currentTime = 0;
+          requestAnimationFrame(step);
+        });
+      }
+
+      const circleLinks = document.querySelectorAll(".figure-portrait");
+      const learnItems = document.querySelectorAll(".learn-list li");
+      const learnByKey = {};
+
+      learnItems.forEach((item) => {
+        learnByKey[item.dataset.key] = item;
+      });
+
+      circleLinks.forEach((circle) => {
+        const key = circle.dataset.key;
+        if (!key) {
+          return;
+        }
+        const target = learnByKey[key];
+        if (!target) {
+          return;
+        }
+
+        const setHighlight = (isOn) => {
+          target.classList.toggle("learn-highlight", isOn);
+        };
+
+        circle.addEventListener("mouseenter", () => setHighlight(true));
+        circle.addEventListener("mouseleave", () => setHighlight(false));
+        circle.addEventListener("focus", () => setHighlight(true));
+        circle.addEventListener("blur", () => setHighlight(false));
+      });
+    </script>
 
     <!-- Our Vision Text Section -->
     <section class="bottom-section">
