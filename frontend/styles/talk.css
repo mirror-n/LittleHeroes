@@ -9,6 +9,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden; /* Prevent scrollbar from translateY animation */
+}
+
+/* Scroll animation for talk page text - initial hidden state */
+.talk-content h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-in, transform 1s ease-out;
+}
+
+/* Animated state when individual h1 enters viewport */
+.talk-content h1.animated {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Characters Grid */
@@ -177,7 +191,11 @@
 
 @media (max-width: 680px) {
   .talk-content {
-    padding: 80px 20px 40px;
+    padding-top: 80px;
+  }
+
+  .characters-grid {
+    padding-top: 5px;
   }
 
   .character-info {

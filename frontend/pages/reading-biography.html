@@ -323,6 +323,27 @@
           </div>
         </a>
       </div>
+
+      <script>
+        // Scroll animation for reading biography page text - animate when h1 enters viewport
+        function checkIfInView() {
+          const h1Element = document.querySelector(".biography-content h1");
+          if (h1Element && !h1Element.classList.contains("animated")) {
+            const rect = h1Element.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            
+            // Trigger when h1 element is visible in viewport
+            if (rect.top < windowHeight && rect.bottom > 0) {
+              h1Element.classList.add("animated");
+            }
+          }
+        }
+
+        // Check on scroll and on page load
+        window.addEventListener("scroll", checkIfInView);
+        window.addEventListener("resize", checkIfInView);
+        checkIfInView(); // Check immediately on page load
+      </script>
     </main>
   </body>
 </html>

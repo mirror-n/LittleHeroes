@@ -127,14 +127,14 @@ img {
 }
 
 .text-title3 {
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 650;
   line-height: 2.8;
   color: #757272;
 }
 
 .text-content1 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 650;
   line-height: 2.5;
   color: #757272;
@@ -192,6 +192,16 @@ img {
 }
 
 /* Responsive Design */
+@media (max-width: 1650px) {
+  .text-title3 {
+    font-size: 34px;
+  }
+  
+  .text-content1 {
+    font-size: 26px;
+  }
+}
+
 @media (max-width: 1450px) {
   .text-title3 {
     font-size: 25px;

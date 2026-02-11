@@ -353,9 +353,29 @@
             link.removeAttribute("href");
           }
         });
+
+        // Scroll animation for talk page text - animate each h1 individually when it enters viewport
+        function checkIfInView() {
+          const h1Elements = document.querySelectorAll(".talk-content h1");
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          
+          h1Elements.forEach((h1) => {
+            if (!h1.classList.contains("animated")) {
+              const rect = h1.getBoundingClientRect();
+              
+              // Trigger when h1 element is visible in viewport (with some offset for earlier trigger)
+              if (rect.top < windowHeight && rect.bottom > 0) {
+                h1.classList.add("animated");
+              }
+            }
+          });
+        }
+
+        // Check on scroll and on page load
+        window.addEventListener("scroll", checkIfInView);
+        window.addEventListener("resize", checkIfInView);
+        checkIfInView(); // Check immediately on page load
       </script>
     </main>
-  </body>
-</html>
   </body>
 </html>

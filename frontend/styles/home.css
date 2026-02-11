@@ -23,6 +23,33 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden; /* Prevent scrollbar from translateY animation */
+}
+
+/* Scroll animation for introduction section - initial hidden state */
+.introduction-section > * {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-in, transform 0.8s ease-out;
+}
+
+/* Animated state when section is in viewport */
+.introduction-section.animated > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for introduction elements */
+.introduction-section.animated > *:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.introduction-section.animated > *:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.introduction-section.animated > *:nth-child(3) {
+  transition-delay: 0.7s;
 }
 
 /* Learn from the Greats Section */
@@ -242,7 +269,7 @@
   z-index: 15;
   max-width: 450px;
   box-sizing: border-box;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .greats-learn-right {
@@ -253,7 +280,7 @@
   z-index: 15;
   max-width: 450px;
   box-sizing: border-box;
-  padding-right: 20px;
+  padding-right: 40px;
 }
 
 /* Learn Text Sections */
@@ -272,6 +299,20 @@
   text-align: right;
 }
 
+/* Scroll animation for learn section titles - initial hidden state */
+.learn-text h2 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-in, transform 1s ease-out;
+}
+
+/* Animated state for titles - appear before list items */
+.greats-section.animated .learn-text h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; /* Titles appear first, before list items */
+}
+
 .learn-list {
   list-style: none;
   padding: 0;
@@ -282,6 +323,40 @@
   font-size: inherit;
   line-height: 2;
   margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-in, transform 0.8s ease-out;
+}
+
+/* Animated state for learn-list items - matching lines appear together */
+.greats-section.animated .learn-list li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation: matching lines from left and right appear at same time */
+.greats-section.animated .learn-list li:nth-child(1) {
+  transition-delay: 0.4s;
+}
+
+.greats-section.animated .learn-list li:nth-child(2) {
+  transition-delay: 0.65s;
+}
+
+.greats-section.animated .learn-list li:nth-child(3) {
+  transition-delay: 0.9s;
+}
+
+.greats-section.animated .learn-list li:nth-child(4) {
+  transition-delay: 1.15s;
+}
+
+.greats-section.animated .learn-list li:nth-child(5) {
+  transition-delay: 1.40s;
+}
+
+.greats-section.animated .learn-list li:nth-child(6) {
+  transition-delay: 1.65s;
 }
 
 /* Vision Text Section */
@@ -293,6 +368,33 @@
   justify-content: center;
   text-align: center;
   min-height: 400px;
+  overflow: hidden; /* Prevent scrollbar from translateY animation */
+}
+
+/* Scroll animation for bottom section text - initial hidden state */
+.bottom-section p {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: opacity 1.5s ease-in, transform 1.2s ease-out;
+}
+
+/* Animated state when section is in viewport */
+.bottom-section.animated p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for each paragraph */
+.bottom-section.animated p:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.bottom-section.animated p:nth-child(2) {
+  transition-delay: 0.5s;
+}
+
+.bottom-section.animated p:nth-child(3) {
+  transition-delay: 0.8s;
 }
 
 /* Responsive: greats circle – fixed size per breakpoint (edit values as needed) */
