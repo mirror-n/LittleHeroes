@@ -144,6 +144,7 @@
 
       let currentCharacterKey = null;
       let currentBackendSlug = null;
+      let conversationHistory = []; // Track conversation history
 
       // Get URL parameter
       function getURLParameter(name) {
@@ -158,7 +159,14 @@
         if (characterParam && characters[characterParam.toLowerCase()]) {
           // Show character detail view
           const character = characters[characterParam.toLowerCase()];
-          currentCharacterKey = characterParam.toLowerCase();
+          const newCharacterKey = characterParam.toLowerCase();
+          
+          // Reset conversation history if character changed
+          if (currentCharacterKey !== newCharacterKey) {
+            conversationHistory = [];
+          }
+          
+          currentCharacterKey = newCharacterKey;
           currentBackendSlug = character.backendSlug || "";
           
           // Update character name
@@ -204,9 +212,14 @@
           const text = input.value.trim();
           if (!text) return;
           reply.textContent = "Thinking...";
+          
+          // Add user message to conversation history
+          conversationHistory.push({ role: "user", content: text });
+          
           const payload = {
             message: text,
             character: currentBackendSlug || "",
+            conversationHistory: conversationHistory.slice(0, -1), // Send history without current message
           };
 
           try {
@@ -228,11 +241,17 @@
               throw new Error(errorMessage);
             }
 
-            reply.textContent = data.answer || "No answer yet.";
+            const answer = data.answer || "No answer yet.";
+            reply.textContent = answer;
+            
+            // Add assistant response to conversation history
+            conversationHistory.push({ role: "assistant", content: answer });
           } catch (error) {
             const message =
               error && error.message ? error.message : "Unable to reach the AI server.";
             reply.textContent = `Error: ${message}`;
+            // Remove the user message from history if request failed
+            conversationHistory.pop();
           }
           input.value = "";
           input.focus();

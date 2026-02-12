@@ -1,3 +1,4 @@
 
 {"timestamp":"2026-01-29T06:46:45.207Z","character":"leonardo-da-vinci","message":"hey, tell me about your last invention","reason":"model_refusal"}
 {"timestamp":"2026-01-29T06:46:45.210Z","character":"leonardo-da-vinci","message":"hey, tell me about your last invention","reason":"safety_refusal"}
+{"timestamp":"2026-02-12T08:28:23.354Z","character":"leonardo-da-vinci","message":"hi","reason":"gemini_error:Missing GEMINI_API_KEY"}

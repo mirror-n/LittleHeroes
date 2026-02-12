@@ -1,4 +1,4 @@
-﻿// This part uses prompts and safety files to build the final prompt and enforce safety.
+// This part uses prompts and safety files to build the final prompt and enforce safety.
 declare const require: (module: string) => any; // Allow CommonJS require in TS.
 declare const process: { cwd: () => string }; // Provide minimal process typing.
 
@@ -12,6 +12,8 @@ export type RagAnswerInput = { // Input for prompt building.
   context: string; // Retrieved RAG context.
   character?: string; // Optional character name.
   refusalText?: string; // Optional refusal override.
+  guardrails?: any; // Optional guardrails for template access.
+  conversationHistory?: any[]; // Optional conversation history.
 }; 
 
 export type RagPrompt = { // Output prompt package.
@@ -51,10 +53,34 @@ function readJsonSafe(filePath: string): any { // Read JSON with fallback.
 } 
 
 function renderTemplate(template: string, vars: TemplateVars): string { // Render template.
-  return template.replace(/\{\{\s*(\w+)\s*\}\}/g, (_, key) => { // Replace tokens.
+  // First handle simple variables like {{key}}
+  let result = template.replace(/\{\{\s*(\w+)\s*\}\}/g, (_, key) => { // Replace tokens.
     const value = vars[key]; // Lookup variable.
     return value === undefined ? "" : String(value); // Use empty if missing.
   }); 
+  
+  // Handle nested object access like guardrails.constraints.redirection_style
+  result = result.replace(/\{\{\s*([\w.]+)\s*\}\}/g, (_, path) => {
+    const keys = path.split('.'); // Split path by dots.
+    let value: any = vars; // Start from vars object.
+    
+    // Traverse the path
+    for (const key of keys) {
+      if (value && typeof value === 'object' && key in value) {
+        value = value[key]; // Navigate deeper.
+      } else {
+        return ""; // Return empty if path not found.
+      }
+    }
+    
+    // Format the final value
+    if (Array.isArray(value)) {
+      return value.join(". "); // Join array items.
+    }
+    return value !== undefined && value !== null ? String(value) : ""; // Convert to string.
+  });
+  
+  return result;
 } 
 
 export function loadSafetyConfig(): SafetyConfig { // Load safety config files.
@@ -150,6 +176,7 @@ export function buildRagOnlyPrompt(input: RagAnswerInput): RagPrompt { // Build 
     question: input.question, // Inject question.
     character: input.character ?? "", // Inject character name.
     refusal_text: refusalText, // Inject refusal text.
+    guardrails: input.guardrails || {}, // Inject guardrails for template access.
   }); 
 
   return { system, user, shouldRefuse }; // Return built prompt package.

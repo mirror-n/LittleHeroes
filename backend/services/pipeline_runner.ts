@@ -20,9 +20,10 @@ export type PipelineInputs = { // Pipeline input package.
   primary: { context: string; guardrails: any; characterName: string }; // Primary RAG data.
   safety: { forbiddenTopics: string[]; childSafeRules: string; escalationPolicy: string }; // Safety config.
   refusalText: string; // Refusal text.
+  conversationHistory: any[]; // Conversation history.
 }; 
 
-export function loadPipelineInputs(characterSlug: string, message: string): PipelineInputs { // Load pipeline data.
+export function loadPipelineInputs(characterSlug: string, message: string, conversationHistory: any[] = []): PipelineInputs { // Load pipeline data.
   const primary = loadPrimaryRag(characterSlug); // Load primary RAG for character.
   const safety = loadSafetyConfig(); // Load safety config files.
   const refusalText = buildRefusalText(); // Load refusal text.
@@ -32,9 +33,11 @@ export function loadPipelineInputs(characterSlug: string, message: string): Pipe
     context: primary.context, // Primary RAG context.
     character: primary.characterName, // Character display name.
     refusalText, // Refusal text.
+    guardrails: primary.guardrails, // Guardrails for template access.
+    conversationHistory, // Conversation history.
   }); 
 
-  return { prompt, primary, safety, refusalText }; // Return pipeline inputs.
+  return { prompt, primary, safety, refusalText, conversationHistory }; // Return pipeline inputs.
 } 
 
 export function applySafety( // Apply safety + guardrails checks.

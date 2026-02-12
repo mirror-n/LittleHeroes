@@ -9,15 +9,10 @@ const DEFAULT_GEMINI_MODEL = "gemini-1.5-flash"; // Default Gemini model.
 const FALLBACK_MODELS = ["gemini-1.5-pro", "gemini-1.0-pro"]; // Safe fallbacks.
 const PREFERRED_MODELS = [DEFAULT_GEMINI_MODEL, ...FALLBACK_MODELS];
 
-function requestGemini(model: string, apiKey: string, mergedPrompt: string): Promise<string> {
+function requestGemini(model: string, apiKey: string, contents: any[]): Promise<string> {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
-      contents: [
-        {
-          role: "user",
-          parts: [{ text: mergedPrompt }],
-        },
-      ],
+      contents,
       generationConfig: {
         temperature: 0.4,
       },
@@ -113,7 +108,7 @@ function listGeminiModels(apiKey: string): Promise<string[]> {
   });
 }
 
-export async function callGemini(systemPrompt: string, userPrompt: string): Promise<string> {
+export async function callGemini(systemPrompt: string, userPrompt: string, conversationHistory: any[] = []): Promise<string> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error("Missing GEMINI_API_KEY");
@@ -124,13 +119,39 @@ export async function callGemini(systemPrompt: string, userPrompt: string): Prom
     (value, index, self) => self.indexOf(value) === index
   );
 
-  const mergedPrompt = `${systemPrompt}\n\n${userPrompt}`.trim();
+  // Build contents array for Gemini API
+  // Gemini uses "model" instead of "assistant" and wraps content in parts array
+  const contents: any[] = [];
+  
+  // Add system prompt as first user message (Gemini doesn't have system role)
+  contents.push({
+    role: "user",
+    parts: [{ text: systemPrompt }],
+  });
+  
+  // Convert conversation history from OpenAI format to Gemini format
+  if (Array.isArray(conversationHistory)) {
+    for (const msg of conversationHistory) {
+      if (msg && msg.role && msg.content) {
+        contents.push({
+          role: msg.role === "assistant" ? "model" : "user",
+          parts: [{ text: String(msg.content) }],
+        });
+      }
+    }
+  }
+  
+  // Add current user prompt
+  contents.push({
+    role: "user",
+    parts: [{ text: userPrompt }],
+  });
 
   let lastError: any = null;
   for (let i = 0; i < models.length; i += 1) {
     const model = models[i];
     try {
-      return await requestGemini(model, apiKey, mergedPrompt);
+      return await requestGemini(model, apiKey, contents);
     } catch (error: any) {
       lastError = error;
       const status = Number(error?.statusCode || 0);
@@ -145,7 +166,7 @@ export async function callGemini(systemPrompt: string, userPrompt: string): Prom
     const preferred = PREFERRED_MODELS.find((model) => available.includes(model));
     const fallback = preferred || available[0];
     if (fallback) {
-      return await requestGemini(fallback, apiKey, mergedPrompt);
+      return await requestGemini(fallback, apiKey, contents);
     }
   } catch (error) {
     lastError = error;

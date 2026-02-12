@@ -45,6 +45,7 @@ export async function handleChatRequest(req: any, res: any): Promise<void> { // 
 
   const message = String(payload.message || "").trim(); // Normalize message text.
   const characterSlug = String(payload.character || "").trim().toLowerCase(); // Normalize character slug.
+  const conversationHistory = Array.isArray(payload.conversationHistory) ? payload.conversationHistory : []; // Get conversation history.
 
   if (!message) { // If message is missing.
     sendJson(res, 400, { error: "Missing message" }); // Return 400 error.
@@ -56,7 +57,7 @@ export async function handleChatRequest(req: any, res: any): Promise<void> { // 
     return; // Stop processing.
   } 
 
-  const pipeline = loadPipelineInputs(characterSlug, message); // Load pipeline data.
+  const pipeline = loadPipelineInputs(characterSlug, message, conversationHistory); // Load pipeline data.
 
       let rawAnswer = ""; // Store raw model answer.
 
@@ -75,7 +76,7 @@ export async function handleChatRequest(req: any, res: any): Promise<void> { // 
         });
   } else {
         try { // Try calling OpenAI.
-          rawAnswer = await callOpenAI(pipeline.prompt.system, pipeline.prompt.user); // Call model.
+          rawAnswer = await callOpenAI(pipeline.prompt.system, pipeline.prompt.user, pipeline.conversationHistory); // Call model.
         } catch (error: any) { // If OpenAI fails, try Gemini if available.
           const openAiMessage = String(error?.message || "OpenAI failed");
           const isQuotaError =
@@ -95,7 +96,7 @@ export async function handleChatRequest(req: any, res: any): Promise<void> { // 
           }
 
           try {
-            rawAnswer = await callGemini(pipeline.prompt.system, pipeline.prompt.user);
+            rawAnswer = await callGemini(pipeline.prompt.system, pipeline.prompt.user, pipeline.conversationHistory);
           } catch (fallbackError: any) {
             const fallbackMessage = String(
               fallbackError?.message || "Gemini failed"

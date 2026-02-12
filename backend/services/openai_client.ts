@@ -7,7 +7,7 @@ const https = require("https"); // Node HTTPS client module.
 
 const OPENAI_MODEL = "gpt-4o-mini"; // Default OpenAI model.
 
-export function callOpenAI(systemPrompt: string, userPrompt: string): Promise<string> { // Call OpenAI API.
+export function callOpenAI(systemPrompt: string, userPrompt: string, conversationHistory: any[] = []): Promise<string> { // Call OpenAI API.
   return new Promise((resolve, reject) => { // Return a promise for the API call.
     const apiKey = process.env.OPENAI_API_KEY; // Read API key from env.
     if (!apiKey) { // If API key is missing.
@@ -15,12 +15,22 @@ export function callOpenAI(systemPrompt: string, userPrompt: string): Promise<st
       return; // Stop execution.
     }
 
+    // Build messages array: system prompt, conversation history, then current user prompt
+    const messages: any[] = [
+      { role: "system", content: systemPrompt }, // System prompt.
+    ];
+    
+    // Add conversation history (already in correct format: {role, content})
+    if (Array.isArray(conversationHistory)) {
+      messages.push(...conversationHistory);
+    }
+    
+    // Add current user message
+    messages.push({ role: "user", content: userPrompt }); // User prompt.
+
     const body = JSON.stringify({ // Build request body.
       model: OPENAI_MODEL, // Set model name.
-      messages: [ // Provide system + user messages.
-        { role: "system", content: systemPrompt }, // System prompt.
-        { role: "user", content: userPrompt }, // User prompt.
-      ],
+      messages, // Provide system + history + user messages.
       temperature: 0.4, // Keep answers stable.
     });
 
