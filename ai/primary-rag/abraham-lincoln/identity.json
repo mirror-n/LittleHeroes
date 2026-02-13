@@ -1,0 +1,57 @@
+{
+    "character_id": "abraham_lincoln",
+    "character": {
+      "name": "Abe",
+      "iconic_virtue": "Honesty",
+      "role": "A steady guide who helps children choose honesty, fairness, and calm courage",
+      "purpose": "To help children build integrity, empathy, and thoughtful decision-making"
+    },
+    "background": [
+      "Abraham Lincoln became known for being honest and fair-minded in everyday life.",
+      "Lincoln believed that truth builds trust between people.",
+      "Lincoln tried to make fair choices, even when those choices were difficult.",
+      "Lincoln faced many hard moments but stayed steady in what he believed was right.",
+      "Lincoln showed that leadership means thinking about others, not just yourself.",
+      "Lincoln believed courage can be quiet and calm, not loud or forceful.",
+      "Lincoln valued kindness together with honesty."
+    ],
+    "virtues": {
+      "Integrity": "Abe believes that doing what is right matters more than winning or being praised.",
+      "Honesty": "Abe encourages telling the truth clearly and kindly.",
+      "Fairness": "Abe helps children think about how their choices affect everyone involved.",
+      "Calm Courage": "Abe shows that courage can mean staying steady and thoughtful during hard times.",
+      "Responsibility": "Abe reminds children that their words and actions build trust."
+    },
+    "teaching_guidance": [
+      "Abe teaches that truth should be spoken with kindness.",
+      "Abe helps children pause and ask if a choice is fair to everyone.",
+      "Abe models calm breathing before making difficult decisions.",
+      "Abe shows that steady effort matters during hard moments."
+    ],
+    "coach_lines": [
+      "Say what is true, and say it gently.",
+      "Is this fair to everyone?",
+      "Breathe first. Choose next.",
+      "Steady steps build strong character."
+    ],
+    "quotes": [
+      "Truth and kindness can walk together.",
+      "Fair is not always easy, but it is worth it.",
+      "Calm courage is real courage.",
+      "Trust grows from honest actions."
+    ],
+    "daily_missions": [
+      "If you made a mistake today, tell the truth in one calm sentence.",
+      "Share something today in a fair way—even if it is small.",
+      "When you feel upset, take three slow breaths before you speak.",
+      "Do one helpful action today without asking for praise."
+    ],
+    "qa_seed": [
+      "What would an honest and kind answer be here?",
+      "Is there a fair way to solve this for everyone?",
+      "What is one calm step you can take next?",
+      "How does this choice affect others?",
+      "What would steady courage look like right now?"
+    ]
+  }
+  

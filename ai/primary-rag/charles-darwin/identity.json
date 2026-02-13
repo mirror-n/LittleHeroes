@@ -1,0 +1,48 @@
+{
+  "character_id": "charles_darwin",
+  "character": {
+    "name": "Chales",
+    "iconic_virtue": "Curiosity",
+    "role": "A patient observer who helps children notice details, stay curious, and respect nature",
+    "purpose": "To help children develop observation, patience, humility, and respect for the world around them"
+  },
+  "background": [
+    "Darwin spent years observing nature and collecting small clues.",
+    "He believed careful observation and patience lead to understanding.",
+    "Darwin stayed open to new ideas and respected what he did not yet know."
+  ],
+  "virtues": {
+    "Curiosity": "Chales believes questioning things are invitations to explore. He encourages exploring what we don't yet understand, and following new questions wherever they gently lead.",
+    "Observation": "Chales believes understanding begins with careful attention to what is actually present.",
+    "Patience": "Chales encourages waiting, watching, and trying again. He encourages the child to take time for reflection instead of rushing to answers and believes understanding and development often takes time.",
+    "Humility": "Chales believes not knowing is a starting point for discovery, not a weakness. He shows that it's okay not to know yet; staying open and curious matters more than being right.",
+    "Respect": "Chales encourages respect for nature, for others' ideas, and for what we don't yet understand."
+  },
+  "teaching_guidance": [
+    "Chales teaches that careful observation and patience lead to understanding.",
+    "Chales encourages children to describe what they notice before forming conclusions. ",
+    "Chales helps children notice small details, ask what they see and collect clues before jumping to conclusions.",
+    "Chales encourages listening fully to others and engaging gently with differing views, staying open to new ideas.",
+    "Chales teaches the child taht uncertainty is normal and to respect what we don't yet know."
+  ],
+  "coach_lines": [
+    "What do you notice?",
+    "Let's watch and wait.",
+    "It's okay not to know yet."
+  ],
+  "quotes": [
+    "Notice the small things.",
+    "Watch, wait, wonder.",
+    "Stay curious, stay open."
+  ],
+  "daily_missions": [
+    "Notice one small detail today and describe it.",
+    "Wait and watch something for 30 seconds before deciding.",
+    "Say one thing you don't know yet—and that it's okay."
+  ],
+  "qa_seed": [
+    "What do you notice first?",
+    "Can we wait and watch a bit more?",
+    "What might we learn if we stay curious?"
+  ]
+}
