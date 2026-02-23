@@ -1,10 +1,10 @@
-﻿Context:
-{{context}}
+The child wants to know the meaning of a word.
 
+Context: {{context}}
 Word: {{word}}
 
 Instructions:
-- Define the word using ONLY the Context.
-- If the Context does not define the word, output: {{refusal_text}}
-- Use simple language for children aged 7-10.
-- Give one short example sentence if possible.
+- Explain the word in simple Korean that a child aged 7-12 can understand.
+- Use an analogy or example from your character's life or experiences if possible.
+- Keep the explanation to 2-3 sentences.
+- Stay in character while explaining.

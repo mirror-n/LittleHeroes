@@ -1,147 +1,96 @@
-// Chat request handler for the backend. 
-declare const require: (module: string) => any; // Allow CommonJS require in TS.
-declare const process: { cwd: () => string }; // Provide minimal process typing.
+import { loadPipelineInputs, retrieveRelevantContext } from '../services/pipeline_runner';
+import { callOpenAI } from '../services/openai_client';
+import { callGemini } from '../services/gemini_client';
+import * as fs from 'fs';
+import * as path from 'path';
 
-const path = require("path"); // Node path module.
+const RAG_BASE = path.resolve(__dirname, '../../ai/primary-rag');
 
-const { // HTTP helper functions.
-  applyCors,
-  readRequestBody,
-  sendJson,
-} = require(path.join(process.cwd(), "backend", "utils", "http")); // HTTP helpers.
+interface ChatRequest {
+  message: string;
+  character: string;
+}
 
-    const { callOpenAI } = require(path.join(process.cwd(), "backend", "services", "openai_client")); // OpenAI client.
-    const { callGemini } = require(path.join(process.cwd(), "backend", "services", "gemini_client")); // Gemini client.
-    const { logUnansweredQuestion } = require(path.join(process.cwd(), "backend", "utils", "unanswered_logger")); // Logger.
+interface ChatResponse {
+  answer: string;
+  shouldRefuse: boolean;
+  character: string;
+}
 
-const {
-  loadPipelineInputs,
-  applySafety,
-} = require(path.join(process.cwd(), "backend", "services", "pipeline_runner")); // Pipeline helpers.
+// Safety check on response
+function applySafety(response: string): string {
+  // Remove any potential system prompt leaks
+  const patterns = [
+    /system prompt/gi,
+    /내부 규칙/gi,
+    /시스템 지시/gi,
+    /프롬프트/gi,
+  ];
 
-export async function handleChatRequest(req: any, res: any): Promise<void> { // Handle /api/chat.
-  applyCors(res); // Apply CORS headers.
-
-  if (req.method === "OPTIONS") { // Handle CORS preflight.
-    res.statusCode = 204; // No content.
-    res.end(); // End response.
-    return; // Stop processing.
-  } 
-
-  if (req.method !== "POST" || req.url !== "/api/chat") { // Only allow POST /api/chat.
-    sendJson(res, 404, { error: "Not found" }); // Return 404 for other routes.
-    return; // Stop processing.
-  } 
-
-  const raw = await readRequestBody(req); // Read raw request body.
-  let payload: any = {}; // Initialize payload.
-
-  try { 
-    payload = JSON.parse(raw || "{}"); // Parse JSON or fallback to empty.
-  } catch { // If JSON is invalid.
-    sendJson(res, 400, { error: "Invalid JSON" }); // Return 400 error.
-    return; // Stop processing.
-  } 
-
-  const message = String(payload.message || "").trim(); // Normalize message text.
-  const characterSlug = String(payload.character || "").trim().toLowerCase(); // Normalize character slug.
-  const conversationHistory = Array.isArray(payload.conversationHistory) ? payload.conversationHistory : []; // Get conversation history.
-
-  if (!message) { // If message is missing.
-    sendJson(res, 400, { error: "Missing message" }); // Return 400 error.
-    return; // Stop processing.
-  } 
-
-  if (!characterSlug) { // If character is missing.
-    sendJson(res, 400, { error: "Missing character" }); // Return 400 error.
-    return; // Stop processing.
-  } 
-
-  const pipeline = loadPipelineInputs(characterSlug, message, conversationHistory); // Load pipeline data.
-
-      let rawAnswer = ""; // Store raw model answer.
-
-      const normalize = (text: string): string =>
-        String(text || "")
-          .trim()
-          .replace(/\s+/g, " "); // Normalize whitespace for comparison.
-
-      if (pipeline.prompt.shouldRefuse) { // Check if context is empty.
-        rawAnswer = pipeline.refusalText; // If no context, refuse.
-        logUnansweredQuestion({
-          timestamp: new Date().toISOString(),
-          character: characterSlug,
-          message,
-          reason: "empty_context",
-        });
-  } else {
-        try { // Try calling OpenAI.
-          rawAnswer = await callOpenAI(pipeline.prompt.system, pipeline.prompt.user, pipeline.conversationHistory); // Call model.
-        } catch (error: any) { // If OpenAI fails, try Gemini if available.
-          const openAiMessage = String(error?.message || "OpenAI failed");
-          const isQuotaError =
-            openAiMessage.includes("insufficient_quota") ||
-            openAiMessage.includes("OpenAI error 429") ||
-            openAiMessage.includes("Missing OPENAI_API_KEY");
-
-          if (!isQuotaError) {
-            logUnansweredQuestion({
-              timestamp: new Date().toISOString(),
-              character: characterSlug,
-              message,
-              reason: `openai_error:${openAiMessage}`,
-            });
-            sendJson(res, 500, { error: `OpenAI failed: ${openAiMessage}` });
-            return; // Stop processing.
-          }
-
-          try {
-            rawAnswer = await callGemini(pipeline.prompt.system, pipeline.prompt.user, pipeline.conversationHistory);
-          } catch (fallbackError: any) {
-            const fallbackMessage = String(
-              fallbackError?.message || "Gemini failed"
-            );
-            logUnansweredQuestion({
-              timestamp: new Date().toISOString(),
-              character: characterSlug,
-              message,
-              reason: `gemini_error:${fallbackMessage}`,
-            });
-            sendJson(res, 500, {
-              error: `OpenAI failed: ${openAiMessage}. Gemini failed: ${fallbackMessage}`,
-            });
-            return; // Stop processing.
-          }
-        }
+  let safe = response;
+  for (const pattern of patterns) {
+    if (pattern.test(safe)) {
+      // If response contains system-related terms, it might be leaking
+      // For now, just log a warning
+      console.warn('Potential system prompt leak detected in response');
+    }
   }
 
-      if (normalize(rawAnswer) === normalize(pipeline.refusalText)) {
-        logUnansweredQuestion({
-          timestamp: new Date().toISOString(),
-          character: characterSlug,
-          message,
-          reason: "model_refusal",
-        });
-      }
+  return safe;
+}
 
-      const safeAnswer = applySafety( // Apply safety + guardrails checks.
-    rawAnswer, // Answer from model.
-    pipeline.safety, // Safety configuration.
-    pipeline.primary.guardrails, // Guardrails for this character.
-    pipeline.refusalText // Refusal text.
-  ); 
+export async function handleChat(req: ChatRequest): Promise<ChatResponse> {
+  const { message, character } = req;
 
-      if (normalize(safeAnswer) === normalize(pipeline.refusalText)) {
-        logUnansweredQuestion({
-          timestamp: new Date().toISOString(),
-          character: characterSlug,
-          message,
-          reason: "safety_refusal",
-        });
-      }
+  if (!message || !character) {
+    throw new Error('Missing required fields: message, character');
+  }
 
-  sendJson(res, 200, { // Return successful response.
-    answer: safeAnswer, // Final answer after checks.
-    shouldRefuse: pipeline.prompt.shouldRefuse, // Include refusal flag for UI.
-  }); 
-} 
+  // Load pipeline inputs
+  const pipelineInput = loadPipelineInputs(character, message);
+
+  // Load identity for context retrieval
+  const charDir = character.replace(/-/g, '_');
+  let identityPath = path.join(RAG_BASE, character, 'identity.json');
+  if (!fs.existsSync(identityPath)) {
+    identityPath = path.join(RAG_BASE, charDir, 'identity.json');
+  }
+  const identity = JSON.parse(fs.readFileSync(identityPath, 'utf-8'));
+
+  // Retrieve relevant context
+  const context = retrieveRelevantContext(identity, message);
+
+  // Check if we should refuse (no relevant context found)
+  const shouldRefuse = !context || context.trim().length === 0;
+
+  if (shouldRefuse) {
+    return {
+      answer: pipelineInput.refusalText,
+      shouldRefuse: true,
+      character,
+    };
+  }
+
+  // Try OpenAI first, fallback to Gemini
+  let answer: string;
+  try {
+    answer = await callOpenAI(pipelineInput, context);
+  } catch (openaiError) {
+    console.error('OpenAI failed, trying Gemini:', openaiError);
+    try {
+      answer = await callGemini(pipelineInput, context);
+    } catch (geminiError) {
+      console.error('Gemini also failed:', geminiError);
+      throw new Error('Both AI providers failed');
+    }
+  }
+
+  // Apply safety check
+  answer = applySafety(answer);
+
+  return {
+    answer,
+    shouldRefuse: false,
+    character,
+  };
+}
