@@ -6,7 +6,47 @@
   padding-bottom: 60px;
   padding-left: 40px;
   padding-right: 40px;
+  text-align: center;
+}
+
+.our-vision-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-content1 {
+  line-height: 1.5;
+}
+
+.vision-section {
+  margin-bottom: 48px;
+}
+
+.vision-section:last-child {
+  margin-bottom: 0;
+}
+
+.vision-section h2 {
+  margin-bottom: 20px;
+}
+
+.vision-section p {
+  margin-bottom: 16px;
+}
+
+.vision-section p:last-of-type {
+  margin-bottom: 0;
+}
+
+.vision-list {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+.vision-list li {
+  margin-bottom: 8px;
 }

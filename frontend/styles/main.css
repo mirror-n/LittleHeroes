@@ -169,12 +169,20 @@ img {
   color: #ffeb3b;
 }
 
-.text-character-quality-red {
+.text-content-red {
   color: #c04b20;
 }
 
-.text-character-quality-green {
+.text-content-green {
   color: #388e3c;
+}
+
+.text-content-orange {
+  color: #ff9800;
+}
+
+.text-content-pink {
+  color: #f08be6;
 }
 
 .text-card-name {
