@@ -51,6 +51,7 @@
 
         <div class="character-chat">
           <div id="character-reply" class="character-reply"></div>
+          <div id="suggested-replies" class="suggested-replies"></div>
           <div class="character-input-row">
             <input
               id="character-input"
@@ -259,6 +260,9 @@
             }
 
             reply.textContent = data.answer || (lang === 'ko' ? "아직 답이 없어." : "No answer yet.");
+
+            // Render suggested replies
+            renderSuggestedReplies(data.suggestedReplies || []);
           } catch (error) {
             const message =
               error && error.message ? error.message : (lang === 'ko' ? "AI 서버에 연결할 수 없어." : "Unable to reach the AI server.");
@@ -266,6 +270,27 @@
           }
           input.value = "";
           input.focus();
+        }
+
+        // Render suggested reply buttons
+        function renderSuggestedReplies(suggestions) {
+          const container = document.getElementById('suggested-replies');
+          container.innerHTML = '';
+
+          if (!suggestions || suggestions.length === 0) return;
+
+          suggestions.forEach(function(text) {
+            const btn = document.createElement('button');
+            btn.className = 'suggested-reply-btn';
+            btn.textContent = text;
+            btn.addEventListener('click', function() {
+              input.value = text;
+              // Clear suggestions immediately on click
+              container.innerHTML = '';
+              sendMessage();
+            });
+            container.appendChild(btn);
+          });
         }
 
         sendButton.addEventListener("click", sendMessage);

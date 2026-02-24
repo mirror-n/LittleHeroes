@@ -1,9 +1,16 @@
 import { PipelineInput } from './pipeline_runner';
+import { AIResponse, parseAIResponse } from './openai_client';
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
-const GEMINI_MODELS = ['gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-1.0-pro'];
+// Read env vars lazily
+function getGeminiConfig() {
+  return {
+    apiKey: process.env.GEMINI_API_KEY || '',
+    models: ['gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-1.0-pro'],
+  };
+}
 
-export async function callGemini(input: PipelineInput, context: string): Promise<string> {
+export async function callGemini(input: PipelineInput, context: string): Promise<AIResponse> {
+  const { apiKey: GEMINI_API_KEY, models: GEMINI_MODELS } = getGeminiConfig();
   if (!GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY is not set');
   }
@@ -13,7 +20,22 @@ export async function callGemini(input: PipelineInput, context: string): Promise
     ? '\n\nIMPORTANT: Respond in Korean using 반말 (casual speech). Do NOT use 존댓말.'
     : '\n\nIMPORTANT: Respond in casual, friendly English suitable for kids.';
 
-  const systemInstruction = `${input.systemPrompt}\n\n${input.characterPrompt}\n\nSafety Guardrails:\n${input.guardrailsContext}${langInstruction}`;
+  // Suggested replies instruction (same as OpenAI)
+  const suggestedRepliesInstruction = input.language === 'ko'
+    ? `\n\nRESPONSE FORMAT: You MUST respond in valid JSON with exactly this structure:
+{"answer": "your reply here", "suggestedReplies": ["option1", "option2", "option3"]}
+- "answer": Your conversational reply (2-3 sentences, casual 반말)
+- "suggestedReplies": Exactly 3 short follow-up questions or responses the child might want to say next (each under 20 characters, in Korean 반말)
+- Make suggested replies fun, curious, and varied
+- Do NOT include any text outside the JSON object.`
+    : `\n\nRESPONSE FORMAT: You MUST respond in valid JSON with exactly this structure:
+{"answer": "your reply here", "suggestedReplies": ["option1", "option2", "option3"]}
+- "answer": Your conversational reply (2-3 sentences, casual friendly English)
+- "suggestedReplies": Exactly 3 short follow-up questions or responses the child might want to say next (each under 30 characters)
+- Make suggested replies fun, curious, and varied
+- Do NOT include any text outside the JSON object.`;
+
+  const systemInstruction = `${input.systemPrompt}\n\n${input.characterPrompt}\n\nSafety Guardrails:\n${input.guardrailsContext}${langInstruction}${suggestedRepliesInstruction}`;
   const userContent = input.answerPrompt
     .replace('{{context}}', context)
     .replace('{{question}}', input.userMessage);
@@ -30,7 +52,7 @@ export async function callGemini(input: PipelineInput, context: string): Promise
           contents: [{ parts: [{ text: userContent }] }],
           generationConfig: {
             temperature: 0.6,
-            maxOutputTokens: 300,
+            maxOutputTokens: 400,
           },
         }),
       });
@@ -43,7 +65,7 @@ export async function callGemini(input: PipelineInput, context: string): Promise
 
       const data = await response.json();
       const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (text) return text;
+      if (text) return parseAIResponse(text);
     } catch (err) {
       console.error(`Gemini ${model} failed:`, err);
       continue;

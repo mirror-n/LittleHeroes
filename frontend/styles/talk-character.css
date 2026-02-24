@@ -147,6 +147,55 @@
   opacity: 0.9;
 }
 
+/* Suggested Replies */
+.suggested-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  min-height: 0;
+}
+
+.suggested-reply-btn {
+  background-color: rgba(255, 235, 59, 0.9);
+  color: #000;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.suggested-reply-btn:hover {
+  background-color: #ffeb3b;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+.suggested-reply-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .character-window {
