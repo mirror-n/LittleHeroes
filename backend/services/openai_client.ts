@@ -1,8 +1,13 @@
 import { PipelineInput } from './pipeline_runner';
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
-const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
-const OPENAI_BASE_URL = process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1';
+// Read env vars lazily so they pick up values loaded by loadEnv() in server.ts
+function getOpenAIConfig() {
+  return {
+    apiKey: process.env.OPENAI_API_KEY || '',
+    model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+    baseUrl: process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1',
+  };
+}
 
 interface ChatMessage {
   role: 'system' | 'user' | 'assistant';
@@ -10,6 +15,7 @@ interface ChatMessage {
 }
 
 export async function callOpenAI(input: PipelineInput, context: string): Promise<string> {
+  const { apiKey: OPENAI_API_KEY, model: OPENAI_MODEL, baseUrl: OPENAI_BASE_URL } = getOpenAIConfig();
   if (!OPENAI_API_KEY) {
     throw new Error('OPENAI_API_KEY is not set');
   }

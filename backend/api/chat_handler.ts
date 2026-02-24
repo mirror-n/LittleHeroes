@@ -1,6 +1,7 @@
 import { loadPipelineInputs, retrieveRelevantContext } from '../services/pipeline_runner';
 import { callOpenAI } from '../services/openai_client';
 import { callGemini } from '../services/gemini_client';
+import { searchMemories, addMemory, buildMem0UserId } from '../services/mem0_client';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -10,6 +11,7 @@ interface ChatRequest {
   message: string;
   character: string;
   language?: string; // 'ko' or 'en', defaults to 'ko'
+  userId?: string;   // Browser-generated anonymous user ID
 }
 
 interface ChatResponse {
@@ -40,7 +42,7 @@ function applySafety(response: string): string {
 
 // Core chat logic
 async function handleChat(req: ChatRequest): Promise<ChatResponse> {
-  const { message, character, language = 'ko' } = req;
+  const { message, character, language = 'ko', userId } = req;
 
   if (!message || !character) {
     throw new Error('Missing required fields: message, character');
@@ -54,24 +56,20 @@ async function handleChat(req: ChatRequest): Promise<ChatResponse> {
   const pipelineInput = loadPipelineInputs(character, message, selectedLanguage);
 
   // Load identity for context retrieval
-  // Try multiple directory/file combinations to handle hyphen vs underscore and lang vs plain files
   function findIdentityFile(char: string, lang: string): string {
     const hyphenated = char;
     const underscored = char.replace(/-/g, '_');
     const candidates = [hyphenated, underscored];
     
-    // Also try partial match
     const dirs = fs.readdirSync(RAG_BASE);
     const normalized = char.replace(/-/g, '').toLowerCase();
     const partialMatch = dirs.find(d => d.replace(/[-_]/g, '').toLowerCase() === normalized);
     if (partialMatch && !candidates.includes(partialMatch)) candidates.push(partialMatch);
 
-    // First pass: look for language-specific file
     for (const dir of candidates) {
       const p = path.join(RAG_BASE, dir, `identity.${lang}.json`);
       if (fs.existsSync(p)) return p;
     }
-    // Second pass: look for plain identity.json
     for (const dir of candidates) {
       const p = path.join(RAG_BASE, dir, 'identity.json');
       if (fs.existsSync(p)) return p;
@@ -82,7 +80,7 @@ async function handleChat(req: ChatRequest): Promise<ChatResponse> {
   const identityPath = findIdentityFile(character, selectedLanguage);
   const identity = JSON.parse(fs.readFileSync(identityPath, 'utf-8'));
 
-  // Retrieve relevant context
+  // Retrieve relevant RAG context
   const context = retrieveRelevantContext(identity, message);
 
   // Check if we should refuse (no relevant context found)
@@ -97,14 +95,46 @@ async function handleChat(req: ChatRequest): Promise<ChatResponse> {
     };
   }
 
+  // ===== Mem0 Long-Term Memory Integration =====
+  let memoryContext = '';
+  let mem0UserId = '';
+
+  if (userId) {
+    mem0UserId = buildMem0UserId(character, userId);
+    
+    try {
+      // Search for relevant memories about this user
+      const memories = await searchMemories(mem0UserId, message);
+      if (memories) {
+        memoryContext = memories;
+        console.log(`[Mem0] Found memories for ${mem0UserId}:`, memories.substring(0, 200));
+      } else {
+        console.log(`[Mem0] No memories found for ${mem0UserId}`);
+      }
+    } catch (err) {
+      console.error('[Mem0] Memory search error (non-blocking):', err);
+      // Non-blocking: continue without memories
+    }
+  }
+
+  // Build enhanced context with memory
+  let enhancedContext = context;
+  if (memoryContext) {
+    const memoryLabel = selectedLanguage === 'ko'
+      ? '이 친구에 대해 기억하고 있는 것들'
+      : 'Things you remember about this friend';
+    enhancedContext = `${context}\n\n[${memoryLabel}]\n${memoryContext}`;
+  }
+  // ===== End Mem0 Integration =====
+
   // Try OpenAI first, fallback to Gemini
   let answer: string;
   try {
-    answer = await callOpenAI(pipelineInput, context);
+    answer = await callOpenAI(pipelineInput, enhancedContext);
   } catch (openaiError) {
     console.error('OpenAI failed, trying Gemini:', openaiError);
     try {
-      answer = await callGemini(pipelineInput, context);
+      answer = await callGemini(pipelineInput, enhancedContext);
     } catch (geminiError) {
       console.error('Gemini also failed:', geminiError);
       throw new Error('AI_PROVIDER_FAILED');
@@ -113,6 +143,19 @@ async function handleChat(req: ChatRequest): Promise<ChatResponse> {
 
   // Apply safety check
   answer = applySafety(answer);
+
+  // ===== Store conversation as memory (fire-and-forget) =====
+  if (userId && mem0UserId) {
+    addMemory(
+      mem0UserId,
+      message,
+      answer,
+      { character, language: selectedLanguage }
+    ).catch(err => {
+      console.error('[Mem0] Background memory storage failed:', err);
+    });
+  }
+  // ===== End Memory Storage =====
 
   return {
     answer,
@@ -154,7 +197,7 @@ export async function handleChatRequest(req: any, res: any): Promise<void> {
 
     rawBody = body;
     const parsed = JSON.parse(body);
-    const { message, character, language } = parsed;
+    const { message, character, language, userId } = parsed;
 
     if (!message || !character) {
       res.statusCode = 400;
@@ -163,20 +206,19 @@ export async function handleChatRequest(req: any, res: any): Promise<void> {
       return;
     }
 
-    // Call core chat logic
-    const result = await handleChat({ message, character, language });
+    // Call core chat logic (now with userId for memory)
+    const result = await handleChat({ message, character, language, userId });
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(result));
   } catch (error: any) {
     console.error('Chat handler error:', error);
-    // Return user-friendly error messages instead of raw technical errors
     const lang = (() => { try { return JSON.parse(rawBody).language || 'ko'; } catch { return 'ko'; } })();
     const friendlyMessage = lang === 'ko'
       ? '미안, 지금 내가 좀 바빠서 대답을 못 했어. 다시 한번 말해줄래?'
       : "Sorry, I couldn't answer right now. Can you ask me again?";
-    res.statusCode = 200; // Return 200 so frontend doesn't show error UI
+    res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({
       answer: friendlyMessage,
