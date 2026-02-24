@@ -1,0 +1,51 @@
+{
+  "character_id": "abraham_lincoln",
+  "character": {
+    "name": "Lincoln",
+    "iconic_virtue": "Integrity"
+  },
+  "episodes": [
+    {
+      "title": "Abe, the Boy in the Log Cabin",
+      "story": "Young Abe Lincoln grew up in a humble log cabin in Kentucky, where hard labor was a daily reality. Despite the demanding frontier life, he harbored a deep love for books, often reading late into the night. His mother, Nancy, taught him to read and instilled in him a quiet strength and kindness. He also learned from an old, worn book, which became his window to a world beyond his small settlement. When his father questioned his reading, Abe explained that it sharpened his mind, much like an axe is sharpened. Tragically, at age nine, Abe lost his mother to a mysterious illness, a loss that profoundly shaped him. He clung to her Bible, finding solace and wrestling with questions of pain, justice, and faith. Though his hands wielded an axe, his mind grappled with larger ideas, sowing the seeds of the man he would become.",
+      "fact": "Abraham Lincoln was born in a small log cabin in Kentucky but had a great love for reading. He gained knowledge by reading old books late into the night.",
+      "quote": "Every time my father sharpens his axe, the blade cuts deeper into the wood. I think reading is like that for my mind; I want to sharpen my thoughts.",
+      "value": "Joy of Learning",
+      "coach_line": "Even in difficult circumstances, if you have a passion for learning, you can achieve anything. Learn three new words and their meanings every day.",
+      "daily_mission": "Today, learn three new words and their meanings."
+    },
+    {
+      "title": "The Price of a Book",
+      "story": "Abe's world expanded when his father remarried, bringing a kind stepmother, Sarah, and a few precious books into their home. Sarah encouraged Abe's love for reading, unlike his father. Abe desperately wanted to read a borrowed biography of George Washington, promising the farmer, Josiah Crawford, he would treat it like gold. A sudden storm, however, soaked and ruined the book while Abe slept. Faced with a damaged book, Abe considered hiding it or making excuses, but his conscience, guided by his mother's teachings and Washington's example, compelled him to confess. He walked miles to Crawford's farm, offering to work to repay the debt. Crawford, impressed by Abe's honesty, had him husk corn for three days, then gifted him the damaged book. This experience taught Abe that true integrity meant taking responsibility, even for small mistakes, and that honesty often yields rewards far greater than what was lost.",
+      "fact": "When Abraham Lincoln accidentally damaged a borrowed book, he honestly confessed to the farmer and worked for several days to repay the debt. Through this experience, he learned the importance of honesty.",
+      "quote": "Sir, I promised to take good care of your book, but I failed. Rain came through a crack in the wall overnight. I am truly sorry. I don't have money to pay for the book, but I will work for you until I make up for the damage.",
+      "value": "Honesty",
+      "coach_line": "Honesty is the greatest asset. Let's cherish even small promises.",
+      "daily_mission": "Today, try to speak honestly without telling any lies."
+    },
+    {
+      "title": "The Chosen Captain",
+      "story": "At twenty-three, Abe Lincoln sought his path beyond farming, finding work as a clerk in New Salem, Illinois. His wit and storytelling made him popular, and the general store became his informal classroom. He earned the nickname 'Honest Abe' for his fair dealings and accurate calculations. One evening, realizing he had overcharged a customer by six and a quarter cents, Abe felt compelled to rectify his mistake. Despite the late hour and long walk, he journeyed to the woman's farm to return the small sum. This act, though seemingly insignificant, solidified his reputation for integrity. Later, during the Black Hawk War, Abe was elected captain of a militia company, a testament to the trust his peers placed in him. This unexpected honor, he later stated, was more gratifying than his presidential nomination. The experience, though not involving combat, taught him valuable lessons about leadership and uniting independent individuals toward a common goal, planting the seeds for his future in public service.",
+      "fact": "While working as a general store clerk, Abraham Lincoln realized he had overcharged a customer by six cents and walked a long distance late at night to return it. This earned him the nickname 'Honest Abe'.",
+      "quote": "There was a mistake in your bill this evening. I overcharged you by six and a quarter cents. I wanted to return it immediately.",
+      "value": "Trust",
+      "coach_line": "If you maintain honesty even in small matters, you can earn great trust.",
+      "daily_mission": "Today, cherish and keep even small promises."
+    },
+    {
+      "title": "The Weight of Words in Court",
+      "story": "After the Black Hawk War, Lincoln returned to New Salem, realizing his future lay not with an axe or plow, but with his mind and words. He decided to study law, teaching himself by devouring legal books. Despite no formal education or teacher, he diligently read while working and late into the night. After years of persistent self-study, Lincoln finally passed the bar examination. He moved to Springfield, the new state capital, and opened a law practice with respected attorney John Stuart. No longer a frontier countryman, he was now a professional man, advocating for people in court.",
+      "fact": "Abraham Lincoln taught himself law and became a lawyer. His excellent eloquence and logic shone in court.",
+      "quote": "Justice is not in power, but in conscience.",
+      "value": "Justice",
+      "coach_line": "The power of words shines brightest when used to uphold justice. Always speak the truth and advocate for the weak.",
+      "daily_mission": "Today, if you encounter an unfair situation, be brave and speak up."
+    }
+  ],
+  "style": {
+    "language": "en-US",
+    "voice": {
+      "tts_voice_id": "en-US-Standard-J"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "character_id": "charles_darwin",
+  "character": {
+    "name": "Charles",
+    "iconic_virtue": "Observation"
+  },
+  "episodes": [
+    {
+      "title": "The Boy Who Collected Beetles",
+      "story": "In the green fields of the English countryside, young Charles Darwin was much happier than he was in the classroom. His classroom was the outdoors, and his teachers were birds, flowers, and insects. He collected almost everything, but his greatest passion was for beetles. He would spend hours looking for them under logs and in old bark. One day, he found two rare beetles at the same time, and to avoid losing one, he even put it in his mouth! He wasn't just collecting things; he was observing them, comparing them, and trying to understand their secret lives. His powerful observational skills were his true talent.",
+      "fact": "As a child, Darwin had a great passion for collecting beetles. He even put one in his mouth to catch two rare beetles at the same time! His excellent observational skills became the foundation for him to become a great scientist later on.",
+      "quote": "He wasn't just collecting things; he was observing them, comparing them, and trying to understand their secret lives.",
+      "value": "Careful Observation",
+      "coach_line": "Look closely at your surroundings. You might discover amazing secrets in things you usually pass by without noticing. Careful observation is the first step to great discoveries.",
+      "daily_mission": "Today, spend 10 minutes quietly observing plants or insects around your home, and record what you discover through drawing or writing."
+    },
+    {
+      "title": "A Five-Year Voyage",
+      "story": "Charles embarked on a five-year scientific expedition aboard HMS Beagle. It was one of the greatest scientific adventures in history. He explored the coasts of South America, excavated giant fossils, and collected countless specimens of plants and animals he had never seen before. This voyage was like a living natural history museum for him. He witnessed firsthand how diverse and wondrous life on Earth was, and it led him to ponder fundamental questions about the origin of life.",
+      "fact": "At the age of 22, Darwin embarked on a five-year circumnavigation of the world aboard HMS Beagle. The experiences and observations from this voyage became a decisive catalyst for the birth of his theory of evolution.",
+      "quote": "Charles was packing for one of the greatest scientific adventures in history.",
+      "value": "Learning Through Experience",
+      "coach_line": "Learning from books is important, but experiencing the world firsthand is an invaluable lesson. Have the courage to go to new places and try new things.",
+      "daily_mission": "Today, explore a neighborhood street you haven't been to before, and tell us what you discovered."
+    },
+    {
+      "title": "The Islands That Changed Everything",
+      "story": "The Beagle arrived at the Galápagos Islands. Charles was astonished to find unique creatures there, such as giant tortoises and marine iguanas. He noticed that the shape of the tortoises' shells and the finches' beaks varied slightly from island to island. He thought that the organisms had adapted to the environment of each island. He didn't know it yet, but this observation was an important puzzle piece that would lead to his great discovery.",
+      "fact": "The finches living on each of the Galápagos Islands had slightly different beak shapes. Darwin realized that these finches had evolved by adapting to the food environment of each island.",
+      "quote": "He didn't understand it yet, but he was collecting the very puzzle pieces that would lead to his greatest discovery.",
+      "value": "Discovery of Differences",
+      "coach_line": "Try to find small differences even among things that seem similar. A great secret that can change the world might be hidden in those small differences.",
+      "daily_mission": "Today, collect leaves from your surroundings and compare how their shapes, colors, and sizes differ."
+    },
+    {
+      "title": "The Finches' Beaks",
+      "story": "Upon returning to London, Charles received astonishing news from ornithologist John Gould: the birds he had brought from the Galápagos were all different species of finches. He spread out the finch specimens and examined their beaks closely. Some beaks were thick, good for cracking nuts, while others were slender, good for catching insects. At that moment, he realized something. The finches had originated from a single ancestor on the mainland, but their beak shapes had changed as they adapted to the different food environments of each island. This was the moment the idea of evolution by 'natural selection' was born.",
+      "fact": "Darwin observed the different beak shapes of the Galápagos finches and conceived the theory of 'natural selection,' where organisms adapt to their environment, and individuals with advantageous traits survive and reproduce.",
+      "quote": "Their beaks were literally shaped by the environment.",
+      "value": "Adaptation and Change",
+      "coach_line": "There are times when we, too, need to change and adapt to our environment. When faced with difficult situations, develop the wisdom to find new ways to adapt without giving up.",
+      "daily_mission": "Today, think about how you solved a difficult situation you experienced, or how you would solve it, and talk about it."
+    },
+    {
+      "title": "The Book That Shook the World",
+      "story": "After more than 20 years of research, Darwin published 'On the Origin of Species by Means of Natural Selection' in 1859. This book contained revolutionary content, stating that all life forms originated from a common ancestor and had gradually evolved through 'struggle for existence' and 'natural selection.' The book caused a great stir immediately upon its publication and had an enormous impact not only on the scientific community but also on society as a whole. Darwin's persistent observation and research finally changed the world.",
+      "fact": "Darwin's 'On the Origin of Species' is considered one of the most important books in the history of biology. Through this book, humanity came to scientifically understand the origin and diversity of life.",
+      "quote": "Endless forms most beautiful and most wonderful have been, and are being, evolved.",
+      "value": "Persistent Research",
+      "coach_line": "Great discoveries are not made overnight. If you have the persistence and passion to consistently delve into your favorite field, you too can make discoveries that will amaze the world.",
+      "daily_mission": "Today, read a book in your favorite field for at least 30 minutes, and record any new facts you learned."
+    }
+  ]
+}

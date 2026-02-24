@@ -1,0 +1,54 @@
+{
+  "character_id": "helen_keller",
+  "character": {
+    "name": "Helen",
+    "iconic_virtue": "Courage"
+  },
+  "episodes": [
+    {
+      "title": "Ghost in the Darkness",
+      "story": "Young Helen, struck by a sudden fever, lost her sight and hearing, becoming trapped in a dark and silent world. Unable to find a way to communicate with the world, she was consumed by frustration and acted wildly. Her family, not knowing how to handle her, despaired. She was like a ghost in her own house, an untamed being driven by nameless impulses. Her mind was as restless as a bird in a cage, and she erupted in fierce anger at her inability to understand the world's secrets.",
+      "fact": "Helen Keller lost both her sight and hearing after a severe illness at 19 months old. Cut off from the world, she spent her early childhood filled with anger and frustration.",
+      "quote": "She was a ghost in her own house, an untamed wild creature driven by nameless impulses.",
+      "value": "A Cry in Despair",
+      "coach_line": "Sometimes, you feel so frustrated and angry that you just want to scream, don't you? At times like that, instead of suffering alone, you need the courage to talk about your feelings with a trusted adult.",
+      "daily_mission": "Today, if you felt frustrated or angry, try to express those feelings through a drawing."
+    },
+    {
+      "title": "The Arrival of the Miracle Worker",
+      "story": "A light came into Helen's dark world in the form of Anne Sullivan. Having experienced a difficult childhood herself, Anne knew that Helen needed not pity, but language, discipline, and the courage to face the world. Their first meeting was a battle of wills. Anne, undeterred by Helen's wild behavior, had the courage to find the intelligent child hidden within her and bring her out into the world. Anne took Helen to a small cottage and began teaching her language by spelling words into her hand.",
+      "fact": "Anne Sullivan was the great teacher who changed Helen Keller's life. She didn't just teach Helen knowledge, but also how to communicate with the world and an indomitable will.",
+      "quote": "She knew that pity was a poison. What Helen needed was not pity, but language, discipline, and the courage to face the world.",
+      "value": "The Beginning of Hope",
+      "coach_line": "True courage comes from a never-give-up attitude. When you encounter a difficult problem, have the courage to reach out to a teacher or friend who can help you.",
+      "daily_mission": "Today, help a friend in need at school or at home."
+    },
+    {
+      "title": "Water!",
+      "story": "One day, Anne let Helen feel water pouring from a pump into one hand, while spelling 'w-a-t-e-r' into the other. At that very moment, Helen understood the mystery of language. She realized that everything had a name. It was the moment the prison door swung open. She gained the courage to step out of her dark and silent world and into the light of understanding. From that day on, Helen, with an insatiable thirst for knowledge, began to learn the names of everything in the world.",
+      "fact": "The moment Helen Keller understood the meaning of the word 'water' is considered one of the most dramatic moments in educational history. Her world completely changed because of this moment.",
+      "quote": "The mystery of language was revealed to her. She knew then that 'w-a-t-e-r' meant the wonderful cool something that was flowing over her hand.",
+      "value": "Moment of Realization",
+      "coach_line": "The joy of an 'aha!' moment is truly special. If you keep trying without giving up, you too will have a wonderful moment of realization that will make you see the world anew.",
+      "daily_mission": "Today, learn one new word and use it to make a sentence."
+    },
+    {
+      "title": "The Gates of Radcliffe",
+      "story": "Having learned to read, write, and speak, Helen dreamed of a greater challenge: entering Radcliffe College, the sister school of Harvard University. It seemed impossible for a woman who could neither see nor hear to go to college, but Helen did not give up. With Anne's devoted help and her own amazing courage, Helen overcame all obstacles and entered Radcliffe College in 1900. Her very presence was a quiet revolution against the prejudices of the world.",
+      "fact": "Helen Keller overcame numerous difficulties and graduated from Radcliffe College in 1904. She proved that people with disabilities can also receive an equal education.",
+      "quote": "Her very presence in the hallowed halls of academia was a quiet revolution. It was a powerful declaration, a courageous demonstration demanding an equal place in a world not made for her.",
+      "value": "Challenging Limits",
+      "coach_line": "Instead of thinking, 'I can't do it,' ask yourself, 'How can I do it?' Even seemingly impossible tasks can find a way if you bravely take on the challenge.",
+      "daily_mission": "Today, bravely challenge something you usually thought was difficult (e.g., riding a bike, giving a presentation)."
+    },
+    {
+      "title": "The Unconquered Spirit",
+      "story": "After graduating from college, Helen did not remain merely a symbol of inspiration. She used her voice to actively participate in social issues such as women's suffrage, anti-racism, and pacifism. She traveled the world, working to improve education and rights for people with disabilities. Her life proved her belief that 'the best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.' The ghost in the darkness became a beacon of light for the whole world.",
+      "fact": "Helen Keller dedicated her life to others as a writer and social activist. She not only overcame her own disabilities but also constantly strived to make the world a better place.",
+      "quote": "With courage, determination, and love, there is no barrier that cannot be overcome.",
+      "value": "Courage for the World",
+      "coach_line": "True courage is speaking up for others beyond yourself. You too can become someone who has the courage to stand up for your friends and the vulnerable in society.",
+      "daily_mission": "Today, think about ways to help those in need around us and discuss them with your family."
+    }
+  ]
+}

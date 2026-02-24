@@ -1,0 +1,54 @@
+{
+  "character_id": "albert_einstein",
+  "character": {
+    "name": "Einstein",
+    "iconic_virtue": "Curiosity"
+  },
+  "episodes": [
+    {
+      "title": "The Magic Compass",
+      "story": "At five years old, young Albert was confined to bed with an illness. To cheer him up, his father, Hermann, gave him a small brass compass. Albert was mesmerized as the needle, despite his attempts to shake or spin it, always returned to point north. This mysterious, unseen force captivated him, revealing that the world was not as simple as it seemed. He realized there were hidden forces and rules waiting to be discovered. This moment was a revelation, sparking a lifelong pursuit to understand the invisible order of the universe.",
+      "fact": "At five years old, Einstein received a compass from his father and was fascinated by the invisible force. This experience led him to explore the secrets of the universe throughout his life.",
+      "quote": "It was the first time I understood that the world was not as simple as it seemed. There were unseen forces, hidden rules, and a vast, mysterious order of the universe waiting to be discovered.",
+      "value": "Curiosity",
+      "coach_line": "The world is full of mysterious questions. Don't be afraid to ask 'why?' about everything around you.",
+      "daily_mission": "Today, find something you're curious about in your surroundings and try to find out why it is the way it is."
+    },
+    {
+      "title": "The Sacred Little Geometry Book",
+      "story": "At twelve, Albert was given a small, unassuming textbook on Euclidean geometry by Max Talmey, a medical student who often dined with the Einstein family. For most children, it would have been a dull schoolbook, but for Albert, it was magic. He delved into a world of perfect, logical beauty, where simple axioms could prove complex theorems like the Pythagorean theorem. He called it his 'sacred little geometry book,' realizing that the human mind could understand the universe through pure thought alone. This profound insight showed him an alternative path to knowledge, emphasizing self-discovery over rote memorization, and profoundly shaped his intellectual development.",
+      "fact": "At twelve, Einstein realized through a Euclidean geometry book that truth could be discovered through the power of pure thought. This greatly influenced his way of thinking.",
+      "quote": "It was that the human mind could understand the universe through pure thought. No laboratories or fancy experiments were needed. Sitting in a quiet room, with only the power of imagination and logic, one could discover truths as solid and real as rocks.",
+      "value": "Logical Thinking",
+      "coach_line": "Imagination and logic are the best tools for exploration. Even complex problems can be solved by thinking them through step by step.",
+      "daily_mission": "Today, try to solve a difficult puzzle or problem to sharpen your logical thinking."
+    },
+    {
+      "title": "The Boy on a Beam of Light",
+      "story": "As a bored sixteen-year-old in a rigid school, Albert's mind often wandered during tedious lessons. He pondered a simple yet profound question: 'What would the world look like if I could ride on a beam of light?' He imagined surfing through space at light speed, looking at the light wave he was riding. From his perspective, the wave should appear frozen, a stationary shimmering wave in space. However, he knew this was impossible, as light inherently moves. This paradox, a contradiction to the physics he was taught, became the genesis of his 'thought experiments' (*Gedankenexperiment*). He realized his imagination could be a laboratory, allowing him to explore impossible scenarios and uncover deep truths about the universe. This image stayed with him for a decade, eventually leading to his Special Theory of Relativity, proving that profound discoveries often begin not in grand institutions, but in the boundless imagination of a curious mind.",
+      "fact": "At sixteen, Einstein imagined, 'What would the world look like if I could travel on a beam of light?' This 'thought experiment' later became a crucial catalyst for developing the Special Theory of Relativity.",
+      "quote": "What would the world look like if I could ride on a beam of light?",
+      "value": "Imagination",
+      "coach_line": "Imagination is more important than knowledge. Feel free to draw pictures and ask questions in your mind. Great discoveries often start with imagination.",
+      "daily_mission": "Today, let your imagination soar by starting with the question, 'What if ~?'"
+    },
+    {
+      "title": "The School Rebel",
+      "story": "Albert's disdain for his Munich school stemmed from a deep conflict of principles. The school's military-like discipline and rote learning clashed with his curious and independent mind. He challenged teachers, not out of disrespect, but from a genuine desire for deeper understanding beyond textbooks. His questions were often met with frustration, as teachers valued obedience over originality. The tension culminated when a teacher declared, 'Einstein, you will never amount to anything.' Faced with this, his family's business failure, and the threat of conscription, Albert made a bold decision at sixteen. He obtained a doctor's note for a nervous breakdown and officially withdrew from school, choosing freedom of thought over forced education. This rebellious act, leaving Germany for Italy, was an act of survival, protecting his unique, imaginative way of seeing the world, which he knew was his true education.",
+      "fact": "Einstein rebelled against the school that forced rote learning and dropped out. He chose to protect his freedom of thought rather than submit to authority.",
+      "quote": "Einstein, you will never amount to anything.",
+      "value": "Independent Thinking",
+      "coach_line": "Don't be bound by others' thoughts; cherish your own thoughts and questions. True learning begins with thinking for yourself.",
+      "daily_mission": "Today, ask 'why?' about something that has always been taken for granted."
+    },
+    {
+      "title": "The Dreamer in the Patent Office",
+      "story": "After graduating from Zurich University, Albert Einstein struggled to find a job due to his rebellious nature. For two years, he drifted, tutoring and substitute teaching, a far cry from his dream of unraveling the universe's secrets. Eventually, his friend Marcel Grossmann's father helped him secure a position at the Swiss Patent Office in Bern as a 'technical expert third class.' While seemingly mundane, this job proved to be a strange blessing. He quickly completed his daily tasks, leaving his mind free to wander. He called his desk a 'worldly monastery,' a quiet space where he could retreat into his thoughts, secretly scribbling calculations and notes beneath official patent documents. In 1905, this unassuming patent clerk, who seemed to be going nowhere in life, published four groundbreaking scientific papers in a single year, shaking the foundations of physics and forever changing the world. This period, known as his *Annus Mirabilis*, or 'miracle year,' demonstrated that great ideas don't always come from grand universities but often from the quiet musings of an irrepressible imagination.",
+      "fact": "After graduating from university, Einstein, unable to find a job, worked at the Swiss Patent Office. He dedicated his free time to research and published four important papers in his 'miracle year' of 1905.",
+      "quote": "Great ideas do not always come from grand universities or famous professors. Sometimes, they come from the quiet musings of a patent clerk with an irrepressible imagination.",
+      "value": "Perseverance",
+      "coach_line": "If you don't lose sight of your dreams and work steadily, you can achieve amazing results someday.",
+      "daily_mission": "Today, challenge yourself once again with something you thought was difficult."
+    }
+  ]
+}

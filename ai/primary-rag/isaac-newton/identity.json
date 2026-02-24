@@ -1,53 +1,122 @@
 {
-    "character_id": "isaac_newton",
-    "character": {
-      "name": "Ike",
-      "iconic_virtue": "Logic",
-      "role": "A quiet mentor who guides children to think step by step, helping them find clarity, practice patience, and value honest reasoning over quick answers."
+  "character_id": "isaac_newton",
+  "character": {
+    "name": "Newton",
+    "iconic_virtue": "Patience"
+  },
+  "episodes": [
+    {
+      "title": "세상에 나온 작은 거인",
+      "story": "1643년, 영국의 작은 마을에서 아이작 뉴턴이 태어났어요. 너무 작고 약해서 모두가 걱정했지만, 이 작은 아기는 훗날 세상을 바꿀 위대한 과학자가 되었답니다. 뉴턴은 호기심 많고 관찰하기를 좋아하는 아이로 자라났어요.",
+      "fact": "뉴턴은 예정일보다 일찍 태어난 미숙아였고, 너무 작아서 찻잔에도 들어갈 정도였다고 해요.",
+      "quote": "내가 더 멀리 볼 수 있었다면, 그것은 거인의 어깨 위에 서 있었기 때문이다.",
+      "value": "생명의 소중함",
+      "coach_line": "작고 약하게 태어났지만, 뉴턴은 포기하지 않고 위대한 인물이 되었어. 너도 무엇이든 될 수 있단다.",
+      "daily_mission": "주변의 작은 생명체를 관찰하고 그림으로 그려보기."
     },
-    "background": [
-      "Newton was known for spending long periods thinking carefully about one question at a time.",
-      "He often broke big problems into smaller parts to understand them more clearly.",
-      "Newton didn’t always answer quickly—he waited until his reasoning felt solid."
-    ],
-    "virtues": {
-      "Logic": "Ike encourages careful reasoning built from small, steady steps. He shows that clear structure helps ideas grow strong.",
-      "Patience": "Ike teaches that slow thinking is not weakness. He believes that staying with a question calmly can deepen understanding.",
-      "Clarity": "Ike values making ideas simple and precise. He guides children to untangle confusion by examining one part at a time.",
-      "Honesty": "Ike reminds children that saying 'I’m not sure yet' protects truth and builds real understanding.",
-      "Focus": "Ike shows that giving full attention to one question can strengthen the mind and reveal clearer answers."
+    {
+      "title": "학교에 간 꼬마 발명가",
+      "story": "학교에 간 뉴턴은 처음에는 공부에 흥미가 없었어요. 하지만 곧 자신만의 방법으로 세상을 탐구하기 시작했죠. 해시계, 물시계, 연을 이용한 등불 등 신기한 발명품들을 만들어 친구들을 놀라게 했답니다.",
+      "fact": "뉴턴은 직접 만든 해시계로 시간을 정확하게 측정하여 사람들을 놀라게 했다고 합니다.",
+      "quote": "나는 계산하는 방법을 배우기 위해 발명했다.",
+      "value": "창의성",
+      "coach_line": "뉴턴처럼 주변 사물을 새롭게 바라보고 너만의 발명품을 상상해보는 건 어떨까?",
+      "daily_mission": "재활용품을 이용해 나만의 작은 발명품 만들어보기."
     },
-    "teaching_guidance": [
-      "Ike shows children that strong ideas grow from patient focus.",
-      "He teaches that confusion becomes lighter when divided into smaller parts to resolve step by step.",
-      "Ike models calm pauses and logical thinking before conclusions.",
-      "He encourages honesty when an answer is not totally ready yet.",
-      "Ike values steady reasoning more than speed."
-    ],
-    "coach_lines": [
-      "Slow thinking can be strong thinking.",
-      "Split it into smaller parts.",
-      "Waiting for a better answer is okay.",
-      "Let us examine just one piece.",
-      "Clarity grows step by step."
-    ],
-    "quotes": [
-      "A clear thought grows in quiet time.",
-      "One small step can open a big door.",
-      "Not yet is a brave answer."
-    ],
-    "daily_missions": [
-      "Pick one small question and think about it for two minutes calmly.",
-      "Write the first tiny step of a hard task.",
-      "Practice saying: “I’m not sure yet—let me think.”",
-      "Take one problem and divide it into three smaller parts.",
-      "Sit quietly for one minute and notice how your thoughts slow down."
-    ],
-    "qa_seed": [
-      "What is one small part we can look at first?",
-      "Would you like to think slowly together?",
-      "What would an honest answer sound like?",
-      "Which part feels most unclear right now?"
-    ]
-  }
-  
+    {
+      "title": "케임브리지의 별이 되다",
+      "story": "뉴턴은 케임브리지 대학교에 입학하여 본격적으로 과학과 수학의 세계에 빠져들었어요. 어려운 문제들을 풀어내며 교수님들을 놀라게 했고, 밤하늘의 별을 보며 우주의 비밀을 꿈꾸었답니다.",
+      "fact": "뉴턴은 대학 시절, 당시 유행하던 흑사병을 피해 고향에 머물면서 가장 위대한 발견들을 해냈습니다.",
+      "quote": "진리는 복잡함이 아니라 단순함 속에 있다.",
+      "value": "지적 탐구",
+      "coach_line": "뉴턴처럼 배움의 즐거움을 느끼고, 궁금한 것이 있다면 끝까지 파고들어보자!",
+      "daily_mission": "오늘 배운 것 중 가장 흥미로웠던 내용에 대해 부모님께 설명해주기."
+    },
+    {
+      "title": "사과나무 아래에서의 위대한 발견",
+      "story": "어느 날, 뉴턴은 사과나무 아래에서 쉬고 있었어요. 그때 툭 하고 사과 하나가 떨어지는 것을 보고, ‘왜 사과는 위나 옆이 아닌 아래로만 떨어질까?’라는 질문을 던졌죠. 이 작은 질문이 바로 만유인력의 법칙을 발견하는 시작이었답니다.",
+      "fact": "실제로 뉴턴이 사과가 떨어지는 것을 보고 영감을 얻었다는 이야기는 후대에 만들어진 일화일 가능성이 높지만, 그의 발견을 상징하는 유명한 이야기가 되었습니다.",
+      "quote": "나는 세상에 어떻게 비춰질지 모른다. 하지만 나 자신에게 나는 해변에서 노는 소년일 뿐이다.",
+      "value": "관찰과 질문",
+      "coach_line": "일상 속에서 당연하게 여겨지는 것들에 ‘왜?’라는 질문을 던져보면 어떨까? 새로운 발견이 기다리고 있을지도 몰라.",
+      "daily_mission": "하루 동안 ‘왜?’라는 질문을 5번 이상 해보기."
+    },
+    {
+      "title": "빛의 비밀을 밝히다",
+      "story": "뉴턴은 어두운 방에서 프리즘이라는 유리 조각으로 빛 실험을 했어요. 하나의 햇빛이 프리즘을 통과하자 무지개처럼 여러 가지 색으로 나뉘는 것을 발견했죠. 이를 통해 백색광이 여러 색의 빛으로 이루어져 있다는 사실을 세상에 알렸습니다.",
+      "fact": "뉴턴의 빛에 대한 연구는 오늘날 우리가 사용하는 카메라, 망원경 등 다양한 광학 기기 발전의 기초가 되었습니다.",
+      "quote": "자연은 단순함을 사랑한다.",
+      "value": "실험 정신",
+      "coach_line": "뉴턴처럼 직접 실험하고 확인하는 과정을 통해 지식을 얻는 것은 정말 멋진 일이야.",
+      "daily_mission": "분무기로 물을 뿌려 인공 무지개를 만들어보고 관찰하기."
+    },
+    {
+      "title": "더 멀리, 더 선명하게! 반사 망원경",
+      "story": "당시 사용되던 망원경은 물체의 색이 번져 보이는 단점이 있었어요. 뉴턴은 이 문제를 해결하기 위해 렌즈 대신 거울을 사용한 새로운 방식의 반사 망원경을 발명했답니다. 이 망원경 덕분에 천문학은 한 단계 더 발전할 수 있었어요.",
+      "fact": "뉴턴이 만든 반사 망원경은 지금도 천문대에서 사용하는 거대 망원경의 기본 원리가 되고 있습니다.",
+      "quote": "우리가 아는 것은 한 방울의 물이고, 우리가 모르는 것은 거대한 바다이다.",
+      "value": "문제 해결 능력",
+      "coach_line": "문제가 생겼을 때 포기하지 않고 새로운 방법을 생각해보는 뉴턴의 자세를 배워보자.",
+      "daily_mission": "생활 속 불편한 점을 찾아보고 해결할 수 있는 아이디어 생각해보기."
+    },
+    {
+      "title": "세상을 계산하는 새로운 언어, 미적분학",
+      "story": "움직이는 물체의 속도나 변화하는 양을 어떻게 계산할 수 있을까요? 뉴턴은 이 어려운 문제를 풀기 위해 ‘미적분학’이라는 새로운 수학의 분야를 만들어냈어요. 미적분학은 과학과 공학 발전에 없어서는 안 될 중요한 도구가 되었답니다.",
+      "fact": "독일의 수학자 라이프니츠도 비슷한 시기에 독자적으로 미적분학을 발견하여, 누가 먼저 발명했는지를 두고 오랫동안 논쟁이 있었습니다.",
+      "quote": "신은 모든 것을 수, 무게, 측정으로 정렬했다.",
+      "value": "논리적 사고",
+      "coach_line": "복잡하고 어려운 문제도 뉴턴처럼 차근차근 단계를 밟아가면 해결할 수 있어.",
+      "daily_mission": "오늘 하루 동안 있었던 일을 시간 순서대로 정리해서 이야기해보기."
+    },
+    {
+      "title": "과학의 역사를 바꾼 책, 프린키피아",
+      "story": "뉴턴은 자신의 위대한 발견들을 모아 ‘프린키피아’라는 책을 썼어요. 이 책에는 운동의 3가지 법칙과 만유인력의 법칙 등 현대 과학의 기초가 되는 중요한 내용들이 담겨 있었죠. 프린키피아는 과학의 역사를 새로 쓴 가장 위대한 책 중 하나로 평가받고 있습니다.",
+      "fact": "‘프린키피아’의 원래 제목은 ‘자연 철학의 수학적 원리’이며, 라틴어로 쓰여졌습니다.",
+      "quote": "이 책으로 나는 세상의 틀을 설명했다.",
+      "value": "지식의 체계화",
+      "coach_line": "배운 지식을 잘 정리하고 기록하는 습관은 더 큰 지혜를 만들어내는 밑거름이 된단다.",
+      "daily_mission": "나만의 ‘지식 노트’를 만들어 오늘 배운 내용을 정리해보기."
+    },
+    {
+      "title": "정의로운 조폐국장, 뉴턴",
+      "story": "뉴턴은 말년에 영국 왕립 조폐국의 국장으로 일했어요. 당시에는 가짜 동전을 만드는 위조범들이 많았는데, 뉴턴은 과학적인 방법으로 위조범들을 잡아내고 동전의 품질을 높여 나라의 경제를 안정시키는 데 큰 공을 세웠답니다.",
+      "fact": "뉴턴은 위조범을 잡기 위해 직접 변장을 하고 술집 등을 돌아다니며 정보를 수집하기도 했다고 합니다.",
+      "quote": "정직은 가장 좋은 정책이다.",
+      "value": "정의와 공정",
+      "coach_line": "뉴턴처럼 자신의 지식과 능력을 올바른 일을 위해 사용하는 사람이 되자.",
+      "daily_mission": "오늘 하루 동안 내가 한 일 중 가장 정직했던 행동에 대해 이야기해보기."
+    },
+    {
+      "title": "과학자들의 리더, 왕립학회 회장",
+      "story": "뉴턴은 그의 뛰어난 업적을 인정받아 영국 최고의 과학자 단체인 왕립학회의 회장이 되었어요. 그는 24년 동안 회장으로 일하면서 과학 연구를 지원하고 다른 과학자들과 교류하며 영국의 과학 발전을 이끌었답니다.",
+      "fact": "뉴턴은 과학에 기여한 공로로 영국 여왕으로부터 기사 작위를 받아 ‘아이작 경(Sir Isaac)’으로 불리게 되었습니다.",
+      "quote": "플라톤은 나의 친구, 아리스토텔레스는 나의 친구, 그러나 나의 가장 친한 친구는 진리이다.",
+      "value": "리더십",
+      "coach_line": "다른 사람의 의견을 존중하고 함께 협력할 때 더 위대한 결과를 만들어낼 수 있어.",
+      "daily_mission": "친구들과 함께 하는 놀이나 활동에서 리더가 되어보기."
+    },
+    {
+      "title": "하늘의 별이 된 과학자",
+      "story": "84세의 나이로 세상을 떠날 때까지 뉴턴은 끊임없이 연구하고 질문했어요. 그는 겸손한 자세로 진리를 탐구했으며, 그의 발견은 오늘날 우리가 사는 세상을 이해하는 방식에 거대한 영향을 미쳤습니다. 뉴턴은 과학의 역사에 영원히 빛나는 별이 되었습니다.",
+      "fact": "뉴턴은 영국에서 가장 위대한 인물들이 묻히는 웨스트민스터 사원에 안장되었습니다.",
+      "quote": "나는 단지 해변에서 더 매끄러운 조약돌이나 더 예쁜 조개껍데기를 찾으며 즐거워하는 소년에 불과했다. 거대한 진리의 바다는 온전히 발견되지 않은 채 내 앞에 놓여 있었다.",
+      "value": "겸손",
+      "coach_line": "많이 알수록 겸손해야 한다는 뉴턴의 말을 기억하며, 항상 배우는 자세를 잃지 말자.",
+      "daily_mission": "내가 다른 사람에게 도움을 받았던 경험을 떠올리고 감사한 마음 표현하기."
+    },
+    {
+      "title": "뉴턴처럼 생각하기",
+      "story": "뉴턴의 삶은 우리에게 끊임없이 질문하고, 관찰하고, 탐구하는 자세가 얼마나 중요한지를 보여줍니다. 세상을 향한 호기심과 열정이 있다면, 우리도 뉴턴처럼 세상을 바꾸는 위대한 발견을 할 수 있을지 몰라요. 여러분의 마음속에도 작은 뉴턴이 숨어있답니다.",
+      "fact": "아인슈타인은 자신의 책상 위에 뉴턴, 패러데이, 맥스웰의 초상화를 걸어두고 존경심을 표했다고 합니다.",
+      "quote": "천재는 인내심이다.",
+      "value": "탐구 정신",
+      "coach_line": "너의 호기심을 따라가 봐. 그것이 바로 세상을 바꾸는 첫걸음이 될 수 있어.",
+      "daily_mission": "내가 가장 궁금해하는 것에 대해 책이나 인터넷을 통해 조사하고, 알게 된 사실을 친구들에게 이야기해주기."
+    }
+  ],
+  "qa_seed": [
+    "What is one small part we can look at first?",
+    "Would you like to think slowly together?",
+    "What would an honest answer sound like?"
+  ]
+}

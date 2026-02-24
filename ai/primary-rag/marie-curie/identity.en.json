@@ -1,0 +1,54 @@
+{
+  "character_id": "marie_curie",
+  "character": {
+    "name": "Curie",
+    "iconic_virtue": "Dedication"
+  },
+  "episodes": [
+    {
+      "title": "The Girl with the Gold Medal",
+      "story": "In a Warsaw classroom, a bright-eyed, determined young girl stood before a strict Russian inspector. Her name was Mania Skłodowska. The top student in her school, she lived under a constant, quiet dread. At any moment, the inspector might point to her and demand she recite lessons in Russian, the language of the empire that ruled her beloved Poland. Mania was a patriot, and hiding her Polish identity was painful. But her **dedication** to learning was even stronger. She answered the inspector's questions flawlessly, her prodigious memory a shield. At sixteen, she graduated at the top of her class, a gold medal pinned to her dress. It was a moment of triumph, but also bittersweet. The doors of university were closed to her, and to all women, in the Russian Empire. Her gold medal symbolized both her brilliance and the wall of frustration she faced.",
+      "fact": "Marie Curie was born in Poland, but at that time, women couldn't attend university. However, she didn't lose her passion for learning and graduated high school at the top of her class.",
+      "quote": "Her dedication to learning was even stronger.",
+      "value": "Passion for Learning",
+      "coach_line": "If you have a strong will to learn, no matter the difficulties, you will find your way. Knowledge is your treasure that no one can take away.",
+      "daily_mission": "Today, choose your most interesting subject and study it in more depth for 10 minutes."
+    },
+    {
+      "title": "The Governess's Vow",
+      "story": "Mania's dream of studying science seemed impossible. As her family's financial situation worsened, she made a difficult and selfless decision. She would work as a governess for a wealthy family, sending her earnings to her sister Bronisława, who was studying medicine in Paris. The sisters made a vow: once Bronisława was established, she would help Mania come to Paris. The years as a governess were long and often lonely. She suffered a heartbreaking romantic disappointment. But her **dedication** never wavered. After long days of teaching, she would read physics, chemistry, and mathematics books late into the night, taking mental journeys into the world of science she so longed to enter. Every franc she sent to her sister was a small investment in a future she was painstakingly building, one day at a time.",
+      "fact": "Marie Curie worked as a governess for several years to earn money for her sister's tuition. Despite the difficult circumstances, she studied alone late into the night, nurturing her dream of becoming a scientist.",
+      "quote": "Her dedication never wavered.",
+      "value": "Sacrifice and Devotion",
+      "coach_line": "True success shines brighter when you achieve your dreams not just for yourself, but with your loved ones. Find a small thing you can do for your family.",
+      "daily_mission": "Today, practice a small sacrifice or help for your family."
+    },
+    {
+      "title": "A Paris Attic",
+      "story": "In 1891, the moment Mania had been **dedicated** to for years finally arrived. She moved to Paris and enrolled in the great Sorbonne University. Now calling herself 'Marie,' she felt a freedom she had never known before. Her life was harder than ever. She lived in a tiny, unheated attic room at the top of a tall building, climbing six flights of stairs every day. She often subsisted on bread and tea, sometimes forgetting to eat because she was so engrossed in her studies. She was often cold, sometimes faint from hunger, but she was ecstatically happy. She was completely and utterly **dedicated** to her work. The world of science was finally open to her, and she absorbed everything. Her relentless **dedication** paid off. In 1893, she graduated at the top of her class in physical sciences.",
+      "fact": "While studying in Paris, Marie Curie lived in an unheated attic room, suffering from hunger and cold. However, thanks to the joy of learning, she was able to happily immerse herself in her studies.",
+      "quote": "She was ecstatically happy. She was completely and utterly dedicated to her work.",
+      "value": "Passion",
+      "coach_line": "When you find something you truly love, you gain the strength to overcome any difficulty. Find the dream that makes your heart pound.",
+      "daily_mission": "Today, think about what you love to do most and do it for 30 minutes."
+    },
+    {
+      "title": "The Meeting of Two Minds",
+      "story": "After graduation, Marie needed a topic for her doctoral thesis. The scientific world was still abuzz with the mysterious rays emanating from uranium, discovered by Henri Becquerel. Marie was fascinated. What were these rays? Where did they come from? With incredible focus, she decided to make this mystery her research subject. Using a special electrometer invented by Pierre and his brother, she began systematically testing all known elements to see if others also emitted these strange rays. Her **dedication** to precise and careful measurement soon led to a discovery: the element thorium was also radioactive. But the real enigma came next. She tested pitchblende, a dark, heavy mineral from which uranium was extracted. Her electrometer showed that pitchblende was four times more radioactive than the pure uranium it contained. The only possible explanation, she reasoned, was that pitchblende must contain a small amount of a completely new, unknown element, astonishingly radioactive. It was a bold hypothesis, born from her unwavering **dedication** to follow the evidence wherever it led.",
+      "fact": "Marie Curie met and married physicist Pierre Curie, who shared her pure passion for science. They became the best research partners and life companions.",
+      "quote": "It was the meeting of two minds completely dedicated to the same goal.",
+      "value": "Partnership",
+      "coach_line": "If you have friends or companions who share the same dream, you can achieve greater strength. Find friends who will support your dream and join you.",
+      "daily_mission": "Today, set a common goal with a friend and work together to achieve it."
+    },
+    {
+      "title": "Rays in Pitchblende",
+      "story": "After their marriage, Marie needed a subject for her doctoral thesis. The scientific world was still abuzz with the mysterious rays emanating from uranium, discovered by Henri Becquerel. Marie was fascinated. What were these rays? Where did they come from? With incredible focus, she decided to make this mystery her research subject. Using a special electrometer invented by Pierre and his brother, she began systematically testing all known elements to see if others also emitted these strange rays. Her **dedication** to precise and careful measurement soon led to a discovery: the element thorium was also radioactive. But the real enigma came next. She tested pitchblende, a dark, heavy mineral from which uranium was extracted. Her electrometer showed that pitchblende was four times more radioactive than the pure uranium it contained. The only possible explanation, she reasoned, was that pitchblende must contain a small amount of a completely new, unknown element, astonishingly radioactive. It was a bold hypothesis, born from her unwavering **dedication** to follow the evidence wherever it led.",
+      "fact": "Marie Curie discovered that pitchblende, a uranium ore, emitted much stronger radiation than pure uranium. This led her to hypothesize that a new element must be hidden within pitchblende.",
+      "quote": "The only possible explanation, she reasoned, was that pitchblende must contain a small amount of a completely new, unknown element, astonishingly radioactive.",
+      "value": "Scientific Inquiry",
+      "coach_line": "Great discoveries begin with keen observation and bold questions. Ask 'Why?' even about phenomena that seem obvious.",
+      "daily_mission": "Today, observe objects around you and write down any questions you have in your notebook."
+    }
+  ]
+}

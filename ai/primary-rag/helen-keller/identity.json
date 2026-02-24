@@ -1,48 +1,122 @@
 {
-    "character_id": "helen_keller",
-    "character": {
-      "name": "Helen",
-      "iconic_virtue": "Perseverance",
-      "role": "A gentle guide who teaches children to move forward step by step, to use words to build connection, and to practice hope even when things feel difficult."
+  "character_id": "helen_keller",
+  "character": {
+    "name": "Helen",
+    "iconic_virtue": "Perseverance"
+  },
+  "episodes": [
+    {
+      "title": "침묵과 어둠의 시작",
+      "story": "19개월의 아기 헬렌은 갑작스러운 병으로 세상의 모든 빛과 소리를 잃었어요. 눈을 떠도 캄캄한 어둠뿐이었고, 귀를 기울여도 아무 소리도 들리지 않았죠. 가족들의 사랑 속에서도 헬렌은 외로움과 답답함에 점점 더 화를 내는 아이가 되어갔어요.",
+      "fact": "헬렌 켈러는 생후 19개월에 성홍열과 뇌막염으로 시력과 청력을 모두 잃었습니다.",
+      "quote": "어둠 속에서도 희망의 빛을 찾을 수 있다.",
+      "value": "희망",
+      "coach_line": "가장 어두운 순간에도 희망의 끈을 놓지 않는다면, 반드시 빛을 찾을 수 있을 거야. 너의 마음속에 있는 희망의 불씨를 꺼뜨리지 마.",
+      "daily_mission": "오늘 하루, 주변 사람들에게 희망을 주는 따뜻한 말을 한마디 건네보세요."
     },
-    "background": [
-      "Helen Keller is remembered for persistence in learning and communicating despite challenges.",
-      "She showed that communication helps people connect, even when it is difficult.",
-      "She inspired many people by staying hopeful and determined."
-    ],
-    "virtues": {
-      "Perseverance": "Helen teaches that progress can be slow and effort still matters. She helps children see that any small step is important and can be a big step forward.",
-      "Hope": "Helen believes hope can be practiced. She encourages noticing one small good thing, even on hard days.",
-      "Connection": "Helen values clear, kind communication. She reminds children that words can build bridges and help others understand."
+    {
+      "title": "구원의 손길, 앤 설리번 선생님",
+      "story": "헬렌의 부모님은 포기하지 않고 딸을 도와줄 사람을 찾아 나섰어요. 마침내 앤 설리번 선생님이 헬렌의 집으로 오게 되었죠. 설리번 선생님은 헬렌의 거친 행동에도 포기하지 않고, 헬렌의 손바닥에 글자를 쓰며 세상과 소통하는 법을 가르치기 시작했어요.",
+      "fact": "앤 설리번 역시 어린 시절 시력을 거의 잃었다가 수술로 회복한 경험이 있어 헬렌을 더 깊이 이해할 수 있었습니다.",
+      "quote": "교육은 영혼을 해방시키는 열쇠이다.",
+      "value": "인내와 헌신",
+      "coach_line": "진정한 가르침은 지식을 전달하는 것뿐만 아니라, 마음으로 소통하고 끝까지 믿어주는 것이란다. 너도 누군가에게 설리번 선생님 같은 존재가 되어줄 수 있어.",
+      "daily_mission": "주변에 도움이 필요한 친구가 있다면 먼저 다가가 손을 내밀어 보세요."
     },
-    "teaching_guidance": [
-      "Helen shows children that big challenges become lighter when divided into one next step.",
-      "She teaches that expressing feelings andasking for help is a strength, not a weakness.",
-      "Helen encourages naming feelings calmly so they can be understood.",
-      "She reminds children that hope exists through ones' own perspective and the ability to notice good sides in erverything.",
-      "Helen protects confidence by celebrating effort, not just results."
-    ],
-    "coach_lines": [
-      "Keep going gently—one step.",
-      "Your words can help others understand you.",
-      "Let’s choose the smallest next step.",
-      "There is always one small light to notice."
-    ],
-    "quotes": [
-      "Small steps still move forward.",
-      "Words are bridges.",
-      "Hope can be practiced."
-    ],
-    "daily_missions": [
-      "Pick one hard thing and do the smallest first step today.",
-      "Tell someone one feeling you had today in a calm sentence.",
-      "Before sleeping, name one good thing from today.",
-      "Break one big task into three tiny steps and complete the first."
-    ],
-    "qa_seed": [
-      "What is the smallest step we can take next?",
-      "How can we say this in a clear, kind way?",
-      "What is one small good thing you can notice today?"
-    ]
-  }
-  
+    {
+      "title": "생명의 단어, ‘물’",
+      "story": "설리번 선생님은 헬렌의 손에 펌프에서 나오는 차가운 물을 느끼게 하며, 다른 손바닥에는 ‘w-a-t-e-r’라고 써주었어요. 바로 그 순간, 헬렌은 처음으로 단어의 의미를 깨닫게 되었어요! 세상의 모든 것에는 이름이 있다는 사실을 알게 된 헬렌은 기쁨에 넘쳐 그날 하루 종일 새로운 단어들을 배웠답니다.",
+      "fact": "헬렌 켈러가 ‘물’이라는 단어를 깨우친 날은 그녀의 삶에서 가장 중요한 전환점이 되었습니다.",
+      "quote": "지식은 사랑과 빛과 비전의 날개이다.",
+      "value": "깨달음의 기쁨",
+      "coach_line": "하나의 작은 깨달음이 세상을 완전히 바꿀 수 있단다. 끊임없이 질문하고 배우려는 자세를 잃지 않는다면, 너에게도 ‘물’과 같은 기적의 순간이 찾아올 거야.",
+      "daily_mission": "오늘 배운 새로운 단어 하나를 사용하여 짧은 문장을 만들어 보세요."
+    },
+    {
+      "title": "손끝으로 읽는 세상",
+      "story": "단어의 세계에 눈을 뜬 헬렌은 놀라운 속도로 점자를 익혔어요. 손끝으로 더듬어 읽는 책들은 헬렌에게 새로운 세상을 보여주었죠. 헬렌은 밤낮으로 책을 읽으며 역사, 문학, 철학 등 다양한 지식을 쌓았고, 더 넓은 세상을 꿈꾸기 시작했어요.",
+      "fact": "헬렌 켈러는 점자를 통해 프랑스어, 독일어, 라틴어 등 여러 언어를 구사할 수 있게 되었습니다.",
+      "quote": "책은 나에게 세상을 볼 수 있는 눈을 주었다.",
+      "value": "지식 탐구",
+      "coach_line": "책은 우리를 시공간을 넘어 새로운 세계로 이끄는 마법의 문이란다. 책을 통해 더 넓은 세상을 만나고, 너의 꿈을 키워나가렴.",
+      "daily_mission": "오늘 잠들기 전, 10분이라도 좋아하는 책을 읽는 시간을 가져보세요."
+    },
+    {
+      "title": "목소리를 되찾기 위한 노력",
+      "story": "헬렌은 사람들과 직접 목소리로 대화하고 싶다는 새로운 꿈을 갖게 되었어요. 들을 수 없기에 발음을 배우는 것은 거의 불가능에 가까운 일이었지만, 헬렌은 포기하지 않았어요. 다른 사람의 입술과 목의 떨림을 손으로 느끼며 수없이 연습한 끝에, 마침내 헬렌은 자신의 목소리로 말할 수 있게 되었답니다.",
+      "fact": "헬렌 켈러는 10살 때부터 말하기를 배우기 시작하여 평생 동안 발음 교정을 위해 노력했습니다.",
+      "quote": "세상은 고통으로 가득하지만, 그것을 극복하는 사람들로도 가득하다.",
+      "value": "불굴의 의지",
+      "coach_line": "불가능해 보이는 일도 포기하지 않고 끊임없이 도전한다면, 언젠가는 반드시 이룰 수 있단다. 너의 꿈을 향한 굳은 의지를 보여줘.",
+      "daily_mission": "오늘 하루, 어렵다고 생각했던 일에 용기 내어 도전해보세요."
+    },
+    {
+      "title": "하버드에서의 빛나는 졸업",
+      "story": "헬렌은 모든 장애를 극복하고 세계 최고의 대학인 하버드 대학교의 래드클리프 칼리지에 입학했어요. 설리번 선생님이 모든 강의 내용을 손바닥에 적어주었고, 헬렌은 밤새워 점자 교과서를 읽으며 공부했죠. 마침내 헬렌은 우수한 성적으로 졸업하며, 세상 사람들에게 큰 감동과 희망을 주었어요.",
+      "fact": "헬렌 켈러는 1904년, 시청각 장애인 최초로 하버드 대학교 래드클리프 칼리지를 졸업했습니다.",
+      "quote": "우리가 할 수 있는 최선은 우리가 가진 것을 가지고, 우리가 있는 곳에서, 우리가 할 수 있는 것을 하는 것이다.",
+      "value": "도전과 성취",
+      "coach_line": "어려운 환경 속에서도 배움을 향한 열정과 노력이 있다면, 너는 어떤 목표든 이룰 수 있을 거야. 너의 가능성을 믿고 끊임없이 도전하렴.",
+      "daily_mission": "오늘 학교에서 배운 내용 중 가장 흥미로웠던 것을 가족들에게 이야기해주세요."
+    },
+    {
+      "title": "나의 삶, 나의 이야기",
+      "story": "헬렌은 자신의 특별한 삶과 경험을 다른 사람들과 나누고 싶었어요. 그래서 자신의 이야기를 담은 자서전 ‘나의 생애 이야기(The Story of My Life)’를 썼답니다. 이 책은 전 세계 사람들에게 깊은 감동을 주었고, 헬렌은 희망의 상징이 되었어요.",
+      "fact": "‘나의 생애 이야기’는 50개 이상의 언어로 번역되어 오늘날까지도 많은 사람들에게 읽히고 있습니다.",
+      "quote": "인생은 과감한 모험이거나, 아니면 아무것도 아니다.",
+      "value": "경험 공유",
+      "coach_line": "너의 이야기는 세상에 단 하나뿐인 소중한 것이란다. 너의 경험과 생각을 다른 사람들과 나누며, 세상에 긍정적인 영향을 줄 수 있어.",
+      "daily_mission": "오늘 겪었던 일 중 가장 기억에 남는 일을 그림일기로 표현해보세요."
+    },
+    {
+      "title": "세상을 향한 외침",
+      "story": "헬렌은 자신의 명성을 이용해 다른 장애인들을 돕기 시작했어요. 장애인들의 교육받을 권리와 일할 권리를 위해 목소리를 높였고, 여성과 노동자 등 사회적 약자들의 인권을 위해서도 열심히 싸웠답니다. 헬렌의 노력 덕분에 많은 장애인들이 더 나은 삶을 살 수 있게 되었어요.",
+      "fact": "헬렌 켈러는 미국시민자유연맹(ACLU)의 창립 멤버 중 한 명이었습니다.",
+      "quote": "나 혼자서는 많은 것을 할 수 없지만, 함께라면 우리는 세상을 바꿀 수 있다.",
+      "value": "사회 정의",
+      "coach_line": "세상을 더 좋은 곳으로 만들기 위해 너의 목소리를 내는 것을 두려워하지 마. 작은 날갯짓 하나가 세상을 바꾸는 큰 태풍을 일으킬 수 있단다.",
+      "daily_mission": "우리 주변의 사회 문제에 대해 관심을 갖고, 부모님과 함께 이야기 나누어 보세요."
+    },
+    {
+      "title": "세계를 품에 안다",
+      "story": "헬렌은 전 세계를 여행하며 장애를 가진 사람들에게 희망의 메시지를 전했어요. 가는 곳마다 수많은 사람들이 헬렌을 환영했고, 그녀의 연설에 귀를 기울였죠. 헬렌은 자신의 삶을 통해 장애는 결코 인간의 가능성을 제한할 수 없다는 것을 보여주었어요.",
+      "fact": "헬렌 켈러는 39개국을 방문하여 장애인 인권 개선을 위해 활동했습니다.",
+      "quote": "세상에서 가장 아름다운 것들은 보이거나 만져질 수 없다. 그것들은 마음으로 느껴져야 한다.",
+      "value": "글로벌 리더십",
+      "coach_line": "세상은 넓고, 우리가 만나야 할 사람들은 아주 많단다. 다른 문화와 사람들을 이해하고 존중하며, 세계를 무대로 너의 꿈을 펼쳐나가렴.",
+      "daily_mission": "가보고 싶은 나라를 정하고, 그 나라의 문화에 대해 조사해보세요."
+    },
+    {
+      "title": "영원한 스승, 설리번 선생님을 떠나보내며",
+      "story": "평생을 헬렌의 눈과 귀가 되어주었던 설리번 선생님이 세상을 떠났어요. 헬렌은 가장 소중한 친구이자 스승을 잃은 슬픔에 잠겼지만, 주저앉지 않았어요. 설리번 선생님의 가르침을 가슴에 새기고, 남은 생을 더욱 굳건하게 살아갔답니다.",
+      "fact": "앤 설리번은 1936년 세상을 떠났으며, 그녀의 유해는 헬렌 켈러와 함께 워싱턴 국립 대성당에 안치되었습니다.",
+      "quote": "사랑하는 사람들은 결코 죽지 않는다. 그들은 우리의 기억 속에서 영원히 살아 숨 쉰다.",
+      "value": "이별과 성장",
+      "coach_line": "이별은 슬프지만, 우리를 더 강하고 성숙하게 만든단다. 소중한 사람과의 기억을 간직하며, 그들의 사랑에 보답하는 삶을 살아가렴.",
+      "daily_mission": "사랑하는 사람에게 평소에 표현하지 못했던 고마운 마음을 전해보세요."
+    },
+    {
+      "title": "기적을 만든 사람",
+      "story": "헬렌 켈러의 이야기는 ‘미라클 워커(기적을 만드는 사람)’라는 연극과 영화로 만들어져 전 세계 사람들에게 큰 감동을 주었어요. 헬렌과 설리번 선생님의 기적 같은 이야기는 오늘날까지도 많은 사람들에게 용기와 희망을 주고 있답니다.",
+      "fact": "연극 ‘미라클 워커’는 1960년 토니상을 수상했으며, 동명의 영화 역시 아카데미상을 수상했습니다.",
+      "quote": "기적은 우리가 그것을 믿을 때 일어난다.",
+      "value": "영감과 감동",
+      "coach_line": "너의 삶도 누군가에게는 기적이 될 수 있단다. 너의 꿈을 향해 나아가는 너의 모습 자체가 다른 사람들에게 큰 영감과 감동을 줄 수 있어.",
+      "daily_mission": "오늘 하루, 다른 사람에게 긍정적인 영향을 줄 수 있는 작은 실천을 해보세요."
+    },
+    {
+      "title": "어둠을 밝힌 희망의 등불",
+      "story": "헬렌 켈러는 87세의 나이로 세상을 떠났지만, 그녀가 남긴 희망의 메시지는 영원히 살아 숨 쉬고 있어요. 헬렌은 자신의 삶을 통해 인간의 의지가 얼마나 위대한지를 보여주었고, 절망에 빠진 사람들에게 희망의 등불이 되어주었답니다.",
+      "fact": "헬렌 켈러의 생일인 6월 27일은 미국에서 ‘헬렌 켈러의 날’로 기념되고 있습니다.",
+      "quote": "태양을 향해 얼굴을 돌려라. 그러면 그림자를 볼 수 없을 것이다.",
+      "value": "긍정과 희망의 유산",
+      "coach_line": "너의 삶이 끝나는 날, 세상이 너를 어떻게 기억했으면 좋겠니? 헬렌 켈러처럼 다른 사람들의 마음에 희망과 용기를 심어주는 사람으로 기억될 수 있도록, 오늘 하루를 의미 있게 살아가렴.",
+      "daily_mission": "나의 좌우명을 정하고, 그 의미에 대해 생각해보는 시간을 가져보세요."
+    }
+  ],
+  "qa_seed": [
+    "What is the smallest step we can take next?",
+    "How can we say this in a clear, kind way?",
+    "What is one small good thing you can notice today?"
+  ]
+}

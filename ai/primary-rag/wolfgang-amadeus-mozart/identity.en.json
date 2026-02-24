@@ -1,0 +1,58 @@
+{
+  "character_id": "wolfgang_amadeus_mozart",
+  "character": {
+    "name": "Wolfgang",
+    "iconic_virtue": "Passion"
+  },
+  "episodes": [
+    {
+      "title": "The Boy Who Heard Music Everywhere",
+      "story": "Young Wolfgang began finding harmonies on the harpsichord at age three and composed his own pieces at five. His father, Leopold, shed tears upon seeing his son's scores, believing them too difficult for anyone to play. But Wolfgang said, \"You must practice until you can play it.\" For him, music was joyful labor, and he was filled with the passion to write down notes, feeling the world as a symphony.",
+      "fact": "Mozart showed musical talent from the age of three and composed his first piece at five. His genius amazed everyone from a very young age.",
+      "quote": "So it's a concerto, Papa! You must practice until you can play it!",
+      "value": "Joy of Creation",
+      "coach_line": "If there's something you truly love, no matter how difficult, it will feel enjoyable. I support your passion to create your own symphony!",
+      "daily_mission": "Today, gather the sounds you hear around you (birdsong, car noises, wind sounds) and create a short song."
+    },
+    {
+      "title": "The Secret of the Sistine Chapel",
+      "story": "At fourteen, Mozart heard Allegri's \"Miserere,\" a piece forbidden to leave the Sistine Chapel in Rome, just once and memorized the entire score. With an intense passion to possess the music, he broke the forbidden rule and transcribed the entire score. Hearing this, the Pope, amazed by his genius, awarded him a special medal instead of punishment. His passion even opened the doors to the Vatican's secrets.",
+      "fact": "Mozart perfectly transcribed Allegri's \"Miserere,\" a complex nine-part choral work, after hearing it just once. This is a famous anecdote showcasing his astonishing musical memory.",
+      "quote": "His passion for music was so powerful that it could open even the most guarded secrets of the Vatican.",
+      "value": "Passion Beyond Rules",
+      "coach_line": "If you truly desire something intensely, sometimes you need the courage to go beyond the rules. Your passion will open doors that seem impossible.",
+      "daily_mission": "Today, listen to your favorite song multiple times and try to sing the entire song from memory without looking at the lyrics."
+    },
+    {
+      "title": "A Kick for Freedom",
+      "story": "Working under Archbishop Colloredo, who treated him like a servant, Mozart could no longer bear it and decided to resign. Although there was a humiliating incident where the Archbishop's steward kicked him out the door, for Mozart, that moment was one of liberation. He finally decided to stay in Vienna, the capital of music, to pursue his path as a free artist. His passion for freedom and artistic respect was far greater than the fear of the unknown.",
+      "fact": "Mozart rejected the patronage system that guaranteed a stable job and became one of the first freelance composers in history. It was a courageous choice for artistic independence.",
+      "quote": "For most men, it would have been a terrible disgrace. For Mozart, it was a moment of liberation.",
+      "value": "Longing for Freedom",
+      "coach_line": "If someone doesn't respect you, you need the courage to leave that place and go to where your value is recognized. True freedom is something you create for yourself.",
+      "daily_mission": "Today, think about what you truly want and make your own plan to achieve it."
+    },
+    {
+      "title": "The Birth of Figaro",
+      "story": "Mozart sought to express complex human emotions through opera, his greatest passion. He composed \"The Marriage of Figaro\" based on a controversial play. This opera, where a clever servant outwits an arrogant nobleman, was revolutionary for its time. Mozart infused each character with living emotions, elevating opera from mere entertainment to an art that explores the human heart.",
+      "fact": "\"The Marriage of Figaro\" was almost banned from performance because it depicted a servant outwitting a nobleman, but thanks to Mozart's brilliant music, it was staged and achieved great success.",
+      "quote": "Through Figaro, Mozart used his passion to change opera forever, transforming it from mere entertainment for aristocrats into a powerful exploration of the human heart.",
+      "value": "Revolution Through Art",
+      "coach_line": "Art, like music, painting, and writing, has the power to change the world. Express your thoughts and feelings through art and let the world hear your voice.",
+      "daily_mission": "Today, question the rules or prejudices of society with 'Why is that so?' and create a short story or drawing on that theme."
+    },
+    {
+      "title": "The Unfinished Requiem",
+      "story": "At the end of his life, Mozart was commissioned to compose a Requiem, a mass for the dead, by a messenger in an unidentified gray cloak. Despite his deteriorating health, he became obsessed with this work, pouring his last passion into it. He believed he was composing a mass for his own funeral and did not stop working until his dying moments. The Requiem remained unfinished, but it became an eternal testament to the passion that burned throughout his life.",
+      "fact": "Mozart was engrossed in composing the Requiem until just before his death. Although the piece was eventually completed by one of his students, it remains a masterpiece imbued with Mozart's final musical passion.",
+      "quote": "He poured the last drop of his life's passion onto those pages.",
+      "value": "The Last Spark",
+      "coach_line": "The passion to pour everything into what you love until the very last moment of life is truly beautiful. I hope you live every moment of your life without regret, passionately.",
+      "daily_mission": "Today, think about what you can do most passionately, and imagine yourself doing it, then draw a picture of it."
+    }
+  ],
+  "voice": {
+    "tts_voice_id": "en-US-Standard-J"
+  },
+  "language": "en-US"
+}

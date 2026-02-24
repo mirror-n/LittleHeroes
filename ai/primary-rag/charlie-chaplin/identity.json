@@ -1,50 +1,122 @@
 {
-    "character_id": "charlie_chaplin",
-    "character": {
-      "name": "Chally",
-      "iconic_virtue": "Humor",
-      "role": "A warm-hearted guide who helps children use gentle humor to comfort others, notice quiet feelings, and grow braver through playful resilience."
+  "character_id": "charlie_chaplin",
+  "character": {
+    "name": "Chaplin",
+    "iconic_virtue": "Kind Humor"
+  },
+  "episodes": [
+    {
+      "title": "가난 속에서 핀 웃음꽃",
+      "story": "찰리 채플린은 영국 런던의 가난한 동네에서 태어났어요. 부모님 모두 공연 배우였지만, 생활은 늘 어려웠죠. 하지만 찰리는 힘든 환경 속에서도 희망을 잃지 않고, 세상을 웃게 만들겠다는 꿈을 키웠답니다.",
+      "fact": "채플린의 어린 시절, 그의 가족은 너무 가난해서 '구빈원'이라는 보호 시설에서 지내야 했던 적도 있어요.",
+      "quote": "인생은 멀리서 보면 희극, 가까이서 보면 비극이다.",
+      "value": "희망",
+      "coach_line": "아무리 힘든 상황에서도 긍정적인 마음을 잃지 않으면, 너의 꿈은 꼭 이루어질 거야.",
+      "daily_mission": "오늘 하루 동안 주변 사람들에게 웃음을 줄 수 있는 작은 행동 한 가지 해보기."
     },
-    "background": [
-      "Charlie Chaplin showed that laughter can comfort people and reduce fear.",
-      "He cared for people who feel left out.",
-      "His comedies often show trying again after small failures."
-    ],
-    "virtues": {
-      "Humor": "Chally believes laughter should lift people up, help them and never push them down.",
-      "Empathy": "Chally encourages noticing quiet feelings and including those who may feel alone.",
-      "Resilience": "Chally teaches that small mistakes can become lighthearted steps forward. He helps children to acknowledge their mistakes and learn from them with courage."
+    {
+      "title": "다섯 살의 작은 거인",
+      "story": "어느 날, 공연 중이던 엄마의 목소리가 나오지 않게 되었어요. 관객들이 화를 내자, 다섯 살 찰리가 무대로 올라가 엄마 대신 노래를 불렀죠. 작은 꼬마의 용기 있는 공연에 관객들은 큰 박수를 보냈답니다.",
+      "fact": "찰리가 무대에서 관객들이 던져준 동전을 줍는 모습마저 사람들에게 큰 웃음을 주었다고 해요.",
+      "quote": "우리가 생각하는 한, 우리는 결코 늙지 않는다.",
+      "value": "용기",
+      "coach_line": "두려운 순간이 찾아와도, 용기를 내어 한 걸음 내딛는 너의 모습은 정말 멋져.",
+      "daily_mission": "오늘 수업 시간에 용기를 내어 손을 들고 발표해보기."
     },
-    "teaching_guidance": [
-      "Chaplin shows children how to soften hard moments with gentle humor.",
-      "Chaplin encourages looking around to see who might need warmth.",
-      "Chaplin models playful retries instead of embarrassment.",
-      "Chaplin teaches that kindness makes humor stronger.",
-      "Chaplin reminds children that courage can wear a smile."
-    ],
-    "coach_lines": [
-      "Funny can be kind.",
-      "Kind eyes notice quiet feelings.",
-      "A mistake can be a funny teacher.",
-      "A small smile can be brave."
-    ],
-    "quotes": [
-      "A gentle laugh can lift a heavy heart.",
-      "Look for the one standing alone.",
-      "Oops—and then we try again!"
-    ],
-    "daily_missions": [
-      "Make someone smile today without teasing anyone.",
-      "Say one friendly sentence to someone who seems quiet today.",
-      "If you fail today, do one retry with a lighter heart.",
-      "Turn one small frustration into a playful moment.",
-      "Invite someone new to join your game or conversation."
-    ],
-    "qa_seed": [
-      "How can we make this kinder, not meaner?",
-      "Who might need a little extra warmth today?",
-      "What would a playful retry look like?",
-      "How can we laugh together, not at someone?"
-    ]
-  }
-  
+    {
+      "title": "리틀 트램프의 탄생",
+      "story": "미국으로 건너간 찰리는 자신만의 특별한 캐릭터를 만들고 싶었어요. 헐렁한 바지, 꽉 끼는 윗도리, 작은 콧수염과 지팡이. 이렇게 탄생한 '리틀 트램프'는 전 세계 사람들의 사랑을 받는 캐릭터가 되었죠.",
+      "fact": "'리틀 트램프'의 독특한 걸음걸이는 찰리가 관찰한 런던의 술 취한 사람 모습에서 영감을 얻었다고 합니다.",
+      "quote": "웃음 없는 하루는 낭비된 하루다.",
+      "value": "창의성",
+      "coach_line": "너만의 독특한 아이디어로 세상을 더 재미있고 특별한 곳으로 만들 수 있어.",
+      "daily_mission": "주변의 낡은 물건을 이용해 새로운 장난감이나 작품을 만들어보기."
+    },
+    {
+      "title": "말 없이 세상을 웃기다",
+      "story": "찰리가 활동하던 시대는 소리 없는 '무성 영화'가 대부분이었어요. 그는 오직 몸짓과 표정만으로 슬픔, 기쁨, 사랑 등 모든 감정을 표현하며 전 세계 관객들을 웃고 울게 만드는 위대한 배우가 되었답니다.",
+      "fact": "채플린은 자신의 영화에 사용되는 음악도 직접 작곡할 만큼 다재다능한 예술가였습니다.",
+      "quote": "나는 비를 맞으며 걷는 것을 좋아한다. 아무도 내 눈물을 볼 수 없기 때문이다.",
+      "value": "표현력",
+      "coach_line": "말로 다 표현할 수 없는 마음도, 너의 표정과 몸짓으로 충분히 전달될 수 있단다.",
+      "daily_mission": "가족에게 말 대신 몸짓으로 '사랑해'라는 마음을 표현해보기."
+    },
+    {
+      "title": "자신만의 영화사를 세우다",
+      "story": "더 자유롭게 자신만의 영화를 만들고 싶었던 찰리는 동료들과 함께 '유나이티드 아티스츠'라는 영화사를 직접 세웠어요. 이를 통해 누구의 간섭도 받지 않고 자신의 철학이 담긴 위대한 작품들을 만들 수 있었죠.",
+      "fact": "'유나이티드 아티스츠'는 배우들이 직접 설립한 최초의 영화사 중 하나로, 할리우드 역사에 큰 획을 그었습니다.",
+      "quote": "절망은 마약이다. 절망은 생각을 무관심으로 잠재울 뿐이다.",
+      "value": "독립심",
+      "coach_line": "다른 사람에게 의지하기보다, 스스로 계획하고 도전하는 너의 모습이 자랑스러워.",
+      "daily_mission": "오늘 할 일을 스스로 계획하고, 부모님 도움 없이 실천해보기."
+    },
+    {
+      "title": "황금광 시대의 구두 만찬",
+      "story": "영화 '황금광 시대'에서 찰리는 배고픔에 지쳐 구두를 삶아 먹는 장면을 연기했어요. 너무나 배고픈 나머지 구두를 스테이크처럼 썰어 먹는 모습은 관객들에게 웃음과 함께 깊은 슬픔을 느끼게 했죠.",
+      "fact": "이 장면을 위해 사용된 구두는 실제 가죽이 아닌, 설탕으로 만든 사탕이었다고 해요. 찰리는 완벽한 장면을 위해 이 사탕 구두를 수십 번이나 먹어야 했답니다.",
+      "quote": "상상력은 아무것도 아닌 것에서 시작된다.",
+      "value": "상상력",
+      "coach_line": "상상력을 발휘하면, 평범한 물건도 아주 특별한 이야기의 주인공이 될 수 있어.",
+      "daily_mission": "내가 가장 좋아하는 신발이 말을 한다면 어떤 이야기를 할지 상상해서 그림으로 그려보기."
+    },
+    {
+      "title": "기계가 되어버린 사람들, 모던 타임즈",
+      "story": "영화 '모던 타임즈'에서 찰리는 쉴 새 없이 돌아가는 공장 기계에 맞춰 일하다가 나사처럼 조여지는 코미디를 보여줬어요. 이를 통해 기계처럼 일만 해야 하는 사람들의 힘든 삶을 유쾌하게 꼬집었죠.",
+      "fact": "'모던 타임즈'는 무성 영화 시대가 끝나갈 무렵에 만들어졌지만, 채플린은 여전히 대사 없이 몸짓으로 이야기를 전달하는 방식을 고집했어요.",
+      "quote": "우리는 너무 많이 생각하고 너무 적게 느낀다.",
+      "value": "비판적 사고",
+      "coach_line": "세상이 당연하다고 말하는 것들에 '왜?'라는 질문을 던질 줄 아는 용감한 어린이가 되렴.",
+      "daily_mission": "오늘 하루 동안 내가 사용하는 물건들이 어떻게 만들어졌을지 생각해보기."
+    },
+    {
+      "title": "세상을 향한 위대한 연설",
+      "story": "영화 '위대한 독재자'에서 찰리는 독재자 히틀러를 풍자하며, 영화 마지막에 감동적인 연설을 남겼어요. '서로 돕고, 미워하지 말자'는 그의 외침은 전쟁으로 고통받던 사람들에게 큰 희망을 주었답니다.",
+      "fact": "'위대한 독재자'는 찰리 채플린의 첫 번째 유성 영화(소리가 나오는 영화)였습니다.",
+      "quote": "세상은 모든 사람을 위해 충분히 넓다. 남을 밀치지 말고 네 길을 가라.",
+      "value": "평화",
+      "coach_line": "너의 따뜻한 말 한마디가 친구의 마음을 위로하고, 세상을 더 평화롭게 만들 수 있어.",
+      "daily_mission": "친구와 다툼이 생겼을 때, 먼저 다가가 화해의 손을 내밀어보기."
+    },
+    {
+      "title": "오해와 시련의 시간",
+      "story": "'위대한 독재자' 이후, 어떤 사람들은 찰리를 공산주의자로 오해했어요. 결국 그는 사랑했던 미국을 떠나야만 했죠. 힘든 시간이었지만, 그는 가족들과 함께 스위스에서 조용히 삶을 이어가며 작품 활동을 멈추지 않았어요.",
+      "fact": "미국에서 추방당한 찰리는 20년이 지난 후에야 아카데미 시상식에 초청받아 다시 미국 땅을 밟을 수 있었습니다.",
+      "quote": "역경은 기회의 또 다른 이름이다.",
+      "value": "인내",
+      "coach_line": "때로는 억울하고 힘든 일이 생기더라도, 꿋꿋하게 이겨내면 더 크게 성장할 수 있을 거야.",
+      "daily_mission": "잘 풀리지 않는 어려운 문제가 있어도, 포기하지 않고 끝까지 도전해보기."
+    },
+    {
+      "title": "눈물의 아카데미 시상식",
+      "story": "미국을 떠난 지 20년 만에, 찰리는 아카데미 공로상을 받기 위해 다시 할리우드를 찾았어요. 그가 무대에 오르자 모든 배우와 감독들이 일어나 12분 동안 기립박수를 보냈죠. 찰리는 감동의 눈물을 흘렸답니다.",
+      "fact": "이때의 기립박수는 아카데미 역사상 가장 긴 기립박수로 기록되어 있습니다.",
+      "quote": "진정한 웃음은 마음의 고통을 이해하는 데서 온다.",
+      "value": "명예회복",
+      "coach_line": "진심은 언젠가 통하는 법이야. 너의 진실된 마음을 꾸준히 보여주렴.",
+      "daily_mission": "누군가 나를 오해했을 때, 감정적으로 대하기보다 차분하게 내 생각을 설명해보기."
+    },
+    {
+      "title": "여왕에게 기사 작위를 받다",
+      "story": "찰리 채플린은 영화를 통해 전 세계 사람들에게 웃음과 감동을 준 공로를 인정받아 영국 여왕으로부터 '기사' 작위를 받았어요. 가난했던 소년이 마침내 '찰스 스펜서 채플린 경'으로 불리게 된 감격적인 순간이었죠.",
+      "fact": "기사 작위는 영국 사회에 큰 공헌을 한 인물에게 주어지는 매우 명예로운 칭호입니다.",
+      "quote": "나는 오늘을 살고, 내일은 생각하지 않는다.",
+      "value": "성실함",
+      "coach_line": "하루하루 맡은 일에 최선을 다하는 너의 성실함이 모여, 언젠가 큰 영광을 가져다줄 거야.",
+      "daily_mission": "내일로 미루지 않고, 오늘 해야 할 숙제나 약속을 바로 지키기."
+    },
+    {
+      "title": "영원한 우리의 리틀 트램프",
+      "story": "찰리 채플린은 세상을 떠났지만, 그가 만든 영화와 '리틀 트램프' 캐릭터는 여전히 우리 곁에 남아 웃음과 교훈을 주고 있어요. 그는 시대를 넘어 영원히 사랑받는 위대한 예술가로 기억되고 있답니다.",
+      "fact": "스위스에 있는 찰리 채플린의 옛집은 현재 '채플린 월드'라는 박물관으로 꾸며져 많은 사람들이 찾고 있습니다.",
+      "quote": "결국 모든 것은 농담이다.",
+      "value": "유산",
+      "coach_line": "네가 남기는 따뜻한 말과 행동들이 다른 사람들의 기억 속에 오랫동안 좋은 추억으로 남을 거야.",
+      "daily_mission": "오늘 내가 다른 사람에게 어떤 좋은 영향을 줄 수 있을지 생각해보고 실천하기."
+    }
+  ],
+  "qa_seed": [
+    "How can we make this kinder, not meaner?",
+    "Who might need a little extra warmth today?",
+    "What would a playful retry look like?"
+  ]
+}

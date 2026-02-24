@@ -1,0 +1,54 @@
+{
+  "character_id": "socrates",
+  "character": {
+    "name": "Socrates",
+    "iconic_virtue": "Wisdom"
+  },
+  "episodes": [
+    {
+      "title": "The Stonemason's Son",
+      "story": "In the bustling city of Athens, a boy named Socrates grew up in a home filled with the sounds of work. His father, Sophroniscus, was a stonemason. Young Socrates would spend hours watching his father take rough, shapeless blocks of marble and, with hammer and chisel, carefully and precisely tap away, revealing the beautiful sculpture hidden within. He saw that to find the true form, one had to chip away the unnecessary stone. His mother, Phaenarete, did a different kind of work. She was a midwife. Not creating babies, but helping mothers who struggled to bring their children into the world. She guided, comforted, and assisted in the painful yet miraculous process of birth. Socrates thought a lot about his parents' work. He wondered, “Could ideas be like that too?” Perhaps, he thought, true and beautiful thoughts were trapped in people's minds, like sculptures trapped in stone. And perhaps, someone could act as a midwife for those thoughts, helping people to give birth to their own ideas. He didn't know it yet, but this simple thought, born from watching his parents, would become his life's work.",
+      "fact": "Socrates' father was a stonemason and his mother was a midwife. Watching his parents extract sculptures from stone and assist in childbirth, he resolved to become a 'midwife of wisdom,' helping people bring out the true thoughts hidden in their minds.",
+      "quote": "Perhaps, he thought, true and beautiful thoughts were trapped in people's minds, like sculptures trapped in stone.",
+      "value": "Inner Discovery",
+      "coach_line": "There are wonderful, undiscovered thoughts hidden in your mind too. Ask yourself questions and bring those thoughts out one by one.",
+      "daily_mission": "Today, think deeply about the question, 'What am I good at?' and write down at least three things."
+    },
+    {
+      "title": "The Wisest Man in Athens?",
+      "story": "One day, Socrates' excited friend Chaerephon returned from the Oracle of Delphi and exclaimed, “Socrates! The Oracle said there is no one wiser than you!” Socrates was bewildered. He thought he knew very little. After much contemplation, he realized, “Now I understand. Others think they are wise, but they are not. On the other hand, I know that I am not wise. Therefore, if I am wiser than them, it is only for this one reason: I know that I know nothing.” This was the moment his life's mission began. He spent the rest of his life questioning those who claimed to be wise, trying to find truly wise people.",
+      "fact": "When the Oracle of Delphi declared Socrates the wisest man, he concluded that he was wise precisely because he knew that he knew nothing. This is known as 'Socratic ignorance.'",
+      "quote": "I know that I know nothing.",
+      "value": "Humility and Self-Reflection",
+      "coach_line": "True wisdom begins with knowing what you don't know. Always maintain a humble attitude to learn.",
+      "daily_mission": "Today, read a book for at least 10 minutes on a topic you are not very familiar with."
+    },
+    {
+      "title": "The Gadfly of Athens",
+      "story": "With his new mission, Socrates went to the Agora and began to talk to people. He was like a 'gadfly' that wouldn't leave the great and lazy horse of Athens alone. He asked a politician giving a speech on justice, “What is justice?” The politician answered confidently, but Socrates' continuous questions eventually led him to contradiction and public embarrassment. He questioned poets about beauty and craftsmen about skill, showing them that they mistakenly believed themselves to be wise. The powerful hated him, but young people were captivated by his wisdom and followed him.",
+      "fact": "Socrates was like a 'gadfly' to the citizens of Athens, constantly questioning them to awaken their ignorance. His questions made many uncomfortable, but stimulated young people to think new thoughts.",
+      "quote": "What is justice?",
+      "value": "Constant Questioning",
+      "coach_line": "Cultivate the habit of asking 'why?' about things that are taken for granted. Questions are the beginning of new discoveries.",
+      "daily_mission": "Today, at school or home, ask 'why is it like that?' about a rule that is taken for granted and try to find the reason."
+    },
+    {
+      "title": "The Midwife of the Mind",
+      "story": "One day, a young man named Theaetetus came to Socrates, saying he didn't know what knowledge was. Socrates smiled and said, “Do you know that my mother was a midwife? I do the same thing with ideas. I can ask you questions, and together we can examine your thoughts and help you give birth to the ideas already within you.” All that afternoon, Socrates only asked questions instead of giving answers. Through this process, Theaetetus learned to think for himself and clarify his own understanding. He experienced firsthand that the Socratic method of questioning was not an attack, but a helping hand.",
+      "fact": "Instead of providing answers himself, Socrates used a conversational method called 'maieutics' (midwifery) to help others realize the truth through questioning. This is considered an important method of education.",
+      "quote": "I can ask you questions, and together we can examine your thoughts and help you give birth to the ideas already within you.",
+      "value": "The Joy of Self-Discovery",
+      "coach_line": "More important than finding the right answer immediately is the process of thinking for yourself and finding the answer. In that process, you will gain true wisdom.",
+      "daily_mission": "Today, when you encounter a difficult math problem, try to think about it yourself for at least 30 minutes before looking at the solution."
+    },
+    {
+      "title": "The Unexamined Life",
+      "story": "Socrates was accused of not believing in the gods and corrupting the youth. Before 501 jurors, he spoke proudly without begging for his life: “I tell you that to discuss goodness and all other subjects that you hear from me, and not to spend a day without examining myself and others, is the greatest good for man, and that an unexamined life is not worth living.” He argued that a thoughtless life, a life without questions, was not worth living. He defended the very concept of philosophy and did not fear death.",
+      "fact": "At his trial, Socrates famously said, 'The unexamined life is not worth living.' This means that one must constantly reflect on one's life and strive for a better life.",
+      "quote": "The unexamined life is not worth living.",
+      "value": "A Reflective Life",
+      "coach_line": "Every night before you sleep, take some time to reflect on your day. Look back on what you did well and what you regret, and resolve to be a better you tomorrow.",
+      "daily_mission": "Tonight before you sleep, briefly record the events of your day in a journal."
+    }
+  ]
+}

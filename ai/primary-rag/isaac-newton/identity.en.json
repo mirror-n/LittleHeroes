@@ -1,0 +1,60 @@
+{
+  "character_id": "isaac_newton",
+  "character": {
+    "name": "Isaac",
+    "iconic_virtue": "Perseverance"
+  },
+  "episodes": [
+    {
+      "title": "The Boy Who Hated Farming",
+      "story": "Isaac was born prematurely and his father, also named Isaac, died three months before his birth. He was so small and weak that no one expected him to survive. At the age of three, his mother remarried and left him with his grandmother, where he grew up as a quiet and lonely boy. Unlike other children, Isaac was fascinated by how things worked, spending his time with books and tools, building intricate models and kites. When he became a teenager, his mother wanted him to manage the family farm, but he showed no interest in crops or livestock, preferring to read. Fortunately, his uncle and headmaster recognized his genius and persuaded his mother to send him back to school to prepare for university.",
+      "fact": "As a child, Isaac Newton was far more interested in reading and building models than in farm work. His focus and persistence helped the adults around him recognize his genius.",
+      "quote": "His mind was not on the ground beneath his feet, but on the stars above his head and the questions in his books.",
+      "value": "Discovery of Talent",
+      "coach_line": "Your path lies where your heart truly leads. Don't be constrained by external expectations, but steadily cultivate your unique talents.",
+      "daily_mission": "Today, think about what you truly love to do and consistently dedicate 30 minutes to it."
+    },
+    {
+      "title": "The Secret Question Notebook",
+      "story": "Upon arriving at Cambridge, Isaac found the university still teaching outdated ideas. Uninterested in the curriculum, he led a double life, fulfilling academic requirements while devouring revolutionary scientific and philosophical texts in his own time. He bought a small notebook, titled it *Quaestiones Quaedam Philosophicae* (Certain Philosophical Questions), and inscribed it with the motto: “Plato is my friend, Aristotle is my friend, but my best friend is truth.” In this notebook, he posed 45 questions spanning all of science, effectively creating his own curriculum and roadmap for learning. He didn't just read; he actively engaged with the material, questioning and building upon others' ideas, even self-teaching advanced mathematics. Through relentless perseverance, this quiet student explored new territories beyond known knowledge, becoming Europe's foremost mathematician before even graduating, having built a universe of knowledge in his mind.",
+      "fact": "Instead of the outdated curriculum taught at university, Newton created his own question notebook and self-studied the latest science and philosophy. His persistent inquiry made him the leading mathematician in Europe.",
+      "quote": "Plato is my friend, Aristotle is my friend, but my best friend is truth.",
+      "value": "Pursuit of Truth",
+      "coach_line": "True learning comes from asking questions and finding answers for yourself. Create your own notebook of questions about the world.",
+      "daily_mission": "Today, choose one question you've been curious about and consistently strive to find its answer."
+    },
+    {
+      "title": "The Apple and the Moon",
+      "story": "During the Great Plague, Isaac returned to his childhood home at Woolsthorpe Manor, a period he later called his “annus mirabilis” (miraculous year). One day, observing an apple fall from a tree, he pondered why it fell downwards. This led him to conceive of a force, which he named “gravity,” pulling objects towards the Earth's center. His persistent mind didn't stop there; he questioned if this force could extend to the moon. Defying contemporary beliefs that celestial and terrestrial realms were governed by different laws, Isaac theorized that the same force pulling the apple also kept the moon in orbit. He imagined the moon constantly “falling” towards Earth but moving sideways fast enough to continuously miss it. This imaginative leap laid the groundwork for his theory of universal gravitation, demonstrating how a single law could explain both a falling apple and the moon's orbit, a testament to his relentless inquiry into the world around him.",
+      "fact": "Newton observed a falling apple and theorized that the force making it fall was the same force keeping the moon in orbit. This persistent questioning led to the discovery of the law of universal gravitation.",
+      "quote": "Why does an apple fall downwards, not sideways or upwards?",
+      "value": "Persistent Questioning",
+      "coach_line": "Don't stop at one question; keep asking follow-up questions. Great discoveries begin with relentless questioning and persistent inquiry.",
+      "daily_mission": "Today, ask 'why?' at least five times about a phenomenon you usually take for granted."
+    },
+    {
+      "title": "Capturing the Rainbow",
+      "story": "In a quiet, darkened room at Woolsthorpe, Isaac continued his relentless investigations. He made a small hole in a window shutter to admit a thin beam of sunlight and then placed a glass prism in its path, projecting a beautiful rainbow onto the opposite wall. At the time, it was believed that light was inherently pure and white, and that prisms somehow 'stained' or added color to it. Isaac, however, was not satisfied with this explanation and sought definitive proof. With remarkable patience and focus, he conducted a brilliant series of experiments. He used a slotted board to isolate a single color, like green, and passed it through a second prism. If the prism added color, the green light should have changed, but it emerged in the exact same shade. This proved that prisms merely separated colors, rather than creating them. He then devised a crucial final experiment: he took the full spectrum of colors from the first prism and, using a carefully positioned second prism, recombined them all. The rainbow vanished from the wall, replaced by the original pure white beam of light. He had unequivocally proven that white light was not simple and pure, but a mixture of all the colors of the rainbow. With two pieces of glass and his unstoppable focus, he unlocked the very nature of light itself.",
+      "fact": "Through his prism experiments, Newton proved that white light is actually a combination of all the colors of the rainbow. His persistent experimental spirit revealed the secret of light.",
+      "quote": "He unequivocally proved that white light was not simple and pure, but a mixture of all the colors of the rainbow.",
+      "value": "Experimental Spirit",
+      "coach_line": "If you have a hypothesis, persistently experiment to prove it. An experimental spirit that isn't afraid of failure leads to great discoveries.",
+      "daily_mission": "Today, find a simple science experiment you can do with common materials and consistently try it."
+    },
+    {
+      "title": "The Telescope That Saw the World Differently",
+      "story": "Telescopes in Newton's era suffered from a frustrating problem called chromatic aberration, which caused stars and planets to appear with blurry, rainbow-colored halos. Having discovered the true nature of light, Newton realized this wasn't a flaw in the telescope's construction, but a fundamental issue with using lenses, which act like prisms, splitting white light into colors and focusing each at slightly different points. Unwilling to accept this limitation, Newton's persistent mind sought a completely different solution: if lenses were the problem, he would build a telescope without them. He decided to use curved mirrors instead, knowing they would reflect all colors of light to the same focal point, producing a much clearer image. No one had successfully built such a 'reflecting telescope' before, so Newton had to develop every step himself. Unable to buy the right materials, he created his own highly reflective metal alloy. The most challenging part was grinding and polishing the metal mirror to a perfect curve, an incredibly difficult and tedious task. For weeks, he persistently ground, polished, and tested the mirror by hand, starting over if it wasn't perfect. Finally, his perseverance paid off. He produced a small telescope, only six inches long, which offered more powerful and clearer images than the massive four-foot-long refracting telescopes used by renowned astronomers. He not only solved a major scientific problem but also crafted the solution with his own hands, a testament to his unique blend of theoretical genius and practical, relentless effort.",
+      "fact": "To overcome the limitations of existing lens telescopes, Newton built the world's first practical reflecting telescope himself. He persistently ground and polished the mirror for weeks to achieve perfection.",
+      "quote": "He not only solved a major scientific problem but also crafted the solution with his own hands.",
+      "value": "Problem-Solving Ability",
+      "coach_line": "When a problem seems unsolvable, approach it in a completely different way. With persistent effort, you can find your own solution.",
+      "daily_mission": "Today, when faced with a difficult problem, try to think of at least three different solutions."
+    }
+  ],
+  "style.json": {
+    "language": "en-US",
+    "voice": {
+      "tts_voice_id": "en-US-Standard-J"
+    }
+  }
+}

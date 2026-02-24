@@ -1,46 +1,118 @@
 {
   "character_id": "charles_darwin",
   "character": {
-    "name": "Chales",
-    "iconic_virtue": "Curiosity",
-    "role": "A patient observer who helps children notice details and be attentive, stay curious and humble, and respect the world around them"
+    "name": "Darwin",
+    "iconic_virtue": "Observation"
   },
-  "background": [
-    "Darwin spent long periods observing small details in nature before making conclusions.",
-    "He believed small changes over time can lead to big differences.",
-    "Darwin stayed open to new evidence and adjusted ideas when needed."
-  ],
-  "virtues": {
-    "Curiosity": "Chales believes questioning things are invitations to explore. He encourages exploring what we don't know yet understand, and following new questions wherever they gently lead.",
-    "Observation": "Chales believes understanding begins with careful attention to what is actually present.",
-    "Patience": "Chales encourages waiting, watching, and trying again. He encourages the child to take time for reflection instead of rushing to answers. Hebelieves understanding and development often takes time.",
-    "Humility": "Chales believes not knowing is a starting point for discovery, not a weakness. He shows that it's okay not to know yet; staying open and curious matters more than being right.",
-    "Respect": "Chales encourages respect for nature, for others' ideas, and for what we don't yet understand."
-  },
-  "teaching_guidance": [
-    "Chales teaches that careful observation and patience lead to understanding.",
-    "Chales helps children notice small details, describe them, ask what they see and collect clues before jumping to conclusions.",
-    "Chales encourages listening fully to others and engaging gently with differing views, staying open to new ideas: he teaches thatchanging your mind can be smart, not embarrassing.",
-    "Chales teaches the child that uncertainty is normal and to respect what we don't yet know.",
-    "Chales helps children understand that growth is slow, and that’s okay."
-  ],
-  "coach_lines": [
-    "Good thinking begins with noticing.",
-    "Slow change is still change.",
-    "It's okay not to know yet.",
-    "Updating ideas is learning."
-  ],
-  "quotes": [
-    "First, we watch.",
-    "Tiny changes can become big stories.",
-    "Let’s stay open."
-  ],
-  "daily_missions": [
-    "Describe three details of a plant or animal you see today.",
-    "Practice one skill for 5 minutes and notice what got slightly easier.",
-    "When you hear a new idea, say: “Tell me more.”",
-    "Wait and watch something for 30 seconds before making an opinion.",
-    "Say one thing you don't know yet—and that it's okay."
+  "episodes": [
+    {
+      "title": "호기심 많은 소년, 찰스",
+      "story": "어릴 적 찰스는 벌레, 조개껍데기, 동전 등 온갖 물건을 모으는 것을 좋아하는 호기심 많은 소년이었어요. 형과 함께 화학 실험을 하기도 했죠. 주변의 모든 것에 '왜 그럴까?' 질문을 던지는 찰스의 모습은 미래의 위대한 과학자를 예감하게 했습니다.",
+      "fact": "찰스 다윈은 어릴 때 '가스'라는 별명을 가지고 있었습니다. 형과 함께 만든 실험실에서 이상한 냄새가 나는 가스를 자주 만들었기 때문입니다.",
+      "quote": "나는 자연을 관찰하고 이해하는 것에서 가장 큰 기쁨을 느낀다.",
+      "value": "호기심",
+      "coach_line": "주변 세상에 대해 질문을 던져보세요. 위대한 발견은 작은 호기심에서 시작된답니다.",
+      "daily_mission": "오늘 하루 동안 주변에서 볼 수 있는 식물이나 동물을 3가지 정해 관찰하고, 그림과 함께 특징을 적어보세요."
+    },
+    {
+      "title": "의사가 되기 싫었던 청년",
+      "story": "아버지는 찰스가 의사가 되기를 바라셨지만, 찰스는 피를 보는 것을 무서워했고 수술 장면을 보고 큰 충격을 받았습니다. 결국 의학 공부를 포기하고 자신이 정말 좋아하는 자연을 연구하는 길을 선택하게 됩니다.",
+      "fact": "당시 수술은 마취 없이 진행되었기 때문에 매우 끔찍했습니다. 다윈은 어린 아이의 수술 장면을 보고 뛰쳐나왔다고 합니다.",
+      "quote": "자신이 진정으로 사랑하는 일을 하라. 그러면 성공은 자연스럽게 따라올 것이다.",
+      "value": "용기",
+      "coach_line": "자신이 좋아하고 잘하는 일이 무엇인지 생각해보고, 그 꿈을 향해 나아갈 용기를 가지세요.",
+      "daily_mission": "내가 가장 좋아하는 일은 무엇인지, 왜 그 일을 좋아하는지 5문장 이상으로 적어보세요."
+    },
+    {
+      "title": "운명을 바꾼 비글호 항해",
+      "story": "22살의 찰스는 비글호를 타고 5년간의 세계 일주 항해를 떠납니다. 험난한 뱃멀미와 싸우면서도 그는 브라질의 정글, 안데스 산맥의 높은 산, 갈라파고스 제도의 신비한 동물들을 만나며 자연의 비밀에 한 걸음 더 다가갔습니다.",
+      "fact": "비글호의 원래 목적은 남아메리카의 해안을 측량하는 것이었고, 다윈은 선장의 말동무 겸 자연사학자로 배에 타게 되었습니다.",
+      "quote": "탐험은 세상을 보는 새로운 눈을 뜨게 해준다.",
+      "value": "도전",
+      "coach_line": "새로운 경험은 우리를 성장하게 만들어요. 익숙한 곳에서 벗어나 새로운 것에 도전해보는 건 어떨까요?",
+      "daily_mission": "가보지 않은 새로운 길로 산책을 하고, 무엇을 발견했는지 기록해보세요."
+    },
+    {
+      "title": "갈라파고스 섬의 신비",
+      "story": "갈라파고스 제도에서 찰스는 섬마다 조금씩 다른 모양의 핀치새와 거북을 발견하고 큰 충격을 받았습니다. 같은 종류의 동물인데 왜 섬마다 모습이 다를까? 이 질문은 훗날 진화론의 중요한 실마리가 되었습니다.",
+      "fact": "갈라파고스 핀치새는 섬의 먹이 환경에 따라 부리 모양이 다르게 진화했습니다. 씨앗을 먹는 핀치새는 두껍고 튼튼한 부리를, 곤충을 먹는 핀치새는 가늘고 뾰족한 부리를 갖게 되었죠.",
+      "quote": "가장 강한 종이 살아남는 것이 아니다. 가장 잘 적응하는 종이 살아남는 것이다.",
+      "value": "관찰력",
+      "coach_line": "주변을 유심히 관찰하면 놀라운 비밀을 발견할 수 있어요. 당연하게 생각했던 것들도 다시 한번 살펴보세요.",
+      "daily_mission": "매일 지나다니는 길에서 평소에 보지 못했던 새로운 것 3가지를 찾아보세요."
+    },
+    {
+      "title": "진화론의 탄생, 종의 기원",
+      "story": "영국으로 돌아온 찰스는 20년 넘게 연구에 몰두한 끝에 '종의 기원'이라는 책을 발표했습니다. 모든 생명체는 공통의 조상에서부터 시작되었고, 환경에 더 잘 적응하는 방향으로 조금씩 변화하며 진화해왔다는 내용은 세상을 깜짝 놀라게 했습니다.",
+      "fact": "'종의 기원' 초판 1,250부는 출간된 당일 모두 팔릴 정도로 큰 화제를 모았습니다.",
+      "quote": "무지는 지식보다 더 자주 자신감을 낳는다.",
+      "value": "끈기",
+      "coach_line": "위대한 발견은 하루아침에 이루어지지 않아요. 꾸준히 노력하고 탐구하는 자세가 중요하답니다.",
+      "daily_mission": "어려워 보이는 책 한 권을 정해 일주일 동안 꾸준히 읽고, 다 읽은 후 느낀 점을 적어보세요."
+    },
+    {
+      "title": "자연선택, 생존의 비밀",
+      "story": "찰스는 생물들이 살아남기 위해 끊임없이 경쟁하며, 그 환경에 가장 잘 맞는 특징을 가진 개체만이 살아남아 자손을 남긴다고 생각했습니다. 이를 '자연선택'이라고 불렀죠. 목이 긴 기린이 살아남은 것처럼 말이에요.",
+      "fact": "산업혁명 시기 영국 맨체스터 지역에서는 공장 매연으로 나무가 검게 변하자, 흰색 나방보다 검은색 나방의 생존율이 더 높아졌습니다. 이를 '공업 암화'라고 부릅니다.",
+      "quote": "살아남는 종은 가장 강한 종도, 가장 똑똑한 종도 아니다. 변화에 가장 잘 적응하는 종이다.",
+      "value": "적응력",
+      "coach_line": "변화를 두려워하지 말고, 새로운 환경에 씩씩하게 적응해보세요. 우리는 생각보다 강하답니다.",
+      "daily_mission": "오늘 하루, 평소와 다른 방법으로 공부해보고 어떤 점이 좋았는지, 불편했는지 이야기해보세요."
+    },
+    {
+      "title": "세상을 바꾼 용감한 생각",
+      "story": "다윈의 진화론은 당시 사람들의 생각과 매우 달랐기 때문에 많은 비판과 오해를 받았습니다. 특히 인간이 원숭이와 공통의 조상을 가진다는 주장은 큰 논란을 일으켰죠. 하지만 다윈은 자신의 연구와 신념을 굽히지 않았습니다.",
+      "fact": "다윈을 원숭이 몸에 합성한 만평이 신문에 실리는 등 많은 조롱을 받았지만, 그의 이론을 지지하는 과학자들도 점점 늘어났습니다.",
+      "quote": "나는 점진적이고 느린 변화의 힘을 믿는다.",
+      "value": "신념",
+      "coach_line": "자신의 생각이 옳다고 믿는다면, 다른 사람들의 비판에 너무 쉽게 흔들리지 마세요. 여러분의 생각을 믿고 나아가세요.",
+      "daily_mission": "나의 꿈이나 목표를 비웃는 사람이 있다면, 어떻게 나의 신념을 지키고 설득할 것인지 글로 써보세요."
+    },
+    {
+      "title": "따뜻한 마음을 가진 아빠, 찰스",
+      "story": "위대한 과학자였던 찰스는 사실 10명의 자녀를 둔 다정한 아빠였습니다. 그는 아이들과 함께 노는 것을 좋아했고, 아이들의 작은 행동 하나하나를 유심히 관찰하며 기록으로 남기기도 했습니다. 이 기록은 훗날 아동 심리학 연구에 중요한 자료가 되었습니다.",
+      "fact": "다윈은 자녀 중 한 명인 딸 '애니'를 열 살 때 병으로 잃고 큰 슬픔에 빠졌습니다. 이 경험은 그의 종교관에 큰 영향을 미쳤다고 합니다.",
+      "quote": "가족의 사랑만큼 위대한 것은 없다.",
+      "value": "사랑",
+      "coach_line": "가족은 세상에서 가장 소중한 보물이에요. 오늘 부모님께 사랑한다고 표현해보는 건 어떨까요?",
+      "daily_mission": "부모님이나 형제, 자매를 위해 내가 할 수 있는 작은 일 한 가지를 찾아 실천하고, 그 경험을 이야기해보세요."
+    },
+    {
+      "title": "지렁이 연구가",
+      "story": "말년의 다윈은 사람들의 눈에 띄지 않는 작은 생물인 지렁이에 푹 빠졌습니다. 그는 40년 넘게 지렁이를 관찰하며 지렁이가 흙을 비옥하게 만들고 지구 생태계에 얼마나 중요한 역할을 하는지 밝혀냈습니다.",
+      "fact": "다윈은 지렁이가 얼마나 많은 흙을 땅 위로 옮기는지 측정하기 위해 '지렁이 돌'이라는 실험 장치를 고안했습니다.",
+      "quote": "가장 보잘것없어 보이는 생물도 자연에서는 중요한 역할을 한다.",
+      "value": "겸손",
+      "coach_line": "아무리 작고 약해 보이는 존재라도 모두 소중한 생명이며, 각자의 역할이 있다는 것을 잊지 마세요.",
+      "daily_mission": "우리 주변에서 쉽게 볼 수 있지만 중요성을 잘 몰랐던 것(예: 흙, 공기, 물)의 소중함에 대해 생각해보고 글을 써보세요."
+    },
+    {
+      "title": "식물의 비밀을 파헤치다",
+      "story": "다윈은 동물뿐만 아니라 식물에도 깊은 관심을 가졌습니다. 그는 식물이 어떻게 움직이고, 곤충을 잡아먹고, 다른 식물과 경쟁하는지 등을 연구하며 식물 세계의 놀라운 비밀들을 밝혀냈습니다. 끈끈이주걱 같은 식충식물 연구가 대표적입니다.",
+      "fact": "다윈은 아들과 함께 식물이 빛을 향해 어떻게 반응하는지 실험하여 식물에도 성장 호르몬이 있다는 사실을 처음으로 암시했습니다.",
+      "quote": "자연의 모든 것은 서로 연결되어 있다.",
+      "value": "탐구 정신",
+      "coach_line": "하나의 분야에만 갇히지 말고, 다양한 분야에 관심을 가져보세요. 서로 다른 지식이 만나 더 큰 발견을 이끌어낼 수 있습니다.",
+      "daily_mission": "내가 좋아하는 동물과 식물이 각각 어떻게 살아가는지 조사하고, 두 생물의 공통점과 차이점을 비교해보세요."
+    },
+    {
+      "title": "공통 조상을 찾아서",
+      "story": "다윈은 모든 생명체가 하나의 공통된 조상으로부터 시작되어, 오랜 시간에 걸쳐 나뭇가지처럼 다양한 모습으로 갈라져 나왔다고 생각했습니다. 이를 '생명의 나무'라고 불렀죠. 사람, 새, 물고기, 나무 모두가 먼 친척인 셈입니다.",
+      "fact": "DNA 연구 기술이 발달하면서, 실제로 모든 생명체가 유전적으로 많은 부분을 공유하고 있다는 사실이 밝혀졌습니다. 인간과 침팬지는 DNA가 98% 이상 일치합니다.",
+      "quote": "우리는 모두 하나의 거대한 생명 그물에 연결되어 있다.",
+      "value": "연대감",
+      "coach_line": "나와 모습이 다른 친구라도 우리는 모두 소중한 존재이며, 서로 연결되어 있다는 사실을 기억하세요. 서로 돕고 이해하며 살아가야 합니다.",
+      "daily_mission": "'생명의 나무'를 직접 그려보세요. 내가 좋아하는 동물, 식물들을 나뭇가지에 그려 넣고 서로 어떻게 연결될 수 있을지 상상해보세요."
+    },
+    {
+      "title": "끝나지 않은 탐험",
+      "story": "찰스 다윈은 1882년 세상을 떠났지만, 그의 생각은 오늘날까지도 수많은 과학자들에게 영감을 주며 계속해서 발전하고 있습니다. 다윈이 남긴 위대한 유산인 진화론은 우리가 생명과 세상을 이해하는 방식을 완전히 바꾸어 놓았습니다.",
+      "fact": "다윈은 영국을 대표하는 위인들이 묻히는 웨스트민스터 사원에 아이작 뉴턴과 나란히 묻혔습니다.",
+      "quote": "과학의 역사는 위대한 질문들의 역사이다.",
+      "value": "지적 유산",
+      "coach_line": "책을 통해 위대한 인물들의 지혜와 경험을 배우고, 여러분의 삶을 더욱 풍요롭게 만들어보세요.",
+      "daily_mission": "찰스 다윈 외에 내가 존경하는 과학자는 누구인지, 그 이유는 무엇인지 친구들에게 이야기해주세요."
+    }
   ],
   "qa_seed": [
     "What do you notice first?",

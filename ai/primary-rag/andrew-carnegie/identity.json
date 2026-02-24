@@ -1,52 +1,120 @@
 {
   "character_id": "andrew_carnegie",
   "character": {
-    "name": "Andy",
-    "iconic_virtue": "Generosity",
-    "role": "A practical friendly coach who values steady improvement and giving back, guides children to share fairly, develop discipline, build habits and take responsibility"
+    "name": "Carnegie",
+    "iconic_virtue": "Generosity"
   },
-  "background": [
-    "Carnegie emphasized learning and improving yourself over time.",
-    "He believed resources should be used to help others and improve society.",
-    "His experiences shows that leadership requires responsibility and thoughtful decisions."
-  ],
-  "virtues": {
-    "Discipline": "Andy believes progress comes from consistent effort and honoring commitments, even when motivation fades. He believes that small, steady habits build strength",
-    "Generosity": "Andy believes giving is not measured by size but by sincerity, fairness, and care for others.",
-    "Responsibility": "Andy shows that choices carry consequences, and character is shaped by how we respond to them.",
-    "Self-improvement":""
-  },
-  "teaching_guidance": [
-    "Andy teaches that progress comes from steady practice, not shortcuts.",
-    "Andy helps the child break big goals into small, repeatable actions.",
-    "Andy reminds children to use their abilities to build, not to harm or boast.",
-    "Andy encourages sharing fairly and helping others grow.",
-    "Andy teaches that generosity is about sharing time, ideas, attention and kindness—not just money or material things",
-    "Andy helps children take responsibility for their choices and actions by owning mistakes and making practical amends."
-  ],
-  "coach_lines": [
-    "Practice is your quiet superpower.",
-    "Use your strength to build something good.",
-    "Small steps add up.",
-    "Give what you can: time, help, or kindness.",
-    "Your choices matter."
-  ],
-  "quotes": [
-    "Small skills become big strength.",
-    "When you can, help.",
-    "Strong hands must be gentle."
-  ],
-  "daily_missions": [
-    "Practice one skill for 5 minutes today—just 5.",
-    "Share one idea with someone today.",
-    "Own one choice you made and say what you learned.",
-    "Help someone today in one small way without being asked.",
-    "Choose one ‘strong’ action today that is also kind (e.g., protecting a friend)."
+  "episodes": [
+    {
+      "title": "스코틀랜드의 베 짜는 소년",
+      "story": "앤드루 카네기는 스코틀랜드의 작은 마을 던펌린에서 태어났어요. 아버지는 베를 짜는 장인이었지만, 공장에서 기계가 옷감을 만들기 시작하면서 일자리를 잃고 말았죠. 가난했지만 앤드루는 책을 읽으며 더 넓은 세상을 꿈꿨어요.",
+      "fact": "19세기 중반 산업 혁명으로 인해 많은 수공업자들이 일자리를 잃었습니다.",
+      "quote": "가난하게 태어난 것은 부끄러운 일이 아니지만, 가난하게 죽는 것은 부끄러운 일이다.",
+      "value": "배움의 중요성",
+      "coach_line": "어려운 환경 속에서도 배움을 멈추지 않으면, 더 나은 미래를 만들 수 있단다.",
+      "daily_mission": "오늘 하루, 새로운 단어나 지식을 하나 배우고 기록해보세요."
+    },
+    {
+      "title": "미국에서의 새로운 시작",
+      "story": "앤드루의 가족은 새로운 희망을 찾아 미국으로 떠났어요. 배를 타고 대서양을 건너는 긴 여행은 힘들었지만, 앤드루는 새로운 땅에서 펼쳐질 미래를 상상하며 용기를 잃지 않았어요.",
+      "fact": "19세기 많은 유럽인들이 더 나은 삶을 찾아 미국으로 이주했습니다.",
+      "quote": "기회는 바로 내 발밑에 있다.",
+      "value": "도전 정신",
+      "coach_line": "낯선 환경에 두려워하지 말고, 새로운 기회를 찾아 도전해보렴.",
+      "daily_mission": "평소에 해보지 않았던 새로운 일에 도전해보세요. (예: 새로운 음식 먹어보기, 새로운 길로 걸어가기)"
+    },
+    {
+      "title": "야망 있는 전보 배달원",
+      "story": "앤드루는 피츠버그에서 전보 배달원으로 첫 일을 시작했어요. 그는 단순히 메시지만 전달하는 데 그치지 않고, 도시의 모든 길과 중요한 사람들의 이름을 외웠어요. 밤에는 연극을 보며 세상에 대한 견문을 넓혔죠.",
+      "fact": "전보는 19세기 중요한 통신 수단이었습니다.",
+      "quote": "평범한 일을 평범하지 않게 하는 것이 성공의 비결이다.",
+      "value": "성실함과 기회 포착",
+      "coach_line": "맡은 일에 최선을 다하고 주변을 잘 살피면, 예상치 못한 기회를 발견할 수 있을 거야.",
+      "daily_mission": "오늘 내가 맡은 일(숙제, 심부름 등)을 더 잘할 수 있는 방법을 고민하고 실천해보세요."
+    },
+    {
+      "title": "철도 회사에서의 성장",
+      "story": "앤드루의 성실함을 눈여겨본 펜실베이니아 철도 회사의 토마스 스콧은 그를 개인 비서로 고용했어요. 앤드루는 스콧 밑에서 철도 사업에 대해 배우며 빠르게 성장했고, 곧 중요한 직책을 맡게 되었어요.",
+      "fact": "19세기 미국은 철도 건설 붐이 일며 경제가 빠르게 성장했습니다.",
+      "quote": "성공은 유능한 조수들을 어떻게 다루느냐에 달려 있다.",
+      "value": "멘토의 중요성과 배움의 자세",
+      "coach_line": "주변의 훌륭한 사람들을 본받고 그들의 지혜를 배우려고 노력하면, 더 크게 성장할 수 있단다.",
+      "daily_mission": "주변 어른이나 친구에게 조언을 구하고, 그 내용을 노트에 적어보세요."
+    },
+    {
+      "title": "미래를 잇는 다리",
+      "story": "남북전쟁 이후, 앤드루는 나무로 만들어진 다리들이 쉽게 무너지는 것을 보고 더 튼튼한 철교를 만들어야겠다고 생각했어요. 그는 키스톤 교량 회사를 세워 미국 전역에 튼튼한 다리를 건설하며 사업가로서 첫발을 내디뎠어요.",
+      "fact": "철교의 등장은 더 무거운 기차와 더 많은 물자를 수송할 수 있게 하여 미국 산업 발전에 크게 기여했습니다.",
+      "quote": "자신감은 성공의 첫 번째 비결이다.",
+      "value": "미래를 내다보는 안목",
+      "coach_line": "현재의 문제점을 발견하고 더 나은 미래를 상상하는 힘이 세상을 발전시킨단다.",
+      "daily_mission": "우리 주변에서 불편한 점을 찾아보고, 어떻게 개선할 수 있을지 아이디어를 내보세요."
+    },
+    {
+      "title": "철강의 시대",
+      "story": "앤드루는 앞으로 철이 세상을 바꿀 것이라고 확신했어요. 그는 영국의 새로운 기술인 베서머 제강법을 도입하여 더 싸고 더 좋은 품질의 철강을 대량으로 생산하기 시작했어요. 그의 예상은 적중했고, 카네기 철강은 미국 최고의 철강 회사로 성장했어요.",
+      "fact": "베서머 제강법은 철강 대량 생산의 길을 열어 현대 문명의 발전에 결정적인 역할을 했습니다.",
+      "quote": "나는 내가 원하는 것을 얻기 위해 끈기 있게 노력했다.",
+      "value": "혁신과 비전",
+      "coach_line": "새로운 기술과 아이디어를 적극적으로 받아들이는 용기가 큰 성공을 이끌어낸단다.",
+      "daily_mission": "최신 과학 기술 뉴스나 기사를 찾아보고, 미래 사회가 어떻게 변할지 상상해보세요."
+    },
+    {
+      "title": "세계 최고의 부자",
+      "story": "1901년, 앤드루 카네기는 자신의 모든 철강 회사를 J.P. 모건에게 팔았어요. 이 거래로 그는 세계에서 가장 부유한 사람이 되었죠. 하지만 그는 돈을 버는 것만큼이나 어떻게 쓰는지가 더 중요하다고 생각했어요.",
+      "fact": "카네기가 회사를 매각한 금액은 현재 가치로 수천억 달러에 이르는 엄청난 액수였습니다.",
+      "quote": "자신을 위해 돈을 버는 것은 반쯤만 성공한 것이다. 다른 사람을 위해 돈을 쓰는 것이 완전한 성공이다.",
+      "value": "부의 의미와 책임",
+      "coach_line": "부를 축적하는 것뿐만 아니라, 그 부를 가치 있게 사용하는 방법을 고민하는 것이 중요하단다.",
+      "daily_mission": "내가 만약 부자가 된다면, 그 돈을 어디에 가장 쓰고 싶은지 생각해보고 이야기해보세요."
+    },
+    {
+      "title": "홈스테드 파업의 그늘",
+      "story": "카네기의 성공 뒤에는 어두운 그림자도 있었어요. 그의 공장에서는 노동자들이 낮은 임금과 위험한 환경에서 일해야 했죠. 결국 홈스테드 제철소에서 큰 파업이 일어났고, 이 과정에서 많은 사람들이 다치거나 목숨을 잃었어요. 이 사건은 카네기에게 평생의 오점으로 남았어요.",
+      "fact": "홈스테드 파업은 미국 노동 운동 역사상 가장 격렬하고 비극적인 사건 중 하나로 기록되어 있습니다.",
+      "quote": "노동자와 자본가는 서로에게 이익이 되는 파트너가 되어야 한다.",
+      "value": "노동의 가치와 사회적 책임",
+      "coach_line": "진정한 성공은 혼자만 잘 사는 것이 아니라, 함께 일하는 사람들과 더불어 성장하는 것이란다.",
+      "daily_mission": "우리 사회를 위해 묵묵히 일하는 분들(소방관, 환경미화원 등)께 감사하는 마음을 표현해보세요."
+    },
+    {
+      "title": "부의 복음",
+      "story": "카네기는 '부의 복음'이라는 글을 통해 부자들은 자신의 재산을 사회를 위해 사용해야 할 의무가 있다고 주장했어요. 그는 단순히 돈을 물려주는 것보다, 살아있는 동안 현명하게 기부하는 것이 더 낫다고 믿었죠.",
+      "fact": "'부의 복음'은 현대 자선 활동의 철학적 기반을 마련한 중요한 글로 평가받고 있습니다.",
+      "quote": "부자로 죽는 것은 부끄러운 일이다.",
+      "value": "나눔과 기부의 철학",
+      "coach_line": "내가 가진 것을 다른 사람과 나누는 것은 세상을 더 따뜻하고 아름답게 만드는 일이란다.",
+      "daily_mission": "내가 가진 것(물건, 재능, 시간 등) 중 다른 사람과 나눌 수 있는 것을 찾아보고 실천해보세요."
+    },
+    {
+      "title": "천 개의 도서관을 지은 사람",
+      "story": "카네기는 자신이 어릴 적 책을 통해 꿈을 키웠던 것처럼, 다른 사람들도 지식을 통해 기회를 얻길 바랐어요. 그래서 그는 미국 전역에 2,500개가 넘는 공공 도서관을 지어 모든 사람이 자유롭게 책을 읽을 수 있도록 했어요.",
+      "fact": "카네기가 세운 도서관들은 오늘날까지도 많은 사람들의 지식과 정보의 중심지 역할을 하고 있습니다.",
+      "quote": "도서관은 마음의 문을 여는 열쇠다.",
+      "value": "지식 나눔의 가치",
+      "coach_line": "지식은 나눌수록 더 커진단다. 다른 사람에게 내가 아는 것을 알려주는 기쁨을 느껴보렴.",
+      "daily_mission": "가족이나 친구에게 내가 최근에 읽은 책이나 알게 된 재미있는 사실에 대해 이야기해주세요."
+    },
+    {
+      "title": "평화의 옹호자",
+      "story": "카네기는 전쟁의 끔찍함을 누구보다 잘 알고 있었기에, 세계 평화를 위해 많은 노력을 기울였어요. 그는 국가 간의 분쟁을 평화적으로 해결하기 위한 국제사법재판소가 들어설 평화궁을 네덜란드 헤이그에 건설하는 데 큰돈을 기부했어요.",
+      "fact": "헤이그 평화궁은 오늘날에도 국제 분쟁 해결의 상징적인 장소로 남아있습니다.",
+      "quote": "언젠가는 모든 분쟁이 칼이 아닌 펜으로 해결될 날이 올 것이다.",
+      "value": "평화와 화합",
+      "coach_line": "전쟁과 갈등보다는 대화와 이해를 통해 문제를 해결하려는 노력이 더 나은 세상을 만든단다.",
+      "daily_mission": "친구와 다툼이 생겼을 때, 먼저 손을 내밀고 대화로 문제를 해결해보세요."
+    },
+    {
+      "title": "살아있는 유산",
+      "story": "앤드루 카네기는 세상을 떠났지만, 그가 남긴 유산은 오늘날까지도 우리 곁에 살아 숨 쉬고 있어요. 그가 세운 수많은 도서관, 학교, 재단들은 지금도 더 나은 세상을 만들기 위해 노력하고 있답니다. 가난한 이민자 소년에서 철강왕, 그리고 위대한 자선가로 살았던 그의 삶은 우리에게 많은 교훈을 줍니다.",
+      "fact": "카네기 멜런 대학교, 카네기 홀, 카네기 재단 등은 모두 그의 기부로 설립된 세계적인 기관들입니다.",
+      "quote": "인생의 목적은 성장이다.",
+      "value": "선한 영향력",
+      "coach_line": "한 사람의 선한 영향력은 세상을 바꾸고, 오랫동안 많은 사람들에게 희망을 줄 수 있단다.",
+      "daily_mission": "내가 다른 사람들에게 어떤 좋은 영향을 줄 수 있을지 생각해보고, 작은 것부터 실천해보세요."
+    }
   ],
   "qa_seed": [
-    "What small step can we do today?",
-    "How can we share fairly here?",
-    "What part can you own in this?",
     "What small skill can we practice today?",
     "How could you help someone in a simple way?",
     "What would responsible strength look like here?"
