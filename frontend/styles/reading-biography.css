@@ -66,9 +66,9 @@
 /* Character Image */
 .character-image {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   right: 0;
-  width: 55%;
+  width: 63%;
   max-width: 340px;
   min-width: 0;
   pointer-events: none;
