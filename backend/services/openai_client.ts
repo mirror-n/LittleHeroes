@@ -14,10 +14,15 @@ export async function callOpenAI(input: PipelineInput, context: string): Promise
     throw new Error('OPENAI_API_KEY is not set');
   }
 
+  // Build language instruction based on selected language
+  const langInstruction = input.language === 'ko'
+    ? '\n\nIMPORTANT: Respond in Korean using 반말 (casual speech). Do NOT use 존댓말.'
+    : '\n\nIMPORTANT: Respond in casual, friendly English suitable for kids.';
+
   const messages: ChatMessage[] = [
     {
       role: 'system',
-      content: `${input.systemPrompt}\n\n${input.characterPrompt}\n\nSafety Guardrails:\n${input.guardrailsContext}`
+      content: `${input.systemPrompt}\n\n${input.characterPrompt}\n\nSafety Guardrails:\n${input.guardrailsContext}${langInstruction}`
     },
     {
       role: 'user',
@@ -36,8 +41,8 @@ export async function callOpenAI(input: PipelineInput, context: string): Promise
     body: JSON.stringify({
       model: OPENAI_MODEL,
       messages,
-      temperature: 0.4,
-      max_tokens: 1024,
+      temperature: 0.6,
+      max_tokens: 300,
     }),
   });
 

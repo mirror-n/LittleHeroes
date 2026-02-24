@@ -3,32 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Greats - Plan</title>
+    <title>Little Heroes - Plan</title>
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/plan.css" />
+    <meta data-page-title-ko="꼬마 위인 - 요금제" data-page-title-en="Little Heroes - Plan" />
   </head>
   <body class="background-orange">
     <!-- Tabs Banner -->
     <header class="tabs-banner">
       <nav class="navigation">
-        <a href="home.html" class="tab-link">Home</a>
-        <a href="talk.html" class="tab-link">
-          Talk <span class="icon">🎤</span>
-        </a>
-        <a href="reading-biography.html" class="tab-link">
-          Reading Biography <span class="icon">📖</span>
-        </a>
-        <a href="plan.html" class="tab-link active">Plan</a>
-        <a href="our-vision.html" class="tab-link">Our vision</a>
+        <a href="home.html" class="tab-link" data-ko="홈" data-en="Home">Home</a>
+        <a href="talk.html" class="tab-link" data-ko-html="대화하기 <span class='icon'>🎤</span>" data-en-html="Talk <span class='icon'>🎤</span>">Talk <span class="icon">🎤</span></a>
+        <a href="reading-biography.html" class="tab-link" data-ko-html="위인전 읽기 <span class='icon'>📖</span>" data-en-html="Reading Biography <span class='icon'>📖</span>">Reading Biography <span class="icon">📖</span></a>
+        <a href="plan.html" class="tab-link active" data-ko="요금제" data-en="Plan">Plan</a>
+        <a href="our-vision.html" class="tab-link" data-ko="우리의 비전" data-en="Our Vision">Our Vision</a>
         <div class="logo-icon">
-          <img src="../images/corner_icon.png" alt="AI Smiley Icon" />
+          <img src="../images/corner_icon.png" alt="Little Heroes Icon" />
         </div>
       </nav>
     </header>
 
     <!-- Page Content -->
-    <main class="page-content">
-      <h1>Plan</h1>
+    <main class="plan-content">
+      <div class="plan-container">
+        <h1 class="plan-title" data-ko="요금제" data-en="Choose Your Plan">Choose Your Plan</h1>
+        <p class="plan-subtitle" data-ko="12명의 꼬마 위인과 함께하는 인성 교육" data-en="Character education with 12 Little Heroes">Character education with 12 Little Heroes</p>
+
+        <div class="plan-cards">
+          <!-- Monthly Plan -->
+          <div class="plan-card">
+            <div class="plan-card-header">
+              <h2 data-ko="월간 구독" data-en="Monthly">Monthly</h2>
+            </div>
+            <div class="plan-card-price">
+              <span class="price" data-lang-show="en">$9</span>
+              <span class="price" data-lang-show="ko">₩12,000</span>
+              <span class="period" data-ko="/월" data-en="/month">/month</span>
+            </div>
+            <ul class="plan-features">
+              <li data-ko="12명의 위인 캐릭터와 대화" data-en="Chat with all 12 hero characters">Chat with all 12 hero characters</li>
+              <li data-ko="한국어 &amp; 영어 지원" data-en="Korean &amp; English support">Korean &amp; English support</li>
+              <li data-ko="12편의 위인전 읽기" data-en="Read 12 biography series">Read 12 biography series</li>
+              <li data-ko="언제든 취소 가능" data-en="Cancel anytime">Cancel anytime</li>
+            </ul>
+            <button class="plan-btn plan-btn-outline" data-ko="준비 중" data-en="Coming Soon">Coming Soon</button>
+          </div>
+
+          <!-- Annual Plan -->
+          <div class="plan-card plan-card-featured">
+            <div class="plan-badge" data-ko="17% 할인" data-en="Save 17%">Save 17%</div>
+            <div class="plan-card-header">
+              <h2 data-ko="연간 구독" data-en="Annual">Annual</h2>
+            </div>
+            <div class="plan-card-price">
+              <span class="price" data-lang-show="en">$90</span>
+              <span class="price" data-lang-show="ko">₩120,000</span>
+              <span class="period" data-ko="/년" data-en="/year">/year</span>
+            </div>
+            <ul class="plan-features">
+              <li data-ko="월간 구독의 모든 혜택 포함" data-en="Everything in Monthly plan">Everything in Monthly plan</li>
+              <li data-ko="연간 결제 시 2개월 무료" data-en="2 months free with annual billing">2 months free with annual billing</li>
+              <li data-ko="신규 캐릭터 우선 체험" data-en="Early access to new characters">Early access to new characters</li>
+              <li data-ko="우선 고객 지원" data-en="Priority support">Priority support</li>
+            </ul>
+            <button class="plan-btn plan-btn-primary" data-ko="준비 중" data-en="Coming Soon">Coming Soon</button>
+          </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+          <p class="payment-title" data-ko="결제 수단" data-en="Payment Methods">Payment Methods</p>
+          <div class="payment-icons" data-lang-show="en">
+            <span>Credit Card</span>
+            <span>PayPal</span>
+            <span>Apple Pay</span>
+          </div>
+          <div class="payment-icons" data-lang-show="ko">
+            <span>신용카드</span>
+            <span>네이버페이</span>
+            <span>카카오페이</span>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <!-- Global Language Switcher -->
+    <script src="../scripts/language-switcher.js"></script>
   </body>
 </html>

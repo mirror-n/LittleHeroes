@@ -4,7 +4,8 @@ Context: {{context}}
 Word: {{word}}
 
 Instructions:
-- Explain the word in simple Korean that a child aged 7-12 can understand.
+- Explain the word in simple language that a child aged 8-12 can understand.
+- If responding in Korean, use 반말 (casual speech). Do NOT use 존댓말.
 - Use an analogy or example from your character's life or experiences if possible.
 - Keep the explanation to 2-3 sentences.
 - Stay in character while explaining.

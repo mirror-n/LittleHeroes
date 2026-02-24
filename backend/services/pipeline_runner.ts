@@ -5,6 +5,7 @@ const RAG_BASE = path.resolve(__dirname, '../../ai/primary-rag');
 const PROMPTS_BASE = path.resolve(__dirname, '../../ai/prompts');
 
 export interface PipelineInput {
+  language: string;
   systemPrompt: string;
   characterPrompt: string;
   answerPrompt: string;
@@ -46,7 +47,7 @@ function resolveCharacterDir(slug: string): string {
   throw new Error(`Character directory not found for slug: ${slug}`);
 }
 
-export function loadPipelineInputs(characterSlug: string, userMessage: string): PipelineInput {
+export function loadPipelineInputs(characterSlug: string, userMessage: string, language: string): PipelineInput {
   const charDir = resolveCharacterDir(characterSlug);
   const charPath = path.join(RAG_BASE, charDir);
 
@@ -56,10 +57,10 @@ export function loadPipelineInputs(characterSlug: string, userMessage: string): 
   const answerPromptTemplate = loadTextFile(path.join(PROMPTS_BASE, 'answer_with_rag.txt'));
   const refusalText = loadTextFile(path.join(PROMPTS_BASE, 'refusal.txt'));
 
-  // Load RAG data
-  const identity = loadJsonFile(path.join(charPath, 'identity.json'));
-  const style = loadJsonFile(path.join(charPath, 'style.json'));
-  const guardrails = loadJsonFile(path.join(charPath, 'guardrails.json'));
+  // Load RAG data based on language
+  const identity = loadJsonFile(path.join(charPath, `identity.${language}.json`));
+  const style = loadJsonFile(path.join(charPath, `style.${language}.json`));
+  const guardrails = loadJsonFile(path.join(charPath, `guardrails.${language}.json`));
 
   const characterName = identity.character.name;
   const iconicVirtue = identity.character.iconic_virtue;
@@ -87,29 +88,59 @@ export function loadPipelineInputs(characterSlug: string, userMessage: string): 
     characterName,
     iconicVirtue,
     userMessage,
+    language,
   };
 }
 
-// Retrieve relevant episodes based on user message
+// Detect if the user is asking an introduction/identity question
+function isIntroductionQuestion(message: string): boolean {
+  const lowerMsg = message.toLowerCase();
+  const introPatterns = [
+    // English patterns
+    'who are you', 'introduce yourself', 'what is your name', 'what\'s your name',
+    'tell me about yourself', 'who is this', 'what are you', 'your name',
+    'hi, who', 'hello, who', 'hi who', 'hello who',
+    // Korean patterns
+    '누구', '자기소개', '이름이 뭐', '너 뭐야', '넌 뭐야', '넌 누구',
+    '소개해', '자기 소개', '이름 알려', '이름을 알려', '이름 뭐',
+    '안녕 누구', '너는 누구', '당신은 누구', '넌 누구야',
+  ];
+  return introPatterns.some(pattern => lowerMsg.includes(pattern));
+}
+
+// Retrieve relevant context based on user message
 export function retrieveRelevantContext(identity: any, userMessage: string): string {
+  // If this is an introduction question, return character's basic info directly
+  if (isIntroductionQuestion(userMessage)) {
+    const char = identity.character;
+    const nickname = char.nickname || char.name;
+    const virtue = char.iconic_virtue;
+    const background = char.background_summary || '';
+    const firstEpisode = identity.episodes && identity.episodes[0]
+      ? `[First memory: ${identity.episodes[0].title}]\n${identity.episodes[0].story?.substring(0, 200)}...`
+      : '';
+
+    return `[Character Introduction]\nName: ${char.name}\nNickname: ${nickname}\nVirtue: ${virtue}\nBackground: ${background}\n${firstEpisode}`;
+  }
+
   const episodes = identity.episodes || [];
   const msg = userMessage.toLowerCase();
 
   // Simple keyword matching for relevant episodes
   const relevant = episodes.filter((ep: any) => {
-    const combined = `${ep.title} ${ep.story} ${ep.fact} ${ep.value} ${ep.quote}`.toLowerCase();
+    const combined = `${ep.title || ''} ${ep.story || ''} ${ep.fact || ''} ${ep.value || ''} ${ep.quote || ''}`.toLowerCase();
     const words = msg.split(/\s+/).filter((w: string) => w.length > 1);
     return words.some((w: string) => combined.includes(w));
   });
 
   if (relevant.length > 0) {
-    return relevant.map((ep: any) =>
-      `[에피소드: ${ep.title}]\n이야기: ${ep.story}\n사실: ${ep.fact}\n명언: "${ep.quote}"\n가치: ${ep.value}\n코칭: ${ep.coach_line}\n미션: ${ep.daily_mission}`
+    return relevant.slice(0, 2).map((ep: any) =>
+      `[Episode: ${ep.title}]\nStory: ${ep.story}\nFact: ${ep.fact}\nQuote: "${ep.quote}"\nValue: ${ep.value}\nCoach: ${ep.coach_line}\nMission: ${ep.daily_mission}`
     ).join('\n\n');
   }
 
   // If no keyword match, return first 2 episodes as default context
   return episodes.slice(0, 2).map((ep: any) =>
-    `[에피소드: ${ep.title}]\n이야기: ${ep.story}\n사실: ${ep.fact}\n명언: "${ep.quote}"\n가치: ${ep.value}\n코칭: ${ep.coach_line}\n미션: ${ep.daily_mission}`
+    `[Episode: ${ep.title}]\nStory: ${ep.story}\nFact: ${ep.fact}\nQuote: "${ep.quote}"\nValue: ${ep.value}\nCoach: ${ep.coach_line}\nMission: ${ep.daily_mission}`
   ).join('\n\n');
 }

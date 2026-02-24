@@ -3,26 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Greats - Talk</title>
+    <title>Little Heroes - Talk</title>
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/talk.css" />
     <link rel="stylesheet" href="../styles/talk-character.css" />
+    <meta data-page-title-ko="꼬마 위인 - 대화하기" data-page-title-en="Little Heroes - Talk" />
   </head>
   <body class="background-red">
     <!-- Tabs Banner -->
     <header class="tabs-banner">
       <nav class="navigation">
-        <a href="home.html" class="tab-link">Home</a>
-        <a href="talk.html" class="tab-link active">
+        <a href="home.html" class="tab-link" data-ko="홈" data-en="Home">Home</a>
+        <a href="talk.html" class="tab-link active" data-ko-html="대화하기 <span class='icon'>🎤</span>" data-en-html="Talk <span class='icon'>🎤</span>">
           Talk <span class="icon">🎤</span>
         </a>
-        <a href="reading-biography.html" class="tab-link">
+        <a href="reading-biography.html" class="tab-link" data-ko-html="위인전 읽기 <span class='icon'>📖</span>" data-en-html="Reading Biography <span class='icon'>📖</span>">
           Reading Biography <span class="icon">📖</span>
         </a>
-        <a href="plan.html" class="tab-link">Plan</a>
-        <a href="our-vision.html" class="tab-link">Our vision</a>
+        <a href="plan.html" class="tab-link" data-ko="요금제" data-en="Plan">Plan</a>
+        <a href="our-vision.html" class="tab-link" data-ko="우리의 비전" data-en="Our Vision">Our Vision</a>
         <div class="logo-icon">
-          <img src="../images/corner_icon.png" alt="AI Smiley Icon" />
+          <img src="../images/corner_icon.png" alt="Little Heroes Icon" />
         </div>
       </nav>
     </header>
@@ -55,9 +56,11 @@
               id="character-input"
               class="character-input"
               type="text"
+              data-ko="메시지를 입력하세요..."
+              data-en="Type your message..."
               placeholder="Type your message..."
             />
-            <button id="character-send" class="character-send" type="button">
+            <button id="character-send" class="character-send" type="button" data-ko="보내기" data-en="Send">
               Send
             </button>
           </div>
@@ -70,73 +73,73 @@
       const characters = {
         abe: {
           name: "Abe",
-          image: "../images/portaits/children/card_abe.png",
+          image: "../images/card_abe.png",
           imageStyle: "",
           backendSlug: "abraham-lincoln",
         },
         leo: {
           name: "Leo",
-          image: "../images/portaits/children/card_leo.png",
+          image: "../images/card_leo.png",
           imageStyle: "",
           backendSlug: "leonardo-da-vinci",
         },
         al: {
           name: "Al",
-          image: "../images/portaits/children/card_al.png",
+          image: "../images/card_al.png",
           imageStyle: "",
           backendSlug: "albert-einstein",
         },
         ike: {
           name: "Ike",
-          image: "../images/portaits/children/card_ike.png",
+          image: "../images/card_ike.png",
           imageStyle: "",
           backendSlug: "isaac-newton",
         },
         socrate: {
           name: "Socrate",
-          image: "../images/portaits/children/card_socrate.png",
+          image: "../images/card_socrate.png",
           imageStyle: "transform: scaleX(0.95) scaleY(0.95)",
           backendSlug: "socrates",
         },
         willy: {
           name: "Willy",
-          image: "../images/portaits/children/card_willy.png",
+          image: "../images/card_willy.png",
           imageStyle: "",
           backendSlug: "william-shakespeare",
         },
         chales: {
           name: "Chales",
-          image: "../images/portaits/children/card_chales.png",
+          image: "../images/card_chales.png",
           imageStyle: "",
           backendSlug: "charles-darwin",
         },
         marie: {
           name: "Marie",
-          image: "../images/portaits/children/card_marie.png",
+          image: "../images/card_marie.png",
           imageStyle: "",
           backendSlug: "marie-curie",
         },
-        helen: {
-          name: "Helen",
-          image: "../images/portaits/children/card_helen.png",
+        hellen: {
+          name: "Hellen",
+          image: "../images/card_hellen.png",
           imageStyle: "transform: scaleX(0.9) scaleY(0.9)",
           backendSlug: "helen-keller",
         },
         wolfi: {
           name: "Wolfi",
-          image: "../images/portaits/children/card_wolfi.png",
+          image: "../images/card_wolfi.png",
           imageStyle: "",
           backendSlug: "wolfgang-amadeus-mozart",
         },
         chally: {
           name: "Chally",
-          image: "../images/portaits/children/card_chally.png",
+          image: "../images/card_chally.png",
           imageStyle: "",
           backendSlug: "charlie-chaplin",
         },
         andy: {
           name: "Andy",
-          image: "../images/portaits/children/card_andy.png",
+          image: "../images/card_andy.png",
           imageStyle: "",
           backendSlug: "andrew-carnegie",
         },
@@ -144,7 +147,14 @@
 
       let currentCharacterKey = null;
       let currentBackendSlug = null;
-      let conversationHistory = []; // Track conversation history
+
+      // Get current language from global language switcher
+      function getCurrentLanguage() {
+        if (window.languageSwitcher) {
+          return window.languageSwitcher.getCurrentLanguage();
+        }
+        return localStorage.getItem('littleHeroesLanguage') || 'en';
+      }
 
       // Get URL parameter
       function getURLParameter(name) {
@@ -157,38 +167,25 @@
         const characterParam = getURLParameter("character");
 
         if (characterParam && characters[characterParam.toLowerCase()]) {
-          // Show character detail view
           const character = characters[characterParam.toLowerCase()];
-          const newCharacterKey = characterParam.toLowerCase();
-          
-          // Reset conversation history if character changed
-          if (currentCharacterKey !== newCharacterKey) {
-            conversationHistory = [];
-          }
-          
-          currentCharacterKey = newCharacterKey;
+          currentCharacterKey = characterParam.toLowerCase();
           currentBackendSlug = character.backendSlug || "";
           
-          // Update character name
           document.getElementById("character-name-display").textContent =
             character.name;
 
-          // Update character image
           const imgElement = document.getElementById("character-image-display");
           imgElement.src = character.image;
           imgElement.alt = character.name;
 
-          // Apply image style if needed
           if (character.imageStyle) {
             imgElement.style.cssText = character.imageStyle;
           } else {
             imgElement.style.cssText = "";
           }
 
-          // Update page title
-          document.title = `AI Greats - Talk with ${character.name}`;
+          document.title = `Little Heroes - Talk with ${character.name}`;
         } else {
-          // Redirect to talk page if no valid character
           window.location.href = "talk.html";
         }
       }
@@ -204,6 +201,7 @@
       // Initialize on page load
       window.addEventListener("DOMContentLoaded", () => {
         initializePage();
+
         const input = document.getElementById("character-input");
         const sendButton = document.getElementById("character-send");
         const reply = document.getElementById("character-reply");
@@ -211,15 +209,14 @@
         async function sendMessage() {
           const text = input.value.trim();
           if (!text) return;
-          reply.textContent = "Thinking...";
-          
-          // Add user message to conversation history
-          conversationHistory.push({ role: "user", content: text });
-          
+
+          const lang = getCurrentLanguage();
+          reply.textContent = lang === 'ko' ? "생각 중..." : "Thinking...";
+
           const payload = {
             message: text,
             character: currentBackendSlug || "",
-            conversationHistory: conversationHistory.slice(0, -1), // Send history without current message
+            language: lang,
           };
 
           try {
@@ -241,17 +238,11 @@
               throw new Error(errorMessage);
             }
 
-            const answer = data.answer || "No answer yet.";
-            reply.textContent = answer;
-            
-            // Add assistant response to conversation history
-            conversationHistory.push({ role: "assistant", content: answer });
+            reply.textContent = data.answer || (lang === 'ko' ? "아직 답이 없어." : "No answer yet.");
           } catch (error) {
             const message =
-              error && error.message ? error.message : "Unable to reach the AI server.";
-            reply.textContent = `Error: ${message}`;
-            // Remove the user message from history if request failed
-            conversationHistory.pop();
+              error && error.message ? error.message : (lang === 'ko' ? "AI 서버에 연결할 수 없어." : "Unable to reach the AI server.");
+            reply.textContent = lang === 'ko' ? `오류: ${message}` : `Error: ${message}`;
           }
           input.value = "";
           input.focus();
@@ -263,10 +254,20 @@
             sendMessage();
           }
         });
+
+        // Listen for global language change events
+        window.addEventListener('languageChanged', (e) => {
+          // Update placeholder text based on language
+          const lang = e.detail.language;
+          input.placeholder = lang === 'ko' ? '메시지를 입력하세요...' : 'Type your message...';
+          sendButton.textContent = lang === 'ko' ? '보내기' : 'Send';
+        });
       });
 
-      // Also handle browser back/forward navigation
       window.addEventListener("popstate", initializePage);
     </script>
+
+    <!-- Global Language Switcher -->
+    <script src="../scripts/language-switcher.js"></script>
   </body>
 </html>

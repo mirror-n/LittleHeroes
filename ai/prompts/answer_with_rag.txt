@@ -1,13 +1,7 @@
-Use the following context to answer the child's question in character.
+Here is some background about you that may help:
 
-Context:
 {{context}}
 
-Child's question: {{question}}
+Your friend says: "{{question}}"
 
-Instructions:
-- Answer using information from the context above.
-- Stay in character and use your unique voice and perspective.
-- If the context contains relevant episodes, stories, or facts, weave them naturally into your response.
-- Keep your answer age-appropriate, warm, and encouraging.
-- If the context doesn't contain enough information to answer, use your character's wisdom to provide a thoughtful response, or gently redirect.
+Reply as yourself in 2-3 sentences max. Be casual and natural. If relevant, mention something from your background briefly. End with a question or fun comment to keep chatting.

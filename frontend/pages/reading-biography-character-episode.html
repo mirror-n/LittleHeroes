@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Greats - Episode</title>
+    <title>Little Heroes - Episode</title>
+    <meta data-page-title-ko="꼬마 위인 - 에피소드" data-page-title-en="Little Heroes - Episode" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link
       rel="stylesheet"
@@ -14,15 +15,15 @@
     <!-- Tabs Banner -->
     <header class="tabs-banner">
       <nav class="navigation">
-        <a href="home.html" class="tab-link">Home</a>
-        <a href="talk.html" class="tab-link">
+        <a href="home.html" class="tab-link" data-ko="홈" data-en="Home">Home</a>
+        <a href="talk.html" class="tab-link" data-ko-html="대화하기 <span class='icon'>🎤</span>" data-en-html="Talk <span class='icon'>🎤</span>">
           Talk <span class="icon">🎤</span>
         </a>
-        <a href="reading-biography.html" class="tab-link active">
+        <a href="reading-biography.html" class="tab-link active" data-ko-html="위인전 읽기 <span class='icon'>📖</span>" data-en-html="Reading Biography <span class='icon'>📖</span>">
           Reading Biography <span class="icon">📖</span>
         </a>
-        <a href="plan.html" class="tab-link">Plan</a>
-        <a href="our-vision.html" class="tab-link">Our vision</a>
+        <a href="plan.html" class="tab-link" data-ko="요금제" data-en="Plan">Plan</a>
+        <a href="our-vision.html" class="tab-link" data-ko="우리의 비전" data-en="Our Vision">Our Vision</a>
         <div class="logo-icon">
           <img src="../images/corner_icon.png" alt="AI Smiley Icon" />
         </div>
@@ -66,7 +67,7 @@
         willy: "willy",
         chales: "chales",
         marie: "marie",
-        helen: "helen",
+        hellen: "hellen",
         wolf: "wolf",
         charlie: "charlie",
         andy: "andy",
@@ -204,5 +205,8 @@
       // Handle browser back/forward navigation
       window.addEventListener("popstate", loadEpisode);
     </script>
+
+    <!-- Global Language Switcher -->
+    <script src="../scripts/language-switcher.js"></script>
   </body>
 </html>

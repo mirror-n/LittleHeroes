@@ -1,52 +1,64 @@
 /* Our Vision Page Specific Styles */
-
-.page-content {
+.vision-content {
   min-height: 100vh;
-  padding-top: 100px;
-  padding-bottom: 60px;
-  padding-left: 40px;
-  padding-right: 40px;
-  text-align: center;
-}
-
-.our-vision-content {
+  padding: 120px 40px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.vision-container {
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
 }
 
-.text-content1 {
-  line-height: 1.5;
-}
-
-.vision-section {
-  margin-bottom: 48px;
-}
-
-.vision-section:last-child {
-  margin-bottom: 0;
-}
-
-.vision-section h2 {
-  margin-bottom: 20px;
-}
-
-.vision-section p {
+.vision-title {
+  font-size: 64px;
+  font-weight: bold;
+  color: #fff;
   margin-bottom: 16px;
 }
 
-.vision-section p:last-of-type {
-  margin-bottom: 0;
+.vision-subtitle {
+  font-size: 24px;
+  color: #ffeb3b;
+  margin-bottom: 60px;
 }
 
-.vision-list {
-  margin: 16px 0;
-  padding-left: 24px;
+.vision-section {
+  margin-bottom: 40px;
+  text-align: left;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
 
-.vision-list li {
-  margin-bottom: 8px;
+.vision-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #63dcfb;
+  margin-bottom: 12px;
+}
+
+.vision-section p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .vision-title {
+    font-size: 48px;
+  }
+  .vision-subtitle {
+    font-size: 20px;
+  }
+  .vision-section h2 {
+    font-size: 28px;
+  }
+  .vision-section p {
+    font-size: 18px;
+  }
 }

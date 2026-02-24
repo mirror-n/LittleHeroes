@@ -8,7 +8,12 @@ export async function callGemini(input: PipelineInput, context: string): Promise
     throw new Error('GEMINI_API_KEY is not set');
   }
 
-  const systemInstruction = `${input.systemPrompt}\n\n${input.characterPrompt}\n\nSafety Guardrails:\n${input.guardrailsContext}`;
+  // Build language instruction based on selected language
+  const langInstruction = input.language === 'ko'
+    ? '\n\nIMPORTANT: Respond in Korean using 반말 (casual speech). Do NOT use 존댓말.'
+    : '\n\nIMPORTANT: Respond in casual, friendly English suitable for kids.';
+
+  const systemInstruction = `${input.systemPrompt}\n\n${input.characterPrompt}\n\nSafety Guardrails:\n${input.guardrailsContext}${langInstruction}`;
   const userContent = input.answerPrompt
     .replace('{{context}}', context)
     .replace('{{question}}', input.userMessage);
@@ -24,8 +29,8 @@ export async function callGemini(input: PipelineInput, context: string): Promise
           system_instruction: { parts: [{ text: systemInstruction }] },
           contents: [{ parts: [{ text: userContent }] }],
           generationConfig: {
-            temperature: 0.4,
-            maxOutputTokens: 1024,
+            temperature: 0.6,
+            maxOutputTokens: 300,
           },
         }),
       });
