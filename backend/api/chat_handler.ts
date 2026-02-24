@@ -9,17 +9,18 @@ const RAG_BASE = path.resolve(__dirname, '../../ai/primary-rag');
 interface ChatRequest {
   message: string;
   character: string;
+  language?: string; // 'ko' or 'en', defaults to 'ko'
 }
 
 interface ChatResponse {
   answer: string;
   shouldRefuse: boolean;
   character: string;
+  language: string;
 }
 
 // Safety check on response
 function applySafety(response: string): string {
-  // Remove any potential system prompt leaks
   const patterns = [
     /system prompt/gi,
     /내부 규칙/gi,
@@ -30,8 +31,6 @@ function applySafety(response: string): string {
   let safe = response;
   for (const pattern of patterns) {
     if (pattern.test(safe)) {
-      // If response contains system-related terms, it might be leaking
-      // For now, just log a warning
       console.warn('Potential system prompt leak detected in response');
     }
   }
@@ -39,22 +38,48 @@ function applySafety(response: string): string {
   return safe;
 }
 
-export async function handleChat(req: ChatRequest): Promise<ChatResponse> {
-  const { message, character } = req;
+// Core chat logic
+async function handleChat(req: ChatRequest): Promise<ChatResponse> {
+  const { message, character, language = 'ko' } = req;
 
   if (!message || !character) {
     throw new Error('Missing required fields: message, character');
   }
 
+  // Validate language
+  const validLanguages = ['ko', 'en'];
+  const selectedLanguage = validLanguages.includes(language) ? language : 'ko';
+
   // Load pipeline inputs
-  const pipelineInput = loadPipelineInputs(character, message);
+  const pipelineInput = loadPipelineInputs(character, message, selectedLanguage);
 
   // Load identity for context retrieval
-  const charDir = character.replace(/-/g, '_');
-  let identityPath = path.join(RAG_BASE, character, 'identity.json');
-  if (!fs.existsSync(identityPath)) {
-    identityPath = path.join(RAG_BASE, charDir, 'identity.json');
+  // Try multiple directory/file combinations to handle hyphen vs underscore and lang vs plain files
+  function findIdentityFile(char: string, lang: string): string {
+    const hyphenated = char;
+    const underscored = char.replace(/-/g, '_');
+    const candidates = [hyphenated, underscored];
+    
+    // Also try partial match
+    const dirs = fs.readdirSync(RAG_BASE);
+    const normalized = char.replace(/-/g, '').toLowerCase();
+    const partialMatch = dirs.find(d => d.replace(/[-_]/g, '').toLowerCase() === normalized);
+    if (partialMatch && !candidates.includes(partialMatch)) candidates.push(partialMatch);
+
+    // First pass: look for language-specific file
+    for (const dir of candidates) {
+      const p = path.join(RAG_BASE, dir, `identity.${lang}.json`);
+      if (fs.existsSync(p)) return p;
+    }
+    // Second pass: look for plain identity.json
+    for (const dir of candidates) {
+      const p = path.join(RAG_BASE, dir, 'identity.json');
+      if (fs.existsSync(p)) return p;
+    }
+    throw new Error(`Identity file not found for character: ${char}, language: ${lang}`);
   }
+
+  const identityPath = findIdentityFile(character, selectedLanguage);
   const identity = JSON.parse(fs.readFileSync(identityPath, 'utf-8'));
 
   // Retrieve relevant context
@@ -68,6 +93,7 @@ export async function handleChat(req: ChatRequest): Promise<ChatResponse> {
       answer: pipelineInput.refusalText,
       shouldRefuse: true,
       character,
+      language: selectedLanguage,
     };
   }
 
@@ -92,5 +118,62 @@ export async function handleChat(req: ChatRequest): Promise<ChatResponse> {
     answer,
     shouldRefuse: false,
     character,
+    language: selectedLanguage,
   };
 }
+
+// HTTP request handler - this is what server.ts calls
+export async function handleChatRequest(req: any, res: any): Promise<void> {
+  // Handle CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    res.statusCode = 204;
+    res.end();
+    return;
+  }
+
+  if (req.method !== 'POST') {
+    res.statusCode = 405;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ error: 'Method not allowed' }));
+    return;
+  }
+
+  try {
+    // Parse request body
+    const body = await new Promise<string>((resolve, reject) => {
+      let data = '';
+      req.on('data', (chunk: any) => { data += chunk; });
+      req.on('end', () => resolve(data));
+      req.on('error', reject);
+    });
+
+    const parsed = JSON.parse(body);
+    const { message, character, language } = parsed;
+
+    if (!message || !character) {
+      res.statusCode = 400;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({ error: 'Missing required fields: message, character' }));
+      return;
+    }
+
+    // Call core chat logic
+    const result = await handleChat({ message, character, language });
+
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(result));
+  } catch (error: any) {
+    console.error('Chat handler error:', error);
+    res.statusCode = 500;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ error: error.message || 'Internal server error' }));
+  }
+}
+
+// Also export handleChat for backward compatibility
+export { handleChat };

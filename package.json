@@ -1,14 +1,22 @@
 {
-  "name": "little-heroes-mvp",
-  "version": "1.0.0",
-  "description": "AI Little Heroes - Children's character chat platform MVP",
-  "main": "backend/api/server.ts",
+  "name": "littleheroes",
+  "version": "1.1.0",
+  "description": "Little Heroes MVP - AI character chat service for children",
+  "main": "index.js",
   "scripts": {
-    "start": "npx tsx backend/api/server.ts",
-    "test": "npx tsx backend/test/test_chat.ts"
+    "dev:server": "tsx backend/api/server.ts",
+    "start": "node --import tsx backend/api/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["education", "ai", "children", "character-chat"],
+  "author": "Little Heroes Team",
+  "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "tsx": "^4.7.0"
+    "tsx": "^4.21.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
   }
 }

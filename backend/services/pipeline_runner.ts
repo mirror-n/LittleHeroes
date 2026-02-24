@@ -27,28 +27,69 @@ function loadJsonFile(filePath: string): any {
   return JSON.parse(raw);
 }
 
-// Map character slug (URL format) to directory name
-function resolveCharacterDir(slug: string): string {
-  // Try exact slug first (e.g., "abraham-lincoln")
-  const exactPath = path.join(RAG_BASE, slug);
-  if (fs.existsSync(exactPath)) return slug;
+// Map character slug (URL format) to the best directory name for the given language.
+// Some characters have two directories (hyphen and underscore versions) with different file sets.
+// The hyphen version may only have plain .json files, while the underscore version has .ko.json / .en.json.
+function resolveCharacterDir(slug: string, language: string): string {
+  const hyphenated = slug;                          // e.g., "leonardo-da-vinci"
+  const underscored = slug.replace(/-/g, '_');      // e.g., "leonardo_da_vinci"
+  const langFile = `identity.${language}.json`;     // e.g., "identity.ko.json"
+  const plainFile = 'identity.json';
 
-  // Try underscore version (e.g., "abraham_lincoln")
-  const underscored = slug.replace(/-/g, '_');
-  const underscorePath = path.join(RAG_BASE, underscored);
-  if (fs.existsSync(underscorePath)) return underscored;
+  // Candidate directories in priority order
+  const candidates: string[] = [];
 
-  // Try listing directories for partial match
-  const dirs = fs.readdirSync(RAG_BASE);
-  const normalized = slug.replace(/-/g, '').toLowerCase();
-  const match = dirs.find(d => d.replace(/[-_]/g, '').toLowerCase() === normalized);
-  if (match) return match;
+  // Add exact slug if it exists
+  if (fs.existsSync(path.join(RAG_BASE, hyphenated))) candidates.push(hyphenated);
+  // Add underscore version if different and exists
+  if (underscored !== hyphenated && fs.existsSync(path.join(RAG_BASE, underscored))) candidates.push(underscored);
 
-  throw new Error(`Character directory not found for slug: ${slug}`);
+  // If no candidates found, try partial match
+  if (candidates.length === 0) {
+    const dirs = fs.readdirSync(RAG_BASE);
+    const normalized = slug.replace(/-/g, '').toLowerCase();
+    const match = dirs.find(d => d.replace(/[-_]/g, '').toLowerCase() === normalized);
+    if (match) candidates.push(match);
+  }
+
+  if (candidates.length === 0) {
+    throw new Error(`Character directory not found for slug: ${slug}`);
+  }
+
+  // Prefer the directory that has the language-specific file (e.g., identity.ko.json)
+  for (const dir of candidates) {
+    if (fs.existsSync(path.join(RAG_BASE, dir, langFile))) {
+      return dir;
+    }
+  }
+
+  // Fallback: prefer the directory that has the plain file (identity.json)
+  for (const dir of candidates) {
+    if (fs.existsSync(path.join(RAG_BASE, dir, plainFile))) {
+      return dir;
+    }
+  }
+
+  // Last resort: return first candidate
+  return candidates[0];
+}
+
+// Safely load a JSON file, trying language-specific first, then plain fallback
+function loadRagJson(charPath: string, baseName: string, language: string): any {
+  const langPath = path.join(charPath, `${baseName}.${language}.json`);
+  if (fs.existsSync(langPath)) {
+    return loadJsonFile(langPath);
+  }
+  // Fallback to plain .json
+  const plainPath = path.join(charPath, `${baseName}.json`);
+  if (fs.existsSync(plainPath)) {
+    return loadJsonFile(plainPath);
+  }
+  throw new Error(`RAG file not found: ${baseName} for language ${language} in ${charPath}`);
 }
 
 export function loadPipelineInputs(characterSlug: string, userMessage: string, language: string): PipelineInput {
-  const charDir = resolveCharacterDir(characterSlug);
+  const charDir = resolveCharacterDir(characterSlug, language);
   const charPath = path.join(RAG_BASE, charDir);
 
   // Load prompt templates
@@ -57,10 +98,10 @@ export function loadPipelineInputs(characterSlug: string, userMessage: string, l
   const answerPromptTemplate = loadTextFile(path.join(PROMPTS_BASE, 'answer_with_rag.txt'));
   const refusalText = loadTextFile(path.join(PROMPTS_BASE, 'refusal.txt'));
 
-  // Load RAG data based on language
-  const identity = loadJsonFile(path.join(charPath, `identity.${language}.json`));
-  const style = loadJsonFile(path.join(charPath, `style.${language}.json`));
-  const guardrails = loadJsonFile(path.join(charPath, `guardrails.${language}.json`));
+  // Load RAG data based on language (with fallback to plain .json)
+  const identity = loadRagJson(charPath, 'identity', language);
+  const style = loadRagJson(charPath, 'style', language);
+  const guardrails = loadRagJson(charPath, 'guardrails', language);
 
   const characterName = identity.character.name;
   const iconicVirtue = identity.character.iconic_virtue;

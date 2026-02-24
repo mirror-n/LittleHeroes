@@ -1,198 +1,11 @@
 /* Home Page Specific Styles */
-/* Header rectangle: same size and color gradient as previous header image background */
-.header-rectangle {
-  width: 100%;
-  margin-top: 70px;
-  aspect-ratio: 1920 / 420;
-  background: #15fa62;
-  background-image: linear-gradient(
-    to bottom,
-    #15FA61 20%,
-    #20FF8D 60%,
-    #27FFA6,
-    #32FFBC
-  );
-  display: block;
-  position: relative;
-}
 
-/* Throne image: centered horizontally, bottom edge aligned with rectangle bottom, height matches rectangle */
-.header-throne-image {
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  bottom: 3px;
-  transform: translateX(-50%);
-  height: 97%;
-  max-height: 97%;
-  width: auto;
-  max-width: 97%;
-  object-fit: contain;
-  display: block;
-}
-
-/* First appearance: adults fade in (staggered) */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Loop: 4s adults → 2.5s crossfade to children → 3s children → 2.5s crossfade to adults (12s cycle) */
-@keyframes adultCycle {
-  0% { opacity: 1; }
-  33.33% { opacity: 1; }   /* 4s hold */
-  54.17% { opacity: 0; }   /* 2.5s crossfade out */
-  79.17% { opacity: 0; }   /* 3s hidden */
-  100% { opacity: 1; }     /* 2.5s crossfade in */
-}
-
-@keyframes childCycle {
-  0% { opacity: 0; }
-  33.33% { opacity: 0; }
-  54.17% { opacity: 1; }   /* 2.5s crossfade in */
-  79.17% { opacity: 1; }   /* 3s hold */
-  100% { opacity: 0; }     /* 2.5s crossfade out */
-}
-
-/* Adult images: bottom edge aligned, height matches rectangle, same padding */
-.header-adult-image {
-  position: absolute;
-  left: 0;
-  bottom: 3px;
-  height: 97%;
-  max-height: 97%;
-  width: auto;
-  max-width: 97%;
-  object-fit: contain;
-  display: block;
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out 0s 1 forwards, adultCycle 12s ease-in-out 7.5s infinite forwards;
-}
-
-/* Child images: same size/position/padding as adults, height matches rectangle, responsive */
-.header-child-image {
-  position: absolute;
-  left: 0;
-  bottom: 3px;
-  height: 97%;
-  max-height: 97%;
-  width: auto;
-  max-width: 97%;
-  object-fit: contain;
-  display: block;
-  opacity: 0;
-  animation: childCycle 12s ease-in-out 7.5s infinite forwards;
-}
-
-/* Individual adult image positions - adjust left values as needed */
-/* animation-delay: [stagger for fadeIn], 8.7s (cycle start); comma ensures first anim gets stagger, second gets 8.7s */
-.header-adult-image[data-adult="lincoln"] {
-  left: -7vw;
-  animation-delay: 0s, 7.5s;
-}
-
-.header-adult-image[data-adult="newton"] {
-  left: 7vw;
-  animation-delay: 0.7s, 7.5s;
-}
-
-.header-adult-image[data-adult="einstein"] {
-  left: -14vw;
-  animation-delay: 1.2s, 7.5s;
-}
-
-.header-adult-image[data-adult="carnegie"] {
-  left: 14.5vw;
-  animation-delay: 1.7s, 7.5s;
-}
-
-.header-adult-image[data-adult="socrate"] {
-  left: -22.5vw;
-  animation-delay: 2.2s, 7.5s;
-}
-
-.header-adult-image[data-adult="marie"] {
-  left: 21vw;
-  animation-delay: 2.7s, 7.5s;
-}
-
-.header-adult-image[data-adult="leonard"] {
-  left: -29vw;
-  animation-delay: 3.2s, 7.5s;
-}
-
-.header-adult-image[data-adult="helen"] {
-  left: 28.2vw;
-  animation-delay: 3.7s, 7.5s;
-}
-
-.header-adult-image[data-adult="shakespeare"] {
-  left: -36vw;
-  animation-delay: 4.2s, 7.5s;
-}
-
-.header-adult-image[data-adult="mozart"] {
-  left: 36.4vw;
-  animation-delay: 4.7s, 7.5s;
-}
-
-.header-adult-image[data-adult="darwin"] {
-  left: -43.5vw;
-  animation-delay: 5.2s, 7.5s;
-}
-
-.header-adult-image[data-adult="charlie"] {
-  left: 43.4vw;
-  animation-delay: 5.7s, 7.5s;
-}
-
-/* Child images: same positions as adults, no stagger (all start cycle at 8.7s together) */
-.header-child-image[data-adult="lincoln"] {
-  left: -7.5vw;
-}
-
-.header-child-image[data-adult="newton"] {
-  left: 7vw;
-}
-
-.header-child-image[data-adult="einstein"] {
-  left: -14.3vw;
-}
-
-.header-child-image[data-adult="carnegie"] {
-  left: 13.9vw;
-}
-
-.header-child-image[data-adult="socrate"] {
-  left: -21vw;
-}
-
-.header-child-image[data-adult="marie"] {
-  left: 20.6vw;
-}
-
-.header-child-image[data-adult="leonard"] {
-  left: -28vw;
-}
-
-.header-child-image[data-adult="helen"] {
-  left: 27.9vw;
-}
-
-.header-child-image[data-adult="shakespeare"] {
-  left: -35vw;
-}
-
-.header-child-image[data-adult="mozart"] {
-  left: 35vw;
-}
-
-.header-child-image[data-adult="darwin"] {
-  left: -42vw;
-}
-
-.header-child-image[data-adult="charlie"] {
-  left: 42vw;
+/* Header Image and TabsSection */
+.header-image-section {
+  padding-top: 70px;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .header-image-section img {
@@ -319,7 +132,7 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #15FA61, #32FFBC);
+  background: linear-gradient(135deg, #15fa62, #30ffbb);
   border: 4px solid #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -363,7 +176,7 @@
 .figure-portrait[data-key="shakespeare"]:focus-visible {
   box-shadow:
     0 0 0 2px rgba(255, 255, 255, 0.9),
-    0 0 40px rgba(192, 75, 32, 1);
+    0 0 30px rgba(192, 75, 32, 1);
 }
 
 .figure-portrait[data-key="darwin"]:hover,
@@ -380,7 +193,7 @@
 .figure-portrait[data-key="carnegie"]:focus-visible {
   box-shadow:
     0 0 0 2px rgba(255, 255, 255, 0.9),
-    0 0 40px rgba(56, 142, 60, 1);
+    0 0 30px rgba(56, 142, 60, 1);
 }
 
 .learn-list li.learn-highlight {
@@ -587,7 +400,7 @@
 /* Responsive: greats circle – fixed size per breakpoint (edit values as needed) */
 @media (max-width: 1250px) {
   .header-image-section {
-    padding-top: 64px;
+    padding-top: 70px;
   }
 
   .header-image-section img {
@@ -677,10 +490,6 @@
 }
 
 @media (max-width: 680px) {
-  .header-rectangle {
-    margin-top: 55px;
-  }
-
   .learn-list li {
     line-height: 1.6;
   }
@@ -703,12 +512,6 @@
 
   .greats-visual {
     transform: translate(-50%, -50%) scale(0.5); /* 380/760 */
-  }
-}
-
-@media (max-width: 480px) {
-  .header-rectangle {
-    margin-top: 45px;
   }
 }
 

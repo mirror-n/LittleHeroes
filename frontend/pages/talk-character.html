@@ -195,7 +195,8 @@
         if (host === "localhost" || host === "127.0.0.1") {
           return "http://localhost:3001";
         }
-        return "https://littleheroes-y949.onrender.com";
+        // Use same-origin: the API runs on the same server as the frontend
+        return window.location.origin;
       }
 
       // Initialize on page load

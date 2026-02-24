@@ -99,7 +99,7 @@
   position: absolute;
   bottom: 0;
   right: 5px;
-  width: 55%;
+  width: 45%;
   max-width: 340px;
   min-width: 0;
   pointer-events: none;
@@ -159,21 +159,10 @@
 }
 
 /* Responsive Design */
-
-@media (max-width: 2300px) {
-  .character-image {
-    width: 50%;
-  }
-}
-
-@media (max-width: 1150px) {
+@media (max-width: 1024px) {
   .characters-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-  }
-
-  .character-image {
-    width: 40%;
   }
 }
 
@@ -196,7 +185,7 @@
   }
 
   .character-image {
-    width: 28%;
+    max-width: 250px;
   }
 }
 
@@ -218,18 +207,6 @@
   }
 
   .character-image {
-    width: 32%;
-  }
-}
-
-@media (max-width: 600px) {
-  .character-image {
-    width: 35%;
-  }
-}
-
-@media (max-width: 480px) {
-  .character-image {
-    width: 45%;
+    max-width: 200px;
   }
 }
