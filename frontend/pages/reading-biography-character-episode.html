@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Little Heroes - Episode</title>
     <meta data-page-title-ko="꼬마 위인 - 에피소드" data-page-title-en="Little Heroes - Episode" />
-    <link rel="stylesheet" href="../styles/main.css?v=2" />
+    <link rel="stylesheet" href="../styles/main.css?v=3" />
     <link
       rel="stylesheet"
-      href="../styles/reading-biography-character-episode.css?v=2"
+      href="../styles/reading-biography-character-episode.css?v=3"
     />
     <style>
       .episode-body {
@@ -38,8 +38,8 @@
       .episode-image-container {
         width: 100%;
         aspect-ratio: 3/4;
-        background-color: #e0e0e0;
-        border: 2px dashed #999;
+        background-color: #C8E6C9;
+        border: 2px dashed #A5D6A7;
         border-radius: 8px;
         display: flex;
         justify-content: center;
@@ -55,7 +55,7 @@
       }
 
       .episode-image-placeholder {
-        color: #999;
+        color: #78909C;
         font-size: 14px;
         text-align: center;
         padding: 20px;
@@ -124,7 +124,7 @@
     </main>
 
     <!-- Load episodes data -->
-    <script src="../data/episodes-titles.js?v=2"></script>
+    <script src="../data/episodes-titles.js?v=3"></script>
 
     <script>
       // Character name mapping
@@ -280,7 +280,7 @@
             }
             let html = '';
             if (showFallbackNotice) {
-              html += '<p class="text-content3" style="color: #888; font-style: italic; margin-bottom: 16px;">한국어 번역이 준비 중입니다. 영어 원문을 표시합니다.</p>';
+              html += '<p class="text-content3" style="color: #78909C; font-style: italic; margin-bottom: 16px; font-family: Noto Sans KR, sans-serif;">한국어 번역이 준비 중입니다. 영어 원문을 표시합니다.</p>';
             }
             html += formatText(displayContent);
             document.getElementById("episode-text-content").innerHTML = html;
@@ -323,6 +323,6 @@
     </script>
 
     <!-- Global Language Switcher -->
-    <script src="../scripts/language-switcher.js?v=2"></script>
+    <script src="../scripts/language-switcher.js?v=3"></script>
   </body>
 </html>

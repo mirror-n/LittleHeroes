@@ -16,14 +16,16 @@
 
 .plan-title {
   font-size: 64px;
-  font-weight: bold;
-  color: #fff;
+  font-weight: 800;
+  font-family: "Nunito", "Jua", sans-serif;
+  color: #37474F;
   margin-bottom: 16px;
 }
 
 .plan-subtitle {
   font-size: 24px;
-  color: #fff;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  color: #546E7A;
   opacity: 0.9;
   margin-bottom: 50px;
 }
@@ -48,7 +50,7 @@
 }
 
 .plan-card-featured {
-  border: 3px solid #0072ce;
+  border: 3px solid #42A5F5;
   transform: scale(1.05);
 }
 
@@ -57,7 +59,7 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: #0072ce;
+  background: #42A5F5;
   color: #fff;
   padding: 6px 20px;
   border-radius: 20px;
@@ -69,7 +71,8 @@
 .plan-card-header h2 {
   font-size: 28px;
   font-weight: bold;
-  color: #333;
+  color: #37474F;
+  font-family: "Nunito", "Jua", sans-serif;
   margin-bottom: 20px;
 }
 
@@ -80,12 +83,14 @@
 .plan-card-price .price {
   font-size: 48px;
   font-weight: bold;
-  color: #0072ce;
+  color: #1E88E5;
+  font-family: "Nunito", sans-serif;
 }
 
 .plan-card-price .period {
   font-size: 18px;
-  color: #666;
+  color: #78909C;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
 }
 
 .plan-features {
@@ -97,7 +102,8 @@
 
 .plan-features li {
   font-size: 16px;
-  color: #555;
+  color: #546E7A;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
   padding: 8px 0;
   padding-left: 28px;
   position: relative;
@@ -108,7 +114,7 @@
   content: "\2713";
   position: absolute;
   left: 0;
-  color: #388e3c;
+  color: #66BB6A;
   font-weight: bold;
   font-size: 18px;
 }
@@ -130,12 +136,12 @@
 
 .plan-btn-outline {
   background: #fff;
-  color: #ff9800;
-  border: 2px solid #ff9800;
+  color: #FFA726;
+  border: 2px solid #FFA726;
 }
 
 .plan-btn-primary {
-  background: #0072ce;
+  background: #42A5F5;
   color: #fff;
 }
 
@@ -145,9 +151,10 @@
 
 .payment-title {
   font-size: 18px;
-  color: #fff;
+  color: #37474F;
   margin-bottom: 16px;
   font-weight: bold;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
 }
 
 .payment-icons {
@@ -158,8 +165,8 @@
 }
 
 .payment-icons span {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: rgba(66, 165, 245, 0.15);
+  color: #37474F;
   padding: 8px 20px;
   border-radius: 20px;
   font-size: 14px;

@@ -13,9 +13,9 @@
 }
 
 .character-window {
-  background-color: #0072ce;
+  background-color: #42A5F5;
   border-radius: 30px;
-  border: 3px solid black;
+  border: 3px solid rgba(0, 0, 0, 0.15);
   padding: 40px;
   position: relative;
   width: 90%;
@@ -110,8 +110,9 @@
   padding: 10px 14px;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.85);
-  color: #000;
+  color: #263238;
   font-size: 18px;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
   line-height: 1.4;
 }
 
@@ -122,7 +123,7 @@
 
 .character-input {
   flex: 1;
-  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   padding: 10px 12px;
   font-size: 18px;
@@ -134,12 +135,14 @@
 }
 
 .character-send {
-  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   padding: 10px 16px;
-  background-color: #ffeb3b;
-  color: #000;
+  background-color: #FFEE58;
+  color: #263238;
   font-size: 18px;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -157,8 +160,8 @@
 }
 
 .suggested-reply-btn {
-  background-color: rgba(255, 235, 59, 0.9);
-  color: #000;
+  background-color: rgba(255, 238, 88, 0.9);
+  color: #263238;
   border: 2px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 6px 14px;
@@ -174,7 +177,7 @@
 }
 
 .suggested-reply-btn:hover {
-  background-color: #ffeb3b;
+  background-color: #FFEE58;
   transform: translateY(-2px);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   border-color: rgba(0, 0, 0, 0.5);

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Little Heroes - Biography Episodes</title>
     <meta data-page-title-ko="꼬마 위인 - 위인전 에피소드" data-page-title-en="Little Heroes - Biography Episodes" />
-    <link rel="stylesheet" href="../styles/main.css?v=2" />
-    <link rel="stylesheet" href="../styles/reading-biography-character.css?v=2" />
+    <link rel="stylesheet" href="../styles/main.css?v=3" />
+    <link rel="stylesheet" href="../styles/reading-biography-character.css?v=3" />
   </head>
   <body class="background-green">
     <!-- Tabs Banner -->
@@ -39,7 +39,7 @@
     </main>
 
     <!-- Load episodes data as JavaScript file (works without web server) -->
-    <script src="../data/episodes-titles.js?v=2"></script>
+    <script src="../data/episodes-titles.js?v=3"></script>
 
     <script>
       // Character name mapping (from reading-biography.html to JSON keys)
@@ -180,7 +180,7 @@
           document.getElementById("biography-title").textContent =
             "Error loading episodes";
           document.getElementById("episodes-grid").innerHTML =
-            "<p style='color: red; text-align: center; padding: 20px;'>" +
+            "<p style='color: #EF5350; text-align: center; padding: 20px; font-family: Noto Sans KR, sans-serif;'>" +
             "Error: " +
             error.message +
             "</p>";
@@ -207,6 +207,6 @@
     </script>
 
     <!-- Global Language Switcher -->
-    <script src="../scripts/language-switcher.js?v=2"></script>
+    <script src="../scripts/language-switcher.js?v=3"></script>
   </body>
 </html>

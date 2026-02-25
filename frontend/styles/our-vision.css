@@ -16,14 +16,16 @@
 
 .vision-title {
   font-size: 64px;
-  font-weight: bold;
+  font-weight: 800;
+  font-family: "Nunito", "Jua", sans-serif;
   color: #fff;
   margin-bottom: 16px;
 }
 
 .vision-subtitle {
   font-size: 24px;
-  color: #ffeb3b;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  color: #FFEE58;
   margin-bottom: 60px;
 }
 
@@ -38,14 +40,16 @@
 .vision-section h2 {
   font-size: 32px;
   font-weight: bold;
-  color: #63dcfb;
+  color: #81D4FA;
+  font-family: "Nunito", "Jua", sans-serif;
   margin-bottom: 12px;
 }
 
 .vision-section p {
   font-size: 20px;
   line-height: 1.7;
-  color: #fff;
+  color: #E3F2FD;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
 }
 
 @media (max-width: 768px) {
