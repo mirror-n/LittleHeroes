@@ -54,7 +54,7 @@
         marie: "marie",
         hellen: "hellen",
         wolf: "wolf",
-        charlie: "charlie",
+        charlie: "chally",
         andy: "andy",
       };
 
@@ -71,7 +71,7 @@
         marie: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
         hellen: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
         wolf: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
-        charlie: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        chally: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
         andy: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
       };
 
@@ -116,17 +116,31 @@
             return;
           }
 
-          // Update title
-          document.getElementById("biography-title").textContent =
-            characterData.fullName + " Biography";
-          document.title = `AI Greats - ${characterData.fullName} Biography`;
+          // Get current language (use same key as language-switcher.js)
+          const currentLang = localStorage.getItem('littleHeroesLanguage') || 'en';
+
+          // Korean full names mapping
+          const fullNameKo = {
+            abe: '에이브러햄 링컨', leo: '레오나르도 다빈치', al: '알버트 아인슈타인',
+            isac: '아이작 뉴턴', socrate: '소크라테스', willy: '윌리엄 셰익스피어',
+            chales: '찰스 다윈', marie: '마리 퀴리', hellen: '헬렌 켈러',
+            wolf: '볼프강 아마데우스 모차르트', chally: '찰리 채플린', andy: '앤드류 카네기'
+          };
+
+          // Update title based on language
+          if (currentLang === 'ko' && fullNameKo[characterKey]) {
+            document.getElementById("biography-title").textContent =
+              fullNameKo[characterKey] + " 위인전";
+            document.title = `꼬마 위인 - ${fullNameKo[characterKey]} 위인전`;
+          } else {
+            document.getElementById("biography-title").textContent =
+              characterData.fullName + " Biography";
+            document.title = `Little Heroes - ${characterData.fullName} Biography`;
+          }
 
           // Clear existing episodes
           const episodesGrid = document.getElementById("episodes-grid");
           episodesGrid.innerHTML = "";
-
-          // Get current language
-          const currentLang = localStorage.getItem('language') || 'en';
 
           // Create episode boxes
           characterData.episodes.forEach((episodeData, index) => {
@@ -147,7 +161,8 @@
               displayTitle = episodeData.title_ko;
             }
             
-            episodeBox.innerHTML = `<p class="text-content3">Episode ${
+            const episodeLabel = currentLang === 'ko' ? '에피소드' : 'Episode';
+            episodeBox.innerHTML = `<p class="text-content3">${episodeLabel} ${
               episodeNumber
             }: ${displayTitle}</p>`;
 
@@ -172,9 +187,14 @@
         }
       }
 
-      // Listen for language changes
+      // Listen for language changes from language switcher (same tab)
+      window.addEventListener('languageChanged', function(e) {
+        loadEpisodes();
+      });
+
+      // Also listen for storage changes (cross-tab)
       window.addEventListener('storage', function(e) {
-        if (e.key === 'language') {
+        if (e.key === 'littleHeroesLanguage') {
           loadEpisodes();
         }
       });

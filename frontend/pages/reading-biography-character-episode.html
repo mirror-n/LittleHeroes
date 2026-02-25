@@ -139,7 +139,7 @@
         marie: "marie",
         hellen: "hellen",
         wolf: "wolf",
-        charlie: "charlie",
+        charlie: "chally",
         andy: "andy",
       };
 
@@ -245,10 +245,16 @@
         const episodeTitle = currentLang === 'ko' ? episodeData.title_ko : episodeData.title_en;
 
         // Update title
+        const episodeLabel = currentLang === 'ko' ? '에피소드' : 'Episode';
         document.getElementById(
           "episode-title"
-        ).textContent = `Episode ${episodeNumber}) ${episodeTitle}`;
-        document.title = `AI Greats - ${characterData.fullName} - ${episodeTitle}`;
+        ).textContent = `${episodeLabel} ${episodeNumber}) ${episodeTitle}`;
+        
+        if (currentLang === 'ko') {
+          document.title = `꼬마 위인 - ${characterData.fullName} - ${episodeTitle}`;
+        } else {
+          document.title = `Little Heroes - ${characterData.fullName} - ${episodeTitle}`;
+        }
 
         // Load text content
         loadTextContent(characterKey, episodeNumber, (error, textContent) => {
@@ -260,12 +266,24 @@
               "</p>";
           } else {
             // Get content in the current language
-            let displayContent = textContent;
+            let displayContent = '';
+            let showFallbackNotice = false;
             if (typeof textContent === 'object' && textContent !== null) {
-              displayContent = textContent[currentLang] || textContent['en'] || '';
+              if (currentLang === 'ko' && textContent['ko'] && textContent['ko'].trim() !== '') {
+                displayContent = textContent['ko'];
+              } else if (textContent['en']) {
+                displayContent = textContent['en'];
+                if (currentLang === 'ko') showFallbackNotice = true;
+              }
+            } else {
+              displayContent = textContent || '';
             }
-            document.getElementById("episode-text-content").innerHTML =
-              formatText(displayContent);
+            let html = '';
+            if (showFallbackNotice) {
+              html += '<p class="text-content3" style="color: #888; font-style: italic; margin-bottom: 16px;">한국어 번역이 준비 중입니다. 영어 원문을 표시합니다.</p>';
+            }
+            html += formatText(displayContent);
+            document.getElementById("episode-text-content").innerHTML = html;
           }
         });
 
