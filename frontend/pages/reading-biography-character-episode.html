@@ -10,6 +10,73 @@
       rel="stylesheet"
       href="../styles/reading-biography-character-episode.css?v=2"
     />
+    <style>
+      .episode-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .episode-text-column {
+        flex: 1;
+        overflow-y: auto;
+        max-height: 600px;
+        padding-right: 20px;
+      }
+
+      .episode-image-column {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .episode-image-container {
+        width: 100%;
+        aspect-ratio: 3/4;
+        background-color: #e0e0e0;
+        border: 2px dashed #999;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .episode-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .episode-image-placeholder {
+        color: #999;
+        font-size: 14px;
+        text-align: center;
+        padding: 20px;
+      }
+
+      @media (max-width: 1024px) {
+        .episode-body {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .episode-text-column {
+          max-height: none;
+        }
+
+        .episode-image-container {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+      }
+    </style>
   </head>
   <body class="background-green">
     <!-- Tabs Banner -->
@@ -47,7 +114,10 @@
 
         <div class="episode-image-column">
           <div class="episode-image-container">
-            <img id="episode-image" src="" alt="Episode illustration" />
+            <img id="episode-image" src="" alt="Episode illustration" style="display: none;" />
+            <div id="image-placeholder" class="episode-image-placeholder">
+              Image placeholder<br/>(3 images per episode)
+            </div>
           </div>
         </div>
       </div>
@@ -77,6 +147,14 @@
       function getURLParameter(name) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name);
+      }
+
+      // Get current language from language switcher or localStorage
+      function getCurrentLanguage() {
+        if (window.languageSwitcher) {
+          return window.languageSwitcher.getCurrentLanguage();
+        }
+        return localStorage.getItem('littleHeroesLanguage') || 'en';
       }
 
       // Global variable to store loaded content
@@ -154,13 +232,17 @@
         }
 
         const characterData = episodesData[characterKey];
-        const episodeTitle = characterData.episodes[episodeNumber - 1];
+        const episodeData = characterData.episodes[episodeNumber - 1];
 
-        if (!episodeTitle) {
+        if (!episodeData) {
           document.getElementById("episode-title").textContent =
             "Episode not found";
           return;
         }
+
+        // Get current language
+        const currentLang = getCurrentLanguage();
+        const episodeTitle = currentLang === 'ko' ? episodeData.title_ko : episodeData.title_en;
 
         // Update title
         document.getElementById(
@@ -177,13 +259,19 @@
               error.message +
               "</p>";
           } else {
+            // Get content in the current language
+            let displayContent = textContent;
+            if (typeof textContent === 'object' && textContent !== null) {
+              displayContent = textContent[currentLang] || textContent['en'] || '';
+            }
             document.getElementById("episode-text-content").innerHTML =
-              formatText(textContent);
+              formatText(displayContent);
           }
         });
 
         // Set image (you can customize image paths based on character and episode)
         const imageElement = document.getElementById("episode-image");
+        const imagePlaceholder = document.getElementById("image-placeholder");
         // Image format: character-episode-Number (e.g., abe-episode-1.png)
         // Try both .png and .jpg extensions
         const imagePath = `../images/episodes-images/${characterKey}-episode-${episodeNumber}`;
@@ -193,11 +281,21 @@
           // Try .jpg if .png fails
           this.src = `${imagePath}.jpg`;
           this.onerror = function () {
-            // Hide image if both formats fail
+            // Hide image if both formats fail, keep placeholder visible
             this.style.display = "none";
+            imagePlaceholder.style.display = "flex";
           };
         };
+        imageElement.onload = function () {
+          imagePlaceholder.style.display = "none";
+          imageElement.style.display = "block";
+        };
       }
+
+      // Listen for language changes
+      window.addEventListener('languageChanged', function(e) {
+        loadEpisode();
+      });
 
       // Initialize on page load
       window.addEventListener("DOMContentLoaded", loadEpisode);

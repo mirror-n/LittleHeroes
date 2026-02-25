@@ -59,19 +59,20 @@
       };
 
       // Episode availability (set to true to enable)
+      // All episodes are now available
       const episodeAvailability = {
-        abe: { 1: true },
-        leo: {},
-        al: {},
-        isac: {},
-        socrate: {},
-        willy: {},
-        chales: {},
-        marie: {},
-        hellen: {},
-        wolf: {},
-        charlie: {},
-        andy: {},
+        abe: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        leo: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        al: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        isac: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        socrate: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        willy: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        chales: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        marie: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        hellen: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        wolf: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        charlie: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
+        andy: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true },
       };
 
       // Get URL parameter
@@ -124,8 +125,11 @@
           const episodesGrid = document.getElementById("episodes-grid");
           episodesGrid.innerHTML = "";
 
+          // Get current language
+          const currentLang = localStorage.getItem('language') || 'en';
+
           // Create episode boxes
-          characterData.episodes.forEach((episodeTitle, index) => {
+          characterData.episodes.forEach((episodeData, index) => {
             const availabilityForCharacter =
               episodeAvailability[characterKey] || {};
             const episodeNumber = index + 1;
@@ -136,9 +140,16 @@
 
             const episodeBox = document.createElement("div");
             episodeBox.className = "episode-box background-darkblue";
+            
+            // Get title in current language
+            let displayTitle = episodeData.title_en;
+            if (currentLang === 'ko' && episodeData.title_ko) {
+              displayTitle = episodeData.title_ko;
+            }
+            
             episodeBox.innerHTML = `<p class="text-content3">Episode ${
               episodeNumber
-            }: ${episodeTitle}</p>`;
+            }: ${displayTitle}</p>`;
 
             episodeBoxLink.appendChild(episodeBox);
             episodesGrid.appendChild(episodeBoxLink);
@@ -160,6 +171,13 @@
             "</p>";
         }
       }
+
+      // Listen for language changes
+      window.addEventListener('storage', function(e) {
+        if (e.key === 'language') {
+          loadEpisodes();
+        }
+      });
 
       // Initialize on page load
       window.addEventListener("DOMContentLoaded", loadEpisodes);
