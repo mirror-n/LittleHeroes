@@ -52,17 +52,25 @@
   z-index: 10;
 }
 
-.character-icons-left .icon,
-.character-icons-right .icon {
-  font-size: 32px;
-  filter: brightness(0);
-  cursor: pointer;
-  transition: transform 0.2s;
+/* Webcam icon top-right */
+.character-icons-top-right {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 10;
 }
 
-.character-icons-left .icon:hover,
-.character-icons-right .icon:hover {
-  transform: scale(1.1);
+.chat-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  opacity: 0.85;
+}
+
+.chat-icon:hover {
+  transform: scale(1.15);
+  opacity: 1;
 }
 
 .character-image-container {
@@ -242,9 +250,9 @@
     gap: 15px;
   }
 
-  .character-icons-left .icon,
-  .character-icons-right .icon {
-    font-size: 24px;
+  .chat-icon {
+    width: 32px;
+    height: 32px;
   }
 
   .character-image-container img {
