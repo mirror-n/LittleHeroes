@@ -1,0 +1,685 @@
+/* ===== Auth Pages Common Styles ===== */
+
+/* Auth Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px 20px 40px;
+  background: linear-gradient(135deg, #FFF8E1 0%, #E3F2FD 50%, #E8F5E9 100%);
+}
+
+/* Auth Card */
+.auth-card {
+  background: white;
+  border-radius: 24px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-title {
+  font-family: "Nunito", "Jua", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #37474F;
+  margin: 0 0 8px;
+}
+
+.auth-subtitle {
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  color: #78909C;
+  margin: 0 0 4px;
+}
+
+.auth-hint {
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  color: #B0BEC5;
+  margin: 0;
+}
+
+/* Error Message */
+.auth-error {
+  background: #FFEBEE;
+  color: #C62828;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form Fields */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-field label {
+  display: block;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #546E7A;
+  margin-bottom: 6px;
+}
+
+.auth-field input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #E0E0E0;
+  border-radius: 12px;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  color: #37474F;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.auth-field input:focus {
+  border-color: #42A5F5;
+}
+
+.auth-field input::placeholder {
+  color: #B0BEC5;
+}
+
+/* Buttons */
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.auth-btn-primary {
+  background: #42A5F5;
+  color: white;
+}
+
+.auth-btn-primary:hover {
+  background: #1E88E5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(66, 165, 245, 0.3);
+}
+
+.auth-btn-google {
+  background: white;
+  color: #37474F;
+  border: 2px solid #E0E0E0;
+}
+
+.auth-btn-google:hover {
+  background: #F5F5F5;
+  border-color: #BDBDBD;
+}
+
+/* Divider */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #E0E0E0;
+}
+
+.auth-divider span {
+  padding: 0 16px;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  color: #B0BEC5;
+}
+
+/* Footer Link */
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  color: #78909C;
+}
+
+.auth-footer a {
+  color: #42A5F5;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Auth Area in Navigation ===== */
+.auth-area {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.auth-login-btn {
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  background: #42A5F5;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.auth-login-btn:hover {
+  background: #1E88E5;
+  transform: translateY(-1px);
+}
+
+.auth-profile-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #42A5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-profile-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(66, 165, 245, 0.3);
+}
+
+.auth-avatar {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ===== Profile Dropdown Menu ===== */
+.auth-dropdown-menu {
+  position: fixed;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  min-width: 220px;
+  z-index: 1000;
+  overflow: hidden;
+  animation: menuSlideIn 0.15s ease-out;
+}
+
+@keyframes menuSlideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-menu-header {
+  padding: 16px 20px;
+}
+
+.auth-menu-name {
+  font-family: "Nunito", "Jua", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #37474F;
+}
+
+.auth-menu-email {
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  color: #90A4AE;
+  margin-top: 2px;
+}
+
+.auth-menu-divider {
+  height: 1px;
+  background: #ECEFF1;
+}
+
+.auth-menu-item {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  color: #546E7A;
+  text-decoration: none;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+  box-sizing: border-box;
+}
+
+.auth-menu-item:hover {
+  background: #F5F5F5;
+}
+
+.auth-menu-logout {
+  color: #EF5350;
+}
+
+.auth-menu-logout:hover {
+  background: #FFEBEE;
+}
+
+/* ===== Profile Selection Page ===== */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px 20px 40px;
+  background: linear-gradient(135deg, #FFF8E1 0%, #E3F2FD 50%, #E8F5E9 100%);
+}
+
+.profile-title {
+  font-family: "Nunito", "Jua", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #37474F;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.profile-subtitle {
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  color: #78909C;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.profile-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 800px;
+  margin-bottom: 32px;
+}
+
+.profile-card {
+  width: 160px;
+  background: white;
+  border-radius: 20px;
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 3px solid transparent;
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(66, 165, 245, 0.2);
+  border-color: #42A5F5;
+}
+
+.profile-card-avatar {
+  font-size: 56px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.profile-card-name {
+  font-family: "Nunito", "Jua", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #37474F;
+}
+
+/* Add Profile Card */
+.profile-card-add {
+  border: 3px dashed #B0BEC5;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.profile-card-add:hover {
+  border-color: #42A5F5;
+  background: rgba(66, 165, 245, 0.05);
+}
+
+.profile-card-add-icon {
+  font-size: 48px;
+  color: #B0BEC5;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.profile-card-add-text {
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  color: #90A4AE;
+}
+
+/* Add Child Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.modal-title {
+  font-family: "Nunito", "Jua", sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #37474F;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.avatar-picker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.avatar-option {
+  width: 52px;
+  height: 52px;
+  font-size: 28px;
+  border: 3px solid #E0E0E0;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.avatar-option:hover {
+  border-color: #42A5F5;
+  transform: scale(1.1);
+}
+
+.avatar-option.selected {
+  border-color: #42A5F5;
+  background: #E3F2FD;
+  transform: scale(1.15);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.modal-btn-cancel {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #E0E0E0;
+  border-radius: 12px;
+  background: white;
+  color: #78909C;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-btn-cancel:hover {
+  background: #F5F5F5;
+}
+
+.modal-btn-save {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #42A5F5;
+  color: white;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-btn-save:hover {
+  background: #1E88E5;
+}
+
+/* ===== Parent Dashboard ===== */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 100px 40px 40px;
+  background: linear-gradient(135deg, #FFF8E1 0%, #E3F2FD 50%, #E8F5E9 100%);
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-title {
+  font-family: "Nunito", "Jua", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #37474F;
+  margin-bottom: 8px;
+}
+
+.dashboard-subtitle {
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  color: #78909C;
+}
+
+.dashboard-section {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-section-title {
+  font-family: "Nunito", "Jua", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #37474F;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #E3F2FD;
+}
+
+.dashboard-child-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ECEFF1;
+}
+
+.dashboard-child-row:last-child {
+  border-bottom: none;
+}
+
+.dashboard-child-avatar {
+  font-size: 36px;
+  margin-right: 16px;
+}
+
+.dashboard-child-info {
+  flex: 1;
+}
+
+.dashboard-child-name {
+  font-family: "Nunito", "Jua", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #37474F;
+}
+
+.dashboard-child-detail {
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  color: #90A4AE;
+}
+
+.dashboard-child-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.dashboard-btn-edit,
+.dashboard-btn-delete {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.dashboard-btn-edit {
+  background: #E3F2FD;
+  color: #1E88E5;
+}
+
+.dashboard-btn-edit:hover {
+  background: #BBDEFB;
+}
+
+.dashboard-btn-delete {
+  background: #FFEBEE;
+  color: #EF5350;
+}
+
+.dashboard-btn-delete:hover {
+  background: #FFCDD2;
+}
+
+.dashboard-account-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  color: #546E7A;
+}
+
+.dashboard-account-label {
+  font-weight: 600;
+  color: #78909C;
+}
+
+.dashboard-account-value {
+  color: #37474F;
+}
+
+.dashboard-logout-btn {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 14px;
+  border: 2px solid #EF5350;
+  border-radius: 12px;
+  background: white;
+  color: #EF5350;
+  font-family: "Nunito", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dashboard-logout-btn:hover {
+  background: #FFEBEE;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 32px 24px;
+  }
+  
+  .profile-grid {
+    gap: 16px;
+  }
+  
+  .profile-card {
+    width: 130px;
+    padding: 20px 12px;
+  }
+  
+  .profile-card-avatar {
+    font-size: 44px;
+  }
+  
+  .dashboard-container {
+    padding: 100px 16px 40px;
+  }
+  
+  .dashboard-section {
+    padding: 24px 16px;
+  }
+}

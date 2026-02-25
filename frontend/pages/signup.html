@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Little Heroes - Sign Up</title>
+  <link rel="stylesheet" href="../styles/main.css?v=4" />
+  <link rel="stylesheet" href="../styles/auth.css?v=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="tabs-banner">
+    <nav class="navigation">
+      <a href="home.html" class="tab-link" data-ko="홈" data-en="Home">Home</a>
+      <a href="talk.html" class="tab-link" data-ko-html="대화하기 <img src='../images/icons/icon-mic-small.svg' alt='' class='nav-icon' />" data-en-html="Talk <img src='../images/icons/icon-mic-small.svg' alt='' class='nav-icon' />">
+        Talk <img src="../images/icons/icon-mic-small.svg" alt="" class="nav-icon" />
+      </a>
+      <a href="reading-biography.html" class="tab-link" data-ko-html="위인전 읽기 <img src='../images/icons/icon-book-small.svg' alt='' class='nav-icon' />" data-en-html="Reading Biography <img src='../images/icons/icon-book-small.svg' alt='' class='nav-icon' />">
+        Reading Biography <img src="../images/icons/icon-book-small.svg" alt="" class="nav-icon" />
+      </a>
+      <a href="plan.html" class="tab-link" data-ko="요금제" data-en="Plan">Plan</a>
+      <a href="our-vision.html" class="tab-link" data-ko="우리의 비전" data-en="Our Vision">Our Vision</a>
+      <div class="logo-icon">
+        <img src="../images/corner_icon.png" alt="Little Heroes Icon" />
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sign Up Form -->
+  <main class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1 class="auth-title" data-ko="회원가입" data-en="Sign Up">Sign Up</h1>
+        <p class="auth-subtitle" data-ko="부모님 계정을 만들어 주세요" data-en="Create a parent account">Create a parent account</p>
+        <p class="auth-hint" data-ko="가입 후 자녀 프로필을 추가할 수 있습니다" data-en="You can add child profiles after signing up">You can add child profiles after signing up</p>
+      </div>
+
+      <!-- Error Message -->
+      <div class="auth-error" id="authError" style="display: none;"></div>
+
+      <!-- Sign Up Form -->
+      <form id="signupForm" class="auth-form">
+        <div class="auth-field">
+          <label for="displayName" data-ko="이름 (닉네임)" data-en="Name (Nickname)">Name (Nickname)</label>
+          <input type="text" id="displayName" required placeholder="Hong Gildong" />
+        </div>
+        <div class="auth-field">
+          <label for="email" data-ko="이메일" data-en="Email">Email</label>
+          <input type="email" id="email" required placeholder="parent@example.com" />
+        </div>
+        <div class="auth-field">
+          <label for="password" data-ko="비밀번호 (6자 이상)" data-en="Password (min 6 characters)">Password (min 6 characters)</label>
+          <input type="password" id="password" required minlength="6" placeholder="••••••••" />
+        </div>
+        <div class="auth-field">
+          <label for="confirmPassword" data-ko="비밀번호 확인" data-en="Confirm Password">Confirm Password</label>
+          <input type="password" id="confirmPassword" required minlength="6" placeholder="••••••••" />
+        </div>
+        <button type="submit" class="auth-btn auth-btn-primary" data-ko="가입하기" data-en="Sign Up">Sign Up</button>
+      </form>
+
+      <!-- Divider -->
+      <div class="auth-divider">
+        <span data-ko="또는" data-en="or">or</span>
+      </div>
+
+      <!-- Google Sign Up -->
+      <button class="auth-btn auth-btn-google" id="googleSignupBtn">
+        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        <span data-ko="Google로 가입하기" data-en="Continue with Google">Continue with Google</span>
+      </button>
+
+      <!-- Login Link -->
+      <div class="auth-footer">
+        <span data-ko="이미 계정이 있으신가요?" data-en="Already have an account?">Already have an account?</span>
+        <a href="login.html" data-ko="로그인" data-en="Log In">Log In</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../scripts/language-switcher.js"></script>
+  <script type="module">
+    import { isFirebaseConfigured, signUpWithEmail, signInWithGoogle } from '../scripts/firebase-config.js';
+
+    const signupForm = document.getElementById('signupForm');
+    const googleBtn = document.getElementById('googleSignupBtn');
+    const errorDiv = document.getElementById('authError');
+
+    function showError(msg) {
+      errorDiv.textContent = msg;
+      errorDiv.style.display = 'block';
+    }
+
+    function hideError() {
+      errorDiv.style.display = 'none';
+    }
+
+    // 이메일/비밀번호 회원가입
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideError();
+
+      if (!isFirebaseConfigured()) {
+        showError('Firebase가 아직 설정되지 않았습니다. 설정 가이드를 참고해 주세요.');
+        return;
+      }
+
+      const displayName = document.getElementById('displayName').value.trim();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const lang = localStorage.getItem('littleHeroesLanguage') || 'en';
+
+      if (password !== confirmPassword) {
+        showError(lang === 'ko' ? '비밀번호가 일치하지 않습니다.' : 'Passwords do not match.');
+        return;
+      }
+
+      try {
+        await signUpWithEmail(email, password, displayName);
+        // 가입 성공 → 자녀 프로필 추가 페이지로 이동
+        window.location.href = 'select-profile.html?welcome=true';
+      } catch (error) {
+        if (error.code === 'auth/email-already-in-use') {
+          showError(lang === 'ko' ? '이미 사용 중인 이메일입니다.' : 'This email is already in use.');
+        } else if (error.code === 'auth/weak-password') {
+          showError(lang === 'ko' ? '비밀번호가 너무 짧습니다. 6자 이상 입력해 주세요.' : 'Password is too weak. Please use at least 6 characters.');
+        } else {
+          showError(lang === 'ko' ? '가입 중 오류가 발생했습니다.' : 'An error occurred during sign up.');
+        }
+      }
+    });
+
+    // Google 가입
+    googleBtn.addEventListener('click', async () => {
+      hideError();
+
+      if (!isFirebaseConfigured()) {
+        showError('Firebase가 아직 설정되지 않았습니다. 설정 가이드를 참고해 주세요.');
+        return;
+      }
+
+      try {
+        await signInWithGoogle();
+        window.location.href = 'select-profile.html?welcome=true';
+      } catch (error) {
+        const lang = localStorage.getItem('littleHeroesLanguage') || 'en';
+        showError(lang === 'ko' ? 'Google 가입 중 오류가 발생했습니다.' : 'An error occurred during Google sign up.');
+      }
+    });
+  </script>
+</body>
+</html>

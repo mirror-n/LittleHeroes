@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Little Heroes - Parent Dashboard</title>
+  <link rel="stylesheet" href="../styles/main.css?v=4" />
+  <link rel="stylesheet" href="../styles/auth.css?v=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="tabs-banner">
+    <nav class="navigation">
+      <a href="home.html" class="tab-link" data-ko="홈" data-en="Home">Home</a>
+      <a href="talk.html" class="tab-link" data-ko-html="대화하기 <img src='../images/icons/icon-mic-small.svg' alt='' class='nav-icon' />" data-en-html="Talk <img src='../images/icons/icon-mic-small.svg' alt='' class='nav-icon' />">
+        Talk <img src="../images/icons/icon-mic-small.svg" alt="" class="nav-icon" />
+      </a>
+      <a href="reading-biography.html" class="tab-link" data-ko-html="위인전 읽기 <img src='../images/icons/icon-book-small.svg' alt='' class='nav-icon' />" data-en-html="Reading Biography <img src='../images/icons/icon-book-small.svg' alt='' class='nav-icon' />">
+        Reading Biography <img src="../images/icons/icon-book-small.svg" alt="" class="nav-icon" />
+      </a>
+      <a href="plan.html" class="tab-link" data-ko="요금제" data-en="Plan">Plan</a>
+      <a href="our-vision.html" class="tab-link" data-ko="우리의 비전" data-en="Our Vision">Our Vision</a>
+      <div class="logo-icon">
+        <img src="../images/corner_icon.png" alt="Little Heroes Icon" />
+      </div>
+    </nav>
+  </header>
+
+  <!-- Dashboard -->
+  <main class="dashboard-container">
+    <div class="dashboard-header">
+      <h1 class="dashboard-title" data-ko="부모 대시보드" data-en="Parent Dashboard">Parent Dashboard</h1>
+      <p class="dashboard-subtitle" id="dashboardSubtitle" data-ko="자녀 프로필을 관리하세요" data-en="Manage your children's profiles">Manage your children's profiles</p>
+    </div>
+
+    <!-- Children Profiles Section -->
+    <div class="dashboard-section">
+      <h2 class="dashboard-section-title" data-ko="자녀 프로필" data-en="Child Profiles">Child Profiles</h2>
+      <div id="childrenList">
+        <!-- Dynamically loaded -->
+      </div>
+      <button class="auth-btn auth-btn-primary" id="addChildBtn" style="margin-top: 16px; max-width: 200px;" data-ko="프로필 추가" data-en="Add Profile">Add Profile</button>
+    </div>
+
+    <!-- Account Info Section -->
+    <div class="dashboard-section">
+      <h2 class="dashboard-section-title" data-ko="계정 정보" data-en="Account Info">Account Info</h2>
+      <div class="dashboard-account-row">
+        <span class="dashboard-account-label" data-ko="이름" data-en="Name">Name</span>
+        <span class="dashboard-account-value" id="accountName">-</span>
+      </div>
+      <div class="dashboard-account-row">
+        <span class="dashboard-account-label" data-ko="이메일" data-en="Email">Email</span>
+        <span class="dashboard-account-value" id="accountEmail">-</span>
+      </div>
+      <div class="dashboard-account-row">
+        <span class="dashboard-account-label" data-ko="가입 방법" data-en="Sign-in Method">Sign-in Method</span>
+        <span class="dashboard-account-value" id="accountProvider">-</span>
+      </div>
+    </div>
+
+    <!-- Logout Button -->
+    <button class="dashboard-logout-btn" id="logoutBtn" data-ko="로그아웃" data-en="Log Out">Log Out</button>
+  </main>
+
+  <!-- Edit Child Modal -->
+  <div class="modal-overlay" id="editChildModal" style="display: none;">
+    <div class="modal-card">
+      <h2 class="modal-title" id="editModalTitle" data-ko="프로필 수정" data-en="Edit Profile">Edit Profile</h2>
+      
+      <div class="auth-field">
+        <label for="editNickname" data-ko="닉네임" data-en="Nickname">Nickname</label>
+        <input type="text" id="editNickname" required placeholder="Enter nickname" maxlength="12" />
+      </div>
+
+      <div class="auth-field" style="margin-top: 16px;">
+        <label for="editBirthYear" data-ko="출생 연도 (선택)" data-en="Birth Year (optional)">Birth Year (optional)</label>
+        <input type="number" id="editBirthYear" placeholder="2016" min="2010" max="2022" />
+      </div>
+
+      <div style="margin-top: 20px;">
+        <label style="font-family: 'Nunito', 'Noto Sans KR', sans-serif; font-size: 14px; font-weight: 600; color: #546E7A; display: block; margin-bottom: 10px;" data-ko="아바타 선택" data-en="Choose Avatar">Choose Avatar</label>
+        <div class="avatar-picker" id="editAvatarPicker"></div>
+      </div>
+
+      <div class="auth-error" id="editModalError" style="display: none;"></div>
+
+      <div class="modal-actions">
+        <button class="modal-btn-cancel" id="editCancelBtn" data-ko="취소" data-en="Cancel">Cancel</button>
+        <button class="modal-btn-save" id="editSaveBtn" data-ko="저장" data-en="Save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Child Modal -->
+  <div class="modal-overlay" id="addChildModal" style="display: none;">
+    <div class="modal-card">
+      <h2 class="modal-title" data-ko="자녀 프로필 추가" data-en="Add Child Profile">Add Child Profile</h2>
+      
+      <div class="auth-field">
+        <label for="addNickname" data-ko="닉네임" data-en="Nickname">Nickname</label>
+        <input type="text" id="addNickname" required placeholder="Enter nickname" maxlength="12" />
+      </div>
+
+      <div class="auth-field" style="margin-top: 16px;">
+        <label for="addBirthYear" data-ko="출생 연도 (선택)" data-en="Birth Year (optional)">Birth Year (optional)</label>
+        <input type="number" id="addBirthYear" placeholder="2016" min="2010" max="2022" />
+      </div>
+
+      <div style="margin-top: 20px;">
+        <label style="font-family: 'Nunito', 'Noto Sans KR', sans-serif; font-size: 14px; font-weight: 600; color: #546E7A; display: block; margin-bottom: 10px;" data-ko="아바타 선택" data-en="Choose Avatar">Choose Avatar</label>
+        <div class="avatar-picker" id="addAvatarPicker"></div>
+      </div>
+
+      <div class="auth-error" id="addModalError" style="display: none;"></div>
+
+      <div class="modal-actions">
+        <button class="modal-btn-cancel" id="addCancelBtn" data-ko="취소" data-en="Cancel">Cancel</button>
+        <button class="modal-btn-save" id="addSaveBtn" data-ko="추가하기" data-en="Add Profile">Add Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts/language-switcher.js"></script>
+  <script type="module">
+    import { auth, isFirebaseConfigured, onAuthStateChanged, logout, getChildProfiles, addChildProfile, updateChildProfile, deleteChildProfile } from '../scripts/firebase-config.js';
+
+    const AVATARS = ['🦁', '🐻', '🐰', '🦊', '🐼', '🐨', '🦄', '🐱', '🐶', '🦋', '🌟', '🎨'];
+    
+    let currentUser = null;
+    let editingChildId = null;
+    let editSelectedAvatar = 0;
+    let addSelectedAvatar = 0;
+
+    // Firebase 미설정 시 데모 모드
+    if (!isFirebaseConfigured()) {
+      showDemoMode();
+    } else {
+      onAuthStateChanged(auth, async (user) => {
+        if (!user) {
+          window.location.href = 'login.html';
+          return;
+        }
+        currentUser = user;
+        
+        // 계정 정보 표시
+        document.getElementById('accountName').textContent = user.displayName || '-';
+        document.getElementById('accountEmail').textContent = user.email || '-';
+        const providers = user.providerData.map(p => p.providerId === 'google.com' ? 'Google' : 'Email').join(', ');
+        document.getElementById('accountProvider').textContent = providers;
+        
+        await loadChildren();
+      });
+    }
+
+    function showDemoMode() {
+      document.getElementById('accountName').textContent = 'Demo User';
+      document.getElementById('accountEmail').textContent = 'demo@littleheroes.com';
+      document.getElementById('accountProvider').textContent = 'Demo';
+      
+      const lang = localStorage.getItem('littleHeroesLanguage') || 'en';
+      const list = document.getElementById('childrenList');
+      list.innerHTML = `
+        <div class="dashboard-child-row">
+          <span class="dashboard-child-avatar">🦁</span>
+          <div class="dashboard-child-info">
+            <div class="dashboard-child-name">${lang === 'ko' ? '민준' : 'MinJun'}</div>
+            <div class="dashboard-child-detail">${lang === 'ko' ? '2016년생' : 'Born 2016'}</div>
+          </div>
+          <div class="dashboard-child-actions">
+            <button class="dashboard-btn-edit" data-ko="수정" data-en="Edit">Edit</button>
+            <button class="dashboard-btn-delete" data-ko="삭제" data-en="Delete">Delete</button>
+          </div>
+        </div>
+        <div class="dashboard-child-row">
+          <span class="dashboard-child-avatar">🐰</span>
+          <div class="dashboard-child-info">
+            <div class="dashboard-child-name">${lang === 'ko' ? '서연' : 'SeoYeon'}</div>
+            <div class="dashboard-child-detail">${lang === 'ko' ? '2018년생' : 'Born 2018'}</div>
+          </div>
+          <div class="dashboard-child-actions">
+            <button class="dashboard-btn-edit" data-ko="수정" data-en="Edit">Edit</button>
+            <button class="dashboard-btn-delete" data-ko="삭제" data-en="Delete">Delete</button>
+          </div>
+        </div>
+      `;
+    }
+
+    async function loadChildren() {
+      const list = document.getElementById('childrenList');
+      const lang = localStorage.getItem('littleHeroesLanguage') || 'en';
+      
+      try {
+        const children = await getChildProfiles(currentUser.uid);
+        
+        if (children.length === 0) {
+          list.innerHTML = `<p style="color: #90A4AE; font-family: 'Nunito', 'Noto Sans KR', sans-serif; text-align: center; padding: 20px;">${lang === 'ko' ? '등록된 자녀 프로필이 없습니다.' : 'No child profiles yet.'}</p>`;
+          return;
+        }
+
+        list.innerHTML = '';
+        children.forEach((child) => {
+          const row = document.createElement('div');
+          row.className = 'dashboard-child-row';
+          row.innerHTML = `
+            <span class="dashboard-child-avatar">${AVATARS[child.avatarIndex] || '🌟'}</span>
+            <div class="dashboard-child-info">
+              <div class="dashboard-child-name">${child.nickname}</div>
+              <div class="dashboard-child-detail">${child.birthYear ? (lang === 'ko' ? child.birthYear + '년생' : 'Born ' + child.birthYear) : ''}</div>
+            </div>
+            <div class="dashboard-child-actions">
+              <button class="dashboard-btn-edit" data-child-id="${child.id}" data-ko="수정" data-en="Edit">${lang === 'ko' ? '수정' : 'Edit'}</button>
+              <button class="dashboard-btn-delete" data-child-id="${child.id}" data-ko="삭제" data-en="Delete">${lang === 'ko' ? '삭제' : 'Delete'}</button>
+            </div>
+          `;
+          
+          row.querySelector('.dashboard-btn-edit').addEventListener('click', () => openEditModal(child));
+          row.querySelector('.dashboard-btn-delete').addEventListener('click', () => confirmDelete(child));
+          
+          list.appendChild(row);
+        });
+      } catch (e) {
+        console.error('Error loading children:', e);
+      }
+    }
+
+    // Edit Modal
+    function openEditModal(child) {
+      editingChildId = child.id;
+      document.getElementById('editNickname').value = child.nickname;
+      document.getElementById('editBirthYear').value = child.birthYear || '';
+      document.getElementById('editModalError').style.display = 'none';
+      
+      initAvatarPicker('editAvatarPicker', child.avatarIndex || 0, (index) => { editSelectedAvatar = index; });
+      editSelectedAvatar = child.avatarIndex || 0;
+      
+      document.getElementById('editChildModal').style.display = 'flex';
+    }
+
+    document.getElementById('editCancelBtn').addEventListener('click', () => {
+      document.getElementById('editChildModal').style.display = 'none';
+    });
+
+    document.getElementById('editSaveBtn').addEventListener('click', async () => {
+      const nickname = document.getElementById('editNickname').value.trim();
+      const birthYear = document.getElementById('editBirthYear').value;
+      const lang = localStorage.getItem('littleHeroesLanguage') || 'en';
+
+      if (!nickname) {
+        const err = document.getElementById('editModalError');
+        err.textContent = lang === 'ko' ? '닉네임을 입력해 주세요.' : 'Please enter a nickname.';
+        err.style.display = 'block';
+        return;
+      }
+
+      if (isFirebaseConfigured() && currentUser) {
+        try {
+          await updateChildProfile(currentUser.uid, editingChildId, {
+            nickname,
+            avatarIndex: editSelectedAvatar,
+            birthYear: birthYear ? parseInt(birthYear) : null
+          });
+          document.getElementById('editChildModal').style.display = 'none';
+          await loadChildren();
+        } catch (e) {
+          const err = document.getElementById('editModalError');
+          err.textContent = lang === 'ko' ? '수정 중 오류가 발생했습니다.' : 'Error updating profile.';
+          err.style.display = 'block';
+        }
+      }
+    });
+
+    // Delete
+    async function confirmDelete(child) {
+      const lang = localStorage.getItem('littleHeroesLanguage') || 'en';
+      const msg = lang === 'ko' 
+        ? `"${child.nickname}" 프로필을 삭제하시겠습니까?` 
+        : `Delete "${child.nickname}" profile?`;
+      
+      if (confirm(msg)) {
+        if (isFirebaseConfigured() && currentUser) {
+          try {
+            await deleteChildProfile(currentUser.uid, child.id);
+            await loadChildren();
+          } catch (e) {
+            alert(lang === 'ko' ? '삭제 중 오류가 발생했습니다.' : 'Error deleting profile.');
+          }
+        }
+      }
+    }
+
+    // Add Child Modal
+    document.getElementById('addChildBtn').addEventListener('click', () => {
+      document.getElementById('addNickname').value = '';
+      document.getElementById('addBirthYear').value = '';
+      document.getElementById('addModalError').style.display = 'none';
+      initAvatarPicker('addAvatarPicker', 0, (index) => { addSelectedAvatar = index; });
+      addSelectedAvatar = 0;
+      document.getElementById('addChildModal').style.display = 'flex';
+    });
+
+    document.getElementById('addCancelBtn').addEventListener('click', () => {
+      document.getElementById('addChildModal').style.display = 'none';
+    });
+
+    document.getElementById('addSaveBtn').addEventListener('click', async () => {
+      const nickname = document.getElementById('addNickname').value.trim();
+      const birthYear = document.getElementById('addBirthYear').value;
+      const lang = localStorage.getItem('littleHeroesLanguage') || 'en';
+
+      if (!nickname) {
+        const err = document.getElementById('addModalError');
+        err.textContent = lang === 'ko' ? '닉네임을 입력해 주세요.' : 'Please enter a nickname.';
+        err.style.display = 'block';
+        return;
+      }
+
+      if (isFirebaseConfigured() && currentUser) {
+        try {
+          await addChildProfile(currentUser.uid, {
+            nickname,
+            avatarIndex: addSelectedAvatar,
+            birthYear: birthYear ? parseInt(birthYear) : null
+          });
+          document.getElementById('addChildModal').style.display = 'none';
+          await loadChildren();
+        } catch (e) {
+          const err = document.getElementById('addModalError');
+          err.textContent = lang === 'ko' ? '추가 중 오류가 발생했습니다.' : 'Error adding profile.';
+          err.style.display = 'block';
+        }
+      }
+    });
+
+    // Avatar Picker Helper
+    function initAvatarPicker(containerId, selectedIndex, onSelect) {
+      const picker = document.getElementById(containerId);
+      picker.innerHTML = '';
+      AVATARS.forEach((emoji, index) => {
+        const option = document.createElement('button');
+        option.className = 'avatar-option' + (index === selectedIndex ? ' selected' : '');
+        option.textContent = emoji;
+        option.type = 'button';
+        option.addEventListener('click', () => {
+          picker.querySelectorAll('.avatar-option').forEach(o => o.classList.remove('selected'));
+          option.classList.add('selected');
+          onSelect(index);
+        });
+        picker.appendChild(option);
+      });
+    }
+
+    // Close modals on overlay click
+    ['editChildModal', 'addChildModal'].forEach(id => {
+      document.getElementById(id).addEventListener('click', (e) => {
+        if (e.target.id === id) {
+          document.getElementById(id).style.display = 'none';
+        }
+      });
+    });
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      if (isFirebaseConfigured()) {
+        await logout();
+      }
+      sessionStorage.removeItem('activeChildProfile');
+      window.location.href = 'home.html';
+    });
+  </script>
+</body>
+</html>
