@@ -125,12 +125,23 @@ async function handleChat(req: ChatRequest): Promise<ChatResponse> {
 
   // Build enhanced context with memory
   let enhancedContext = context;
+  let historyContext = selectedLanguage === 'ko'
+    ? '(최근 대화 기억이 아직 없어.)'
+    : '(No recent conversation memory found yet.)';
+
   if (memoryContext) {
+    historyContext = memoryContext;
     const memoryLabel = selectedLanguage === 'ko'
       ? '이 친구에 대해 기억하고 있는 것들'
       : 'Things you remember about this friend';
     enhancedContext = `${context}\n\n[${memoryLabel}]\n${memoryContext}`;
   }
+
+  // Inject history and character name into the answer prompt
+  pipelineInput.answerPrompt = pipelineInput.answerPrompt
+    .replace('{{history}}', historyContext)
+    .replace(/\{\{character_name\}\}/g, pipelineInput.characterName);
+
   // ===== End Mem0 Integration =====
 
   // Try OpenAI first, fallback to Gemini

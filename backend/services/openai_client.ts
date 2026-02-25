@@ -27,8 +27,8 @@ export async function callOpenAI(input: PipelineInput, context: string): Promise
 
   // Build language instruction based on selected language
   const langInstruction = input.language === 'ko'
-    ? '\n\nIMPORTANT: Respond in Korean using 반말 (casual speech). Do NOT use 존댓말.'
-    : '\n\nIMPORTANT: Respond in casual, friendly English suitable for kids.';
+    ? '\n\nIMPORTANT: Respond in Korean using 반말 (casual speech). Do NOT use 존댓말. DO NOT repeat the same stories or facts you already told in the conversation history.'
+    : '\n\nIMPORTANT: Respond in casual, friendly English suitable for kids. DO NOT repeat the same stories or facts you already told in the conversation history.';
 
   // Suggested replies instruction
   const suggestedRepliesInstruction = input.language === 'ko'
