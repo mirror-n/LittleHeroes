@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden; /* Prevent scrollbar from translateY animation */
+  gap: 30px;
 }
 
 /* Scroll animation for talk page text - initial hidden state */
@@ -17,6 +18,16 @@
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease-in, transform 1s ease-out;
+}
+
+.talk-content h1.text-content2:first-of-type {
+  font-size: 38px;
+  white-space: nowrap;
+}
+
+.talk-content h1.text-content2:last-of-type {
+  font-size: 38px;
+  white-space: pre-line;
 }
 
 /* Animated state when individual h1 enters viewport */
