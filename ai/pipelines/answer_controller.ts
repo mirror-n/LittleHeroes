@@ -182,12 +182,17 @@ export function buildRagOnlyPrompt(input: RagAnswerInput): RagPrompt { // Build 
   return { system, user, shouldRefuse }; // Return built prompt package.
 } 
 
-export function buildRefusalText(): string { // Read refusal text.
-  const raw = readPrompt("refusal.txt"); // Load refusal options.
-  const options = raw
+/** All refusal phrases from refusal.txt (for detecting refusals even when model uses a different variant). */
+export function getRefusalOptions(): string[] {
+  const raw = readPrompt("refusal.txt");
+  return raw
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter((line) => line.length > 0);
+}
+
+export function buildRefusalText(): string { // Read refusal text.
+  const options = getRefusalOptions();
   if (options.length === 0) return "";
   const index = Math.floor(Math.random() * options.length);
   return options[index]; // Return one refusal variant.

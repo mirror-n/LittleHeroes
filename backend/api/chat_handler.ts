@@ -59,21 +59,43 @@ export async function handleChatRequest(req: any, res: any): Promise<void> { // 
 
   const pipeline = loadPipelineInputs(characterSlug, message, conversationHistory); // Load pipeline data.
 
-      let rawAnswer = ""; // Store raw model answer.
-
+      // Collect all refusal/redirect reasons; log once at the end with combined reason(s).
+      const refusalReasons = new Set<string>();
       const normalize = (text: string): string =>
-        String(text || "")
-          .trim()
-          .replace(/\s+/g, " "); // Normalize whitespace for comparison.
+        String(text || "").trim().replace(/\s+/g, " ");
+
+      const ESCALATION_MESSAGE_PHRASES = [
+        "want to die", "want to kill", "kill myself", "hurt myself", "end my life",
+        "feel like dying", "suicide", "so sad", "very sad", "feel scared",
+        "feel afraid", "can't go on", "don't want to live", "hate my life",
+      ];
+      const shouldEscalate = (msg: string): boolean => {
+        const lower = String(msg || "").toLowerCase();
+        return ESCALATION_MESSAGE_PHRASES.some((phrase) => lower.includes(phrase));
+      };
+      const REFUSAL_ANSWER_PHRASES = [
+        "ask a grown-up", "grown-up you trust", "talk to a grown-up", "trusted adult",
+        "I am not sure yet how to help", "I cannot tell you", "I do not know how to help",
+        "I do not have that answer yet", "I do not know yet", "I am not sure yet",
+        "I am still learning this one", "I do not have that answer",
+      ];
+      const answerContainsRedirect = (answer: string): boolean => {
+        const lower = String(answer || "").toLowerCase();
+        return REFUSAL_ANSWER_PHRASES.some((phrase) => lower.includes(phrase.toLowerCase()));
+      };
+      const answerMatchesRefusal = (answer: string): boolean => {
+        const n = normalize(answer);
+        const options = pipeline.refusalOptions || [pipeline.refusalText];
+        return options.some((opt) => normalize(opt) === n);
+      };
+
+      if (pipeline.prompt.shouldRefuse) refusalReasons.add("empty_context");
+      if (shouldEscalate(message)) refusalReasons.add("escalation_redirect");
+
+      let rawAnswer = ""; // Store raw model answer.
 
       if (pipeline.prompt.shouldRefuse) { // Check if context is empty.
         rawAnswer = pipeline.refusalText; // If no context, refuse.
-        logUnansweredQuestion({
-          timestamp: new Date().toISOString(),
-          character: characterSlug,
-          message,
-          reason: "empty_context",
-        });
   } else {
         try { // Try calling OpenAI.
           rawAnswer = await callOpenAI(pipeline.prompt.system, pipeline.prompt.user, pipeline.conversationHistory); // Call model.
@@ -115,14 +137,8 @@ export async function handleChatRequest(req: any, res: any): Promise<void> { // 
         }
   }
 
-      if (normalize(rawAnswer) === normalize(pipeline.refusalText)) {
-        logUnansweredQuestion({
-          timestamp: new Date().toISOString(),
-          character: characterSlug,
-          message,
-          reason: "model_refusal",
-        });
-      }
+      if (!pipeline.prompt.shouldRefuse && answerMatchesRefusal(rawAnswer)) refusalReasons.add("model_refusal");
+      else if (!pipeline.prompt.shouldRefuse && answerContainsRedirect(rawAnswer)) refusalReasons.add("refusal_redirect");
 
       const safeAnswer = applySafety( // Apply safety + guardrails checks.
     rawAnswer, // Answer from model.
@@ -131,12 +147,15 @@ export async function handleChatRequest(req: any, res: any): Promise<void> { // 
     pipeline.refusalText // Refusal text.
   ); 
 
-      if (normalize(safeAnswer) === normalize(pipeline.refusalText)) {
+      if (safeAnswer !== rawAnswer && answerMatchesRefusal(safeAnswer)) refusalReasons.add("safety_refusal");
+      else if (answerContainsRedirect(safeAnswer)) refusalReasons.add("refusal_redirect");
+
+      if (refusalReasons.size > 0) {
         logUnansweredQuestion({
           timestamp: new Date().toISOString(),
           character: characterSlug,
           message,
-          reason: "safety_refusal",
+          reason: [...refusalReasons].sort().join(","),
         });
       }
 

@@ -11,6 +11,7 @@ const {
 const {
   buildRagOnlyPrompt,
   buildRefusalText,
+  getRefusalOptions,
   loadSafetyConfig,
   enforceSafety,
 } = require(path.join(process.cwd(), "ai", "pipelines", "answer_controller")); // Prompt + safety helpers.
@@ -19,14 +20,16 @@ export type PipelineInputs = { // Pipeline input package.
   prompt: { system: string; user: string; shouldRefuse: boolean }; // Prompt bundle.
   primary: { context: string; guardrails: any; characterName: string }; // Primary RAG data.
   safety: { forbiddenTopics: string[]; childSafeRules: string; escalationPolicy: string }; // Safety config.
-  refusalText: string; // Refusal text.
+  refusalText: string; // Refusal text (one variant for this request).
+  refusalOptions: string[]; // All refusal variants (for detecting model/safety refusal).
   conversationHistory: any[]; // Conversation history.
 }; 
 
 export function loadPipelineInputs(characterSlug: string, message: string, conversationHistory: any[] = []): PipelineInputs { // Load pipeline data.
   const primary = loadPrimaryRag(characterSlug); // Load primary RAG for character.
   const safety = loadSafetyConfig(); // Load safety config files.
-  const refusalText = buildRefusalText(); // Load refusal text.
+  const refusalText = buildRefusalText(); // Load refusal text (one variant).
+  const refusalOptions = getRefusalOptions(); // All variants for refusal detection.
 
   const prompt = buildRagOnlyPrompt({ // Build prompt inputs.
     question: message, // User message.
@@ -37,7 +40,7 @@ export function loadPipelineInputs(characterSlug: string, message: string, conve
     conversationHistory, // Conversation history.
   }); 
 
-  return { prompt, primary, safety, refusalText, conversationHistory }; // Return pipeline inputs.
+  return { prompt, primary, safety, refusalText, refusalOptions, conversationHistory }; // Return pipeline inputs.
 } 
 
 export function applySafety( // Apply safety + guardrails checks.
