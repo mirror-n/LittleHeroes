@@ -12,6 +12,7 @@ class VoiceInput {
     this.selectedDeviceId = null;
     this.mediaStream = null;
     this.voiceButton = null;
+    this.autoSendEnabled = true; // Enable auto-send after voice recognition
     
     this.initRecognition();
   }
@@ -50,6 +51,14 @@ class VoiceInput {
       if (finalTranscript) {
         this.inputElement.value = finalTranscript.trim();
         console.log('Final transcript:', finalTranscript.trim());
+        
+        // Auto-send after voice recognition
+        if (this.autoSendEnabled && this.sendButtonElement) {
+          setTimeout(() => {
+            console.log('Auto-sending message...');
+            this.sendButtonElement.click();
+          }, 300);
+        }
       } else if (interimTranscript) {
         this.inputElement.placeholder = interimTranscript;
         console.log('Interim transcript:', interimTranscript);
