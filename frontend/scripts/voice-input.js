@@ -11,6 +11,7 @@ class VoiceInput {
     this.recognition = null;
     this.selectedDeviceId = null;
     this.mediaStream = null;
+    this.voiceButton = null;
     
     this.initRecognition();
   }
@@ -30,6 +31,7 @@ class VoiceInput {
     this.recognition.onstart = () => {
       this.isListening = true;
       this.updateMicrophoneIcon(true);
+      console.log('Speech recognition started');
     };
 
     this.recognition.onresult = (event) => {
@@ -47,30 +49,57 @@ class VoiceInput {
 
       if (finalTranscript) {
         this.inputElement.value = finalTranscript.trim();
+        console.log('Final transcript:', finalTranscript.trim());
       } else if (interimTranscript) {
         this.inputElement.placeholder = interimTranscript;
+        console.log('Interim transcript:', interimTranscript);
       }
     };
 
     this.recognition.onerror = (event) => {
       console.error('Speech recognition error:', event.error);
       this.updateMicrophoneIcon(false);
-      this.showError(event.error);
+      
+      // Don't show error for "no-speech" - just restart
+      if (event.error !== 'no-speech') {
+        this.showError(event.error);
+      }
     };
 
     this.recognition.onend = () => {
       this.isListening = false;
       this.updateMicrophoneIcon(false);
+      console.log('Speech recognition ended');
+      
+      // Auto-restart if we were listening and input is empty
+      if (this.inputElement.value.trim() === '' && this.voiceButton) {
+        // Automatically restart listening after a short delay
+        setTimeout(() => {
+          if (this.voiceButton && !this.isListening) {
+            this.startListening();
+          }
+        }, 500);
+      }
     };
   }
 
   getCurrentLanguage() {
+    let lang = 'en';
+    
     if (window.languageSwitcher) {
-      const lang = window.languageSwitcher.getCurrentLanguage();
-      return lang === 'ko' ? 'ko-KR' : 'en-US';
+      lang = window.languageSwitcher.getCurrentLanguage();
+    } else {
+      lang = localStorage.getItem('littleHeroesLanguage') || 'en';
     }
-    const lang = localStorage.getItem('littleHeroesLanguage') || 'en';
-    return lang === 'ko' ? 'ko-KR' : 'en-US';
+    
+    // Map to proper language code
+    if (lang === 'ko') {
+      return 'ko-KR';
+    } else if (lang === 'en') {
+      return 'en-US';
+    }
+    
+    return 'en-US';
   }
 
   async selectMicrophone() {
@@ -246,6 +275,15 @@ class VoiceInput {
           font-size: 18px;
           margin-left: 8px;
         }
+
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+        }
       `;
       document.head.appendChild(styles);
     }
@@ -278,8 +316,9 @@ class VoiceInput {
     }
 
     try {
-      // Update language
+      // Update language based on current setting
       this.recognition.lang = this.getCurrentLanguage();
+      console.log('Starting speech recognition with language:', this.recognition.lang);
       
       // Start recognition
       this.recognition.start();
@@ -310,12 +349,18 @@ class VoiceInput {
 
   showError(message) {
     const lang = this.getCurrentLanguage().startsWith('ko') ? 'ko' : 'en';
-    alert(message || (lang === 'ko' ? '오류가 발생했습니다.' : 'An error occurred.'));
+    const errorMsg = message || (lang === 'ko' ? '오류가 발생했습니다.' : 'An error occurred.');
+    console.error('Voice input error:', errorMsg);
+    // Only show alert for critical errors
+    if (message && message !== 'no-speech' && message !== 'network') {
+      alert(errorMsg);
+    }
   }
 
   attachToMicrophoneIcon() {
     const micIcon = document.querySelector('.chat-icon[alt="Microphone"]');
     if (micIcon) {
+      this.voiceButton = micIcon;
       micIcon.style.cursor = 'pointer';
       micIcon.addEventListener('click', () => {
         this.selectMicrophone();
@@ -337,6 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('languageChanged', (e) => {
       if (voiceInput.recognition) {
         voiceInput.recognition.lang = voiceInput.getCurrentLanguage();
+        console.log('Language updated to:', voiceInput.recognition.lang);
       }
     });
   }
